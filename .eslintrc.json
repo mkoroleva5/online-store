@@ -17,7 +17,14 @@
   "rules": {
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
   },
   "ignorePatterns": ["vite.config.ts"]
 }
