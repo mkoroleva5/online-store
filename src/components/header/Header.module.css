@@ -43,17 +43,33 @@
 }
 
 .cart {
+  position: relative;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.cart:hover {
+.cart_image:hover {
   transform: translateY(-2px);
 }
 
 .cart_image {
   width: 30px;
   height: 30px;
+  transition: 0.2s;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  color: white;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 1600px) {

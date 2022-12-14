@@ -18,6 +18,7 @@ export const Header = () => {
           </div>
           <div className={style.cart}>
             <img className={style.cart_image} src={cartImg} alt="Cart" />
+            <div className={style.counter}>0</div>
           </div>
         </div>
       </div>
