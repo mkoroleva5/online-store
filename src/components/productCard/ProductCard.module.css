@@ -1,0 +1,17 @@
+.card_wrapper {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.title {
+}
+
+.stock {
+}
+
+.price {
+}
