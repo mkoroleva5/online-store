@@ -1,4 +1,4 @@
-.header_wrapper {
+.header-wrapper {
   width: 100%;
   box-shadow: 0px 0px 8px -1px rgba(34, 60, 80, 0.18);
 }
@@ -11,7 +11,7 @@
   padding: 20px;
 }
 
-.logo_wrapper {
+.logo-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -29,7 +29,7 @@
   font-size: 2.8rem;
 }
 
-.cart_wrapper {
+.cart-wrapper {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,14 +47,14 @@
   cursor: pointer;
 }
 
-.cart_image:hover {
-  transform: translateY(-2px);
-}
-
-.cart_image {
+.cart-image {
   width: 30px;
   height: 30px;
   transition: 0.2s;
+}
+
+.cart-image:hover {
+  transform: translateY(-2px);
 }
 
 .counter {

@@ -24,6 +24,8 @@
 
 :root {
   --text-color: #333333;
+  --white-color: #ffffff;
+  --bg-color: #44b76e;
 }
 
 *,
@@ -42,6 +44,9 @@ html {
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 1.6rem;
+
   color: var(--text-color);
 }
