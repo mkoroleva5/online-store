@@ -53,7 +53,7 @@
   transition: 0.2s;
 }
 
-.cart-image:hover {
+.cart:hover .cart-image {
   animation: rotate 1s normal linear infinite;
   -webkit-animation: rotate 1s normal linear infinite;
 }
