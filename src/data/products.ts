@@ -6,12 +6,12 @@ export interface Product {
   price: number;
   stock: number;
   brand: string;
-  category: ProductCategory;
+  category: string;
   type: string;
   preview: string;
   images: string[];
 }
 
-export type ProductCategory = 'Полезные сладости' | 'Полезные напитки' | 'Свечи';
+// export type ProductCategory = 'Полезные сладости' | 'Полезные напитки' | 'Свечи';
 
 // export type ProductType = 'батончик' | 'печенье';
