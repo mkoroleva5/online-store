@@ -5,7 +5,7 @@ import cartImg from '../../assets/images/cart.png';
 
 export const Header = () => {
   return (
-    <div className={style.headerWrapper}>
+    <header className={style.headerWrapper}>
       <div className={style.header}>
         <a href="#" className={style.logoWrapper}>
           <img className={style.logo} src={logoSource} alt="Logo" />
@@ -22,6 +22,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
