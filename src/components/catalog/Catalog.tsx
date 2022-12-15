@@ -3,8 +3,6 @@ import style from './Catalog.module.css';
 import { ProductCard } from '../productCard/ProductCard';
 import products from '../../data/products.json';
 
-export type DisplayLayout = 'table' | 'list';
-
 export const Catalog = () => {
   const [layout, setLayout] = useState('table');
   return (
