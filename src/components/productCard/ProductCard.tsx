@@ -1,7 +1,12 @@
 import { Product } from '../../data/product';
 import style from './ProductCard.module.css';
 
-export const ProductCard = ({ title, stock, price, preview }: Partial<Product>) => {
+export const ProductCard = ({
+  title,
+  stock,
+  price,
+  preview,
+}: Pick<Product, 'title' | 'stock' | 'price' | 'preview'>) => {
   return (
     <div className={style.cardWrapper}>
       <img src={preview} alt={title} className={style.img} />
