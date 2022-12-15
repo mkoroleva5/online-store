@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Product } from '../../data/product';
 import style from './ProductCard.module.css';
 
@@ -6,10 +7,18 @@ export const ProductCard = ({
   stock,
   price,
   preview,
-}: Pick<Product, 'title' | 'stock' | 'price' | 'preview'>) => {
+  images,
+}: Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'>) => {
+  const [hover, setHover] = useState(false);
   return (
     <div className={style.cardWrapper}>
-      <img src={preview} alt={title} className={style.img} />
+      <img
+        src={`${hover ? images[1] : preview}`}
+        alt={title}
+        className={style.img}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      />
       <h3 className={style.title}>{title}</h3>
       <p className={style.stock}>В наличии: {stock}</p>
       <p className={style.price}>

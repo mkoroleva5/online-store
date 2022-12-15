@@ -14,6 +14,7 @@ export const Catalog = () => {
               price={item.price}
               preview={item.preview}
               stock={item.stock}
+              images={item.images}
             />
           );
         })}

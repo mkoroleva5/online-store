@@ -6,13 +6,13 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  padding: 0 10px 20px 10px;
+  padding: 10px 10px 20px 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .card_wrapper:hover {
-  box-shadow: 0px 0px 21px -1px rgba(34, 60, 80, 0.18);
+  box-shadow: 0px 0px 8px -1px rgba(34, 60, 80, 0.18);
 }
 
 .img {
