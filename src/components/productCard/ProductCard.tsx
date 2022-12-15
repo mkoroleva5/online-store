@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Product } from '../../data/product';
 import style from './ProductCard.module.css';
+import noImage from '../../assets/images/default.jpg';
 
 export const ProductCard = ({
   title,
@@ -13,7 +14,7 @@ export const ProductCard = ({
   return (
     <div className={style.cardWrapper}>
       <img
-        src={`${hover ? images[1] : preview}`}
+        src={`${hover ? images[1] || noImage : preview || noImage}`}
         alt={title}
         className={style.img}
         onMouseEnter={() => setHover(true)}
