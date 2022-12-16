@@ -9,15 +9,6 @@
   margin: 0 auto;
 }
 
-.buttons-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding: 20px;
-  gap: 1rem;
-  border-bottom: 1px solid #e5e5e5;
-}
-
 .catalog-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 30%);
