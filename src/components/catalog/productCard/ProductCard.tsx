@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Product } from '../../data/product';
+import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
-import noImage from '../../assets/images/default.jpg';
-import { Layout } from '../catalog/types';
+import noImage from '../../../assets/images/default.jpg';
+import { Layout } from '../types';
 
 interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'> {
   layout: Layout;
