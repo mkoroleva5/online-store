@@ -1,27 +1,6 @@
 import { useState } from 'react';
+import { Switch } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
-
-type Props = {
-  isOn: boolean;
-  handleToggle: () => void;
-};
-
-const Switch = ({ isOn, handleToggle }: Props) => {
-  return (
-    <>
-      <input
-        checked={isOn}
-        onChange={handleToggle}
-        className={style.switchCheckbox}
-        id="switchNew"
-        type="checkbox"
-      />
-      <label className={`${style.switchLabel} ${isOn ? style.active : ''}`} htmlFor="switchNew">
-        <span className={style.switchButton} />
-      </label>
-    </>
-  );
-};
 
 export const Filter = () => {
   const [checked, setChecked] = useState(true);
