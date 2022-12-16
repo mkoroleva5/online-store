@@ -20,8 +20,8 @@
 }
 
 .display-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   transition: 0.2s;
 }
 
@@ -37,6 +37,7 @@
   align-items: center;
   gap: 0.5rem;
 
+  font-size: 1.4rem;
   color: var(--gray-color);
   transition: all 0.2s ease-in-out;
 }
@@ -50,7 +51,7 @@
 }
 
 .arrow {
-  width: 1.5rem;
+  width: 1.3rem;
   aspect-ratio: 1/1;
   filter: brightness(0) saturate(100%) invert(46%) sepia(2%) saturate(23%) hue-rotate(53deg)
     brightness(102%) contrast(91%);
