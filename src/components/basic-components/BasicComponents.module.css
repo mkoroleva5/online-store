@@ -42,3 +42,22 @@
 .active {
   background: var(--bg-color);
 }
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.option-input {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.option-label {
+  color: var(--gray-color);
+  font-size: 1.4rem;
+  cursor: pointer;
+}

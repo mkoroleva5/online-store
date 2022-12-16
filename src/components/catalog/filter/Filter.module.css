@@ -2,23 +2,23 @@
   display: flex;
   flex-direction: column;
   width: 20%;
-  margin-top: 2.5rem;
+  margin-top: 1.2rem;
   margin-right: 2rem;
 }
 
 .title {
   color: var(--gray-color);
   font-size: 1.4rem;
-  margin-bottom: 2.3rem;
+  margin-bottom: 1.2rem;
 }
 
 .field {
   width: 100%;
-  height: 100%;
   border: 1px solid #e5e5e5;
+  border-bottom: none;
 }
 
-.option {
+.block {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #e5e5e5;
@@ -28,4 +28,8 @@
 .in-stock {
   flex-direction: row;
   justify-content: space-between;
+}
+
+.optionsWrapper {
+  padding: 1rem 0;
 }
