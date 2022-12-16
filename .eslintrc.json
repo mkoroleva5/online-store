@@ -24,6 +24,12 @@
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
       }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
     ]
   },
   "ignorePatterns": ["vite.config.ts"]
