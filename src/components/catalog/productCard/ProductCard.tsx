@@ -3,6 +3,7 @@ import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
+import { formatPrice } from '../../../utils/formatPrice';
 
 interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'> {
   layout: Layout;
@@ -23,13 +24,7 @@ export const ProductCard = ({ title, stock, price, preview, images, layout }: Pr
       <div className={`${layout === 'table' ? style.cardInfoTable : style.cardInfoList}`}>
         <h3 className={`${style.title} ${layout === 'table' ? '' : style.titleList}`}>{title}</h3>
         <p className={style.stock}>В наличии: {stock}</p>
-        <p className={style.price}>
-          {`${price}`
-            .split('.')
-            .map((el, ind) => (ind === 1 ? el.padEnd(2, '0') : el))
-            .join(',')}{' '}
-          BYN
-        </p>
+        <p className={style.price}>{formatPrice(price)} BYN</p>
         <button type="button" className={style.button}>
           В корзину
         </button>
