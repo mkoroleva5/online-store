@@ -1,0 +1,16 @@
+.display-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.display-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s;
+}
+
+.display-button:hover .display-icon {
+  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
+}
