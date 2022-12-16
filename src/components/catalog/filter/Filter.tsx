@@ -1,10 +1,17 @@
 import { useState } from 'react';
-import { BrandOption, ProductOption, Switch } from '../../basic-components/BasicComponents';
+import {
+  BrandOption,
+  DualSlider,
+  ProductOption,
+  Switch,
+} from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
+const prices = products.map((item): number => item.price).sort((a, b) => a - b);
+const stock = products.map((item): number => item.stock).sort((a, b) => a - b);
 
 export const Filter = () => {
   const [checked, setChecked] = useState(true);
@@ -18,9 +25,11 @@ export const Filter = () => {
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Цена</div>
+          <DualSlider min={prices[0]} max={prices[prices.length - 1]} onChange />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Количество на складе</div>
+          <DualSlider min={stock[0]} max={stock[stock.length - 1]} onChange />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Бренд</div>
