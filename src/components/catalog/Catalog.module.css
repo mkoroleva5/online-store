@@ -9,32 +9,6 @@
   margin: 0 auto;
 }
 
-.buttons-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding: 20px;
-  gap: 1rem;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.display-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.display-icon {
-  width: 2rem;
-  height: 2rem;
-  transition: 0.2s;
-}
-
-.display-button:hover .display-icon {
-  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
-}
-
 .catalog-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 30%);
