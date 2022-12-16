@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import style from './Header.module.css';
 import logoSource from '../../assets/images/healthy-logo.png';
-import cartImg from '../../assets/images/cart.png';
+import cartIcon from '../../assets/icons/cart.svg';
 
 export const Header = () => {
   return (
@@ -17,7 +17,7 @@ export const Header = () => {
             <div>0</div>
           </div>
           <div className={style.cart}>
-            <img className={style.cartImage} src={cartImg} alt="Cart" />
+            <img className={style.cartImage} src={cartIcon} alt="Cart" />
             <div className={style.counter}>0</div>
           </div>
         </div>
