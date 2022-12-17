@@ -60,9 +60,6 @@ export const DualSlider = ({ min, max, onChange }: RangesType) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
 
-  const minValRef = useRef(null);
-  const maxValRef = useRef(null);
-
   return (
     <div className={style.sliderWrapper}>
       <input
@@ -70,11 +67,9 @@ export const DualSlider = ({ min, max, onChange }: RangesType) => {
         min={min}
         max={max}
         value={minVal}
-        ref={minValRef}
         onChange={(event) => {
           const value = Math.min(+event.target.value, maxVal - 1);
           setMinVal(value);
-          event.target.value = value.toString();
         }}
         className={`${style.thumb} ${style.thumbZindex4} ${
           minVal > max - maxVal ? style.thumbZindex5 : ''
@@ -85,11 +80,9 @@ export const DualSlider = ({ min, max, onChange }: RangesType) => {
         min={min}
         max={max}
         value={maxVal}
-        ref={maxValRef}
         onChange={(event) => {
           const value = Math.max(+event.target.value, minVal + 1);
           setMaxVal(value);
-          event.target.value = value.toString();
         }}
         className={`${style.thumb} ${style.thumbZindex4} ${
           minVal < max - maxVal ? style.thumbZindex5 : ''
