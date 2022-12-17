@@ -1,6 +1,6 @@
 import style from './CatalogMenu.module.css';
-import tableIcon from '../../../assets/images/table.png';
-import listIcon from '../../../assets/images/list.png';
+import tableIcon from '../../../assets/icons/grid.svg';
+import listIcon from '../../../assets/icons/list.svg';
 import { Layout } from '../types';
 import arrow from '../../../assets/icons/arrow.svg';
 

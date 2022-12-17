@@ -1,0 +1,35 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 1.2rem;
+  margin-right: 2rem;
+}
+
+.title {
+  color: var(--gray-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem;
+}
+
+.in-stock {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.optionsWrapper {
+  padding: 1rem 0;
+}
