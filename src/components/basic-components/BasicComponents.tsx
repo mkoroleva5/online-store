@@ -76,6 +76,7 @@ interface RangesType {
 }
 
 export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
+  const filterState = useContext(FilterState);
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -120,7 +121,7 @@ export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={minVal}
+        value={filterState[`min${sliderGroup === 'price' ? 'Price' : 'Stock'}`] ?? minVal}
         onChange={(event) => {
           const value = Math.min(Number(event.target.value), maxVal - 1);
           setMinVal(value);
@@ -138,7 +139,7 @@ export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={maxVal}
+        value={filterState[`max${sliderGroup === 'price' ? 'Price' : 'Stock'}`] ?? maxVal}
         onChange={(event) => {
           const value = Math.max(Number(event.target.value), minVal + 1);
           setMaxVal(value);
