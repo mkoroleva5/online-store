@@ -1,6 +1,17 @@
 import { createContext } from 'react';
-import { initialFilterState } from '../../store/filterStore/FilterStore';
-import { FilterActionType, FilterStoreState } from '../../store/filterStore/FilterStoreTypes';
+import { FilterStoreState } from '../../store/filterStore/FilterStoreTypes';
 
-export const FilterStateContext = createContext<FilterStoreState>(initialFilterState);
-export const FilterDispatchContext = createContext<React.Dispatch<FilterActionType>>(() => {});
+export const initialFilterState: FilterStoreState = {
+  searchField: '',
+  brand: [],
+  product: [],
+  minPrice: 0,
+  maxPrice: 10,
+  minStock: 0,
+  maxStock: 10,
+  sortBy: 'name',
+  sortDirection: 'asc',
+  display: 'table',
+};
+
+export const FilterState = createContext(initialFilterState);

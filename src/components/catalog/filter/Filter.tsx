@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-  BrandOption,
-  DualSlider,
-  ProductOption,
-  Switch,
-} from '../../basic-components/BasicComponents';
+import { FilterOption, DualSlider, Switch } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
 
@@ -26,25 +21,27 @@ export const Filter = () => {
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Цена</div>
-          <DualSlider min={prices[0]} max={prices[prices.length - 1]} onChange />
+          <DualSlider min={prices[0]} max={prices[prices.length - 1]} />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Количество на складе</div>
-          <DualSlider min={stock[0]} max={stock[stock.length - 1]} onChange />
+          <DualSlider min={stock[0]} max={stock[stock.length - 1]} />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Бренд</div>
           <div className={style.optionsWrapper}>
             {[...brands].map((brand, index) => {
-              return <BrandOption key={brand} value={brand} id={index} />;
+              return <FilterOption key={brand} value={brand} id={index} filterGroup="brand" />;
             })}
           </div>
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Тип продукта</div>
           <div className={style.optionsWrapper}>
-            {[...productTypes].map((prodType, index) => {
-              return <ProductOption key={prodType} value={prodType} id={index} />;
+            {[...productTypes].map((product, index) => {
+              return (
+                <FilterOption key={product} value={product} id={index} filterGroup="product" />
+              );
             })}
           </div>
         </div>

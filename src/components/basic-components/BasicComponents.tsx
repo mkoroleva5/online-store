@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
-import { history } from '../../store/filterStore/History';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
-import { FilterDispatchContext, FilterStateContext } from '../catalog/filterState';
+import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
 type SwitchProps = {
@@ -29,71 +28,40 @@ export const Switch = ({ isOn, handleToggle }: SwitchProps) => {
 interface OptionProps {
   value: string;
   id: number;
+  filterGroup: 'brand' | 'product';
 }
 
-export const BrandOption = ({ value, id }: OptionProps) => {
-  const filterState = useContext(FilterStateContext);
-  const filterDispatch = useContext(FilterDispatchContext);
+export const FilterOption = ({ value, id, filterGroup }: OptionProps) => {
+  const filterState = useContext(FilterState);
   return (
     <div className={style.option}>
       <input
         className={style.optionInput}
-        id={`brand-${id}`}
+        id={`${filterGroup}-${id}`}
         type="checkbox"
-        checked={filterState.brand.includes(value)}
+        checked={filterState[filterGroup]?.includes(value)}
         onChange={(e) => {
-          const currentBrands = getSearchValue('brand');
+          const currentGroup = getSearchValue(filterGroup);
           if (e.target.checked) {
-            if (currentBrands) {
-              updateSearchValue('brand', [...currentBrands.split('-or-'), value].join('-or-'));
+            if (currentGroup) {
+              updateSearchValue(filterGroup, [...currentGroup.split('-and-'), value].join('-and-'));
             } else {
-              updateSearchValue('brand', value);
+              updateSearchValue(filterGroup, value);
             }
           } else if (!e.target.checked) {
-            if (currentBrands) {
+            if (currentGroup) {
               updateSearchValue(
-                'brand',
-                currentBrands
-                  .split('-or-')
+                filterGroup,
+                currentGroup
+                  .split('-and-')
                   .filter((el) => el !== value)
-                  .join('-or-'),
+                  .join('-and-'),
               );
             }
           }
         }}
       />
-      <label className={style.optionLabel} htmlFor={`brand-${id}`}>
-        {value}
-      </label>
-    </div>
-  );
-};
-
-export const ProductOption = ({ value, id }: OptionProps) => {
-  const filterState = useContext(FilterStateContext);
-  const filterDispatch = useContext(FilterDispatchContext);
-  return (
-    <div className={style.option}>
-      <input
-        className={style.optionInput}
-        id={`product-${id}`}
-        type="checkbox"
-        checked={filterState.prodType.includes(value)}
-        onChange={(e) => {
-          if (e.target.checked) {
-            filterDispatch({
-              type: 'ADD_PRODTYPE',
-              payload: value,
-            });
-          } else {
-            filterDispatch({
-              type: 'REMOVE_PRODTYPE',
-              payload: value,
-            });
-          }
-        }}
-      />
-      <label className={style.optionLabel} htmlFor={`product-${id}`}>
+      <label className={style.optionLabel} htmlFor={`${filterGroup}-${id}`}>
         {value}
       </label>
     </div>
@@ -103,10 +71,9 @@ export const ProductOption = ({ value, id }: OptionProps) => {
 interface RangesType {
   min: number;
   max: number;
-  onChange: boolean;
 }
 
-export const DualSlider = ({ min, max, onChange }: RangesType) => {
+export const DualSlider = ({ min, max }: RangesType) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
 
