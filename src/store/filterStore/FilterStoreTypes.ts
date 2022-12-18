@@ -66,10 +66,10 @@ export interface FilterStoreState {
   searchField: string;
   brand: string[] | null;
   product: string[] | null;
-  minPrice: number;
-  maxPrice: number;
-  minStock: number;
-  maxStock: number;
+  minPrice: number | null;
+  maxPrice: number | null;
+  minStock: number | null;
+  maxStock: number | null;
   sortBy: SortBy;
   sortDirection: SortDirection;
   display: Layout;

@@ -71,11 +71,15 @@ export const FilterOption = ({ value, id, filterGroup }: OptionProps) => {
 interface RangesType {
   min: number;
   max: number;
+  sliderGroup: 'price' | 'stock';
 }
 
-export const DualSlider = ({ min, max }: RangesType) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
+export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
+  // const [minVal, setMinVal] = useState(min);
+  // const [maxVal, setMaxVal] = useState(max);
+  const filterState = useContext(FilterState);
+  const minVal = filterState[`min${sliderGroup === 'price' ? 'Price' : 'Stock'}`];
+  const maxVal = filterState[`max${sliderGroup === 'price' ? 'Price' : 'Stock'}`];
 
   return (
     <div className={style.sliderWrapper}>
@@ -83,10 +87,11 @@ export const DualSlider = ({ min, max }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={minVal}
-        onChange={(event) => {
-          const value = Math.min(+event.target.value, maxVal - 1);
-          setMinVal(value);
+        value={minVal ?? min}
+        onChange={(e) => {
+          // const value = Math.min(+event.target.value, maxVal - 1);
+          // setMinVal(value);
+          updateSearchValue(`min${sliderGroup === 'price' ? 'Price' : 'Stock'}`, e.target.value);
         }}
         className={`${style.thumb} ${style.thumbZindex4} ${
           minVal > max - maxVal ? style.thumbZindex5 : ''
@@ -96,10 +101,11 @@ export const DualSlider = ({ min, max }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={maxVal}
-        onChange={(event) => {
-          const value = Math.max(+event.target.value, minVal + 1);
-          setMaxVal(value);
+        value={maxVal ?? max}
+        onChange={(e) => {
+          // const value = Math.max(+event.target.value, minVal + 1);
+          // setMaxVal(value);
+          updateSearchValue(`max${sliderGroup === 'price' ? 'Price' : 'Stock'}`, e.target.value);
         }}
         className={`${style.thumb} ${style.thumbZindex4} ${
           minVal < max - maxVal ? style.thumbZindex5 : ''

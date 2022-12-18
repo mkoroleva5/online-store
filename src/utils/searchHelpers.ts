@@ -26,7 +26,7 @@ export const getArraySearchValue = (key: string) => {
   return null;
 };
 
-export const updateSearchValue = (key: string, val: string | null) => {
+export const updateSearchValue = (key: string, val: string | number | null) => {
   const searchParams = new URLSearchParams(history.location.search);
   if (!val) {
     deleteSearchValue(key);

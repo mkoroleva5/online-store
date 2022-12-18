@@ -5,7 +5,7 @@ import products from '../../data/products.json';
 import { CatalogMenu } from './sortMenu/CatalogMenu';
 import { Filter } from './filter/Filter';
 import { history } from '../../store/filterStore/History';
-import { getArraySearchValue } from '../../utils/searchHelpers';
+import { getArraySearchValue, getSearchValue } from '../../utils/searchHelpers';
 import { FilterState, initialFilterState } from './filterState';
 
 export const Catalog = () => {
@@ -16,10 +16,18 @@ export const Catalog = () => {
       setFilterState((prevState) => {
         const brandState = getArraySearchValue('brand');
         const productState = getArraySearchValue('product');
+        const minPrice = getSearchValue('minPrice');
+        const maxPrice = getSearchValue('maxPrice');
+        const minStock = getSearchValue('minStock');
+        const maxStock = getSearchValue('maxStock');
         return {
           ...prevState,
           brand: brandState,
           product: productState,
+          minPrice: minPrice ? +minPrice : null,
+          maxPrice: maxPrice ? +maxPrice : null,
+          minStock: minStock ? +minStock : null,
+          maxStock: maxStock ? +maxStock : null,
         };
       });
     });
