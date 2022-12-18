@@ -1,4 +1,7 @@
-import { useRef, useState } from 'react';
+import { useContext, useState } from 'react';
+import { history } from '../../store/filterStore/History';
+import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
+import { FilterDispatchContext, FilterStateContext } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
 type SwitchProps = {
@@ -23,15 +26,42 @@ export const Switch = ({ isOn, handleToggle }: SwitchProps) => {
   );
 };
 
-interface OptionType {
+interface OptionProps {
   value: string;
   id: number;
 }
 
-export const BrandOption = ({ value, id }: OptionType) => {
+export const BrandOption = ({ value, id }: OptionProps) => {
+  const filterState = useContext(FilterStateContext);
+  const filterDispatch = useContext(FilterDispatchContext);
   return (
     <div className={style.option}>
-      <input className={style.optionInput} id={`brand-${id}`} type="checkbox" />
+      <input
+        className={style.optionInput}
+        id={`brand-${id}`}
+        type="checkbox"
+        checked={filterState.brand.includes(value)}
+        onChange={(e) => {
+          const currentBrands = getSearchValue('brand');
+          if (e.target.checked) {
+            if (currentBrands) {
+              updateSearchValue('brand', [...currentBrands.split('-or-'), value].join('-or-'));
+            } else {
+              updateSearchValue('brand', value);
+            }
+          } else if (!e.target.checked) {
+            if (currentBrands) {
+              updateSearchValue(
+                'brand',
+                currentBrands
+                  .split('-or-')
+                  .filter((el) => el !== value)
+                  .join('-or-'),
+              );
+            }
+          }
+        }}
+      />
       <label className={style.optionLabel} htmlFor={`brand-${id}`}>
         {value}
       </label>
@@ -39,10 +69,30 @@ export const BrandOption = ({ value, id }: OptionType) => {
   );
 };
 
-export const ProductOption = ({ value, id }: OptionType) => {
+export const ProductOption = ({ value, id }: OptionProps) => {
+  const filterState = useContext(FilterStateContext);
+  const filterDispatch = useContext(FilterDispatchContext);
   return (
     <div className={style.option}>
-      <input className={style.optionInput} id={`product-${id}`} type="checkbox" />
+      <input
+        className={style.optionInput}
+        id={`product-${id}`}
+        type="checkbox"
+        checked={filterState.prodType.includes(value)}
+        onChange={(e) => {
+          if (e.target.checked) {
+            filterDispatch({
+              type: 'ADD_PRODTYPE',
+              payload: value,
+            });
+          } else {
+            filterDispatch({
+              type: 'REMOVE_PRODTYPE',
+              payload: value,
+            });
+          }
+        }}
+      />
       <label className={style.optionLabel} htmlFor={`product-${id}`}>
         {value}
       </label>

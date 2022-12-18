@@ -1,85 +1,79 @@
-export interface Action {
-  type:
-    | 'IN_STOCK'
-    | 'BRAND'
-    | 'CATEGORY'
-    | 'MIN_PRICE'
-    | 'MAX_PRICE'
-    | 'MIN_STOCK'
-    | 'MAX_STOCK'
-    | 'SORT'
-    | 'ASC';
-  payload: string | boolean | number;
-}
+import { FilterActionType, FilterStoreState } from './FilterStoreTypes';
 
-interface FilterStoreState {
-  brand: string;
-  category: string;
-  price: {
-    minPrice: number;
-    maxPrice: number;
-  };
-  stock: {
-    minStock: number;
-    maxStock: number;
-  };
-  sort: string;
-  asc: boolean;
-}
+export const initialFilterState: FilterStoreState = {
+  searchField: '',
+  brand: [],
+  prodType: [],
+  minPrice: 0,
+  maxPrice: 10,
+  minStock: 0,
+  maxStock: 10,
+  sortBy: 'name',
+  sortDirection: 'asc',
+  display: 'table',
+};
 
-const filterReducer = (state: FilterStoreState, action: Action) => {
+export const filterReducer = (state: FilterStoreState, action: FilterActionType) => {
   switch (action.type) {
-    case 'BRAND':
+    case 'SEARCH':
       return {
         ...state,
-        brand: action.payload,
+        searchField: action.payload,
       };
-    case 'CATEGORY':
+    case 'ADD_BRAND':
       return {
         ...state,
-        category: action.payload,
+        brand: [...state.brand, action.payload],
+      };
+    case 'REMOVE_BRAND':
+      return {
+        ...state,
+        brand: state.brand.filter((el) => el !== action.payload),
+      };
+    case 'ADD_PRODTYPE':
+      return {
+        ...state,
+        prodType: [...state.prodType, action.payload],
+      };
+    case 'REMOVE_PRODTYPE':
+      return {
+        ...state,
+        prodType: state.prodType.filter((el) => el !== action.payload),
       };
     case 'MIN_PRICE':
       return {
         ...state,
-        price: {
-          ...state.price,
-          minPrice: action.payload,
-        },
+        minPrice: action.payload,
       };
     case 'MAX_PRICE':
       return {
         ...state,
-        price: {
-          ...state.price,
-          maxPrice: action.payload,
-        },
+        maxPrice: action.payload,
       };
     case 'MIN_STOCK':
       return {
         ...state,
-        stock: {
-          ...state.stock,
-          minStock: action.payload,
-        },
+        minStock: action.payload,
       };
     case 'MAX_STOCK':
       return {
         ...state,
-        stock: {
-          ...state.stock,
-          maxStock: action.payload,
-        },
+        maxStock: action.payload,
       };
-    case 'SORT':
+    case 'SORT_BY':
       return {
         ...state,
-        sort: action.payload,
+        sortBy: action.payload,
       };
-    case 'ASC':
+    case 'SORT_DIRECTION':
       return {
         ...state,
-        asc: action.payload,
+        sortDirection: action.payload,
+      };
+    case 'DISPLAY':
+      return {
+        ...state,
+        display: action.payload,
       };
     default:
       return state;

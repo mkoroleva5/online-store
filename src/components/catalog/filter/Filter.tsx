@@ -15,6 +15,7 @@ const stock = products.map((item): number => item.stock).sort((a, b) => a - b);
 
 export const Filter = () => {
   const [checked, setChecked] = useState(true);
+
   return (
     <div className={style.filterWrapper}>
       <div className={style.title}>Фильтры</div>
@@ -34,16 +35,16 @@ export const Filter = () => {
         <div className={style.block}>
           <div className={style.blockTitle}>Бренд</div>
           <div className={style.optionsWrapper}>
-            {[...brands].map((item, index) => {
-              return <BrandOption key={item} value={item} id={index} />;
+            {[...brands].map((brand, index) => {
+              return <BrandOption key={brand} value={brand} id={index} />;
             })}
           </div>
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Тип продукта</div>
           <div className={style.optionsWrapper}>
-            {[...productTypes].map((item, index) => {
-              return <ProductOption key={item} value={item} id={index} />;
+            {[...productTypes].map((prodType, index) => {
+              return <ProductOption key={prodType} value={prodType} id={index} />;
             })}
           </div>
         </div>
