@@ -49,19 +49,37 @@ export const Catalog = () => {
                 filterState.display === 'table' ? '' : style.list
               }`}
             >
-              {products.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    title={item.title}
-                    price={item.price}
-                    preview={item.preview}
-                    stock={item.stock}
-                    images={item.images}
-                    layout={filterState.display}
-                  />
-                );
-              })}
+              {products
+                .filter((el) => {
+                  return (
+                    (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
+                    (filterState.product ? filterState.product.includes(el.type) : el) &&
+                    (filterState.searchField
+                      ? el.brand.includes(filterState.searchField) ||
+                        el.category.includes(filterState.searchField) ||
+                        el.description.includes(filterState.searchField) ||
+                        el.title.includes(filterState.searchField) ||
+                        el.type.includes(filterState.searchField)
+                      : el) &&
+                    (filterState.minPrice ? el.price > filterState.minPrice : el) &&
+                    (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
+                    (filterState.minStock ? el.stock > filterState.minStock : el) &&
+                    (filterState.maxStock ? el.stock < filterState.maxStock : el)
+                  );
+                })
+                .map((item) => {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      title={item.title}
+                      price={item.price}
+                      preview={item.preview}
+                      stock={item.stock}
+                      images={item.images}
+                      layout={filterState.display}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
