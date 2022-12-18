@@ -21,11 +21,21 @@ export const Filter = () => {
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Цена</div>
-          <DualSlider min={prices[0]} max={prices[prices.length - 1]} sliderGroup="price" />
+          <DualSlider
+            min={prices[0]}
+            max={prices[prices.length - 1]}
+            sliderGroup="price"
+            onChange={() => {}}
+          />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Количество на складе</div>
-          <DualSlider min={stock[0]} max={stock[stock.length - 1]} sliderGroup="stock" />
+          <DualSlider
+            min={stock[0]}
+            max={stock[stock.length - 1]}
+            sliderGroup="stock"
+            onChange={() => {}}
+          />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Бренд</div>
