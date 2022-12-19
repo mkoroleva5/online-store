@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useEffect, useMemo, useState } from 'react';
 import style from './Catalog.module.css';
 import { ProductCard } from './productCard/ProductCard';
@@ -50,37 +51,23 @@ export const Catalog = () => {
   }, []);
 
   const filteredProducts = useMemo(() => {
-    return products
-      .filter((el) => {
-        return (
-          (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
-          (filterState.product ? filterState.product.includes(el.type) : el) &&
-          (filterState.searchField
-            ? el.brand.toLowerCase().includes(filterState.searchField) ||
-              el.category.toLowerCase().includes(filterState.searchField) ||
-              el.description.toLowerCase().includes(filterState.searchField) ||
-              el.title.toLowerCase().includes(filterState.searchField) ||
-              el.type.toLowerCase().includes(filterState.searchField)
-            : el) &&
-          (filterState.minPrice ? el.price > filterState.minPrice : el) &&
-          (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
-          (filterState.minStock ? el.stock > filterState.minStock : el) &&
-          (filterState.maxStock ? el.stock < filterState.maxStock : el)
-        );
-      })
-      .map((item) => {
-        return (
-          <ProductCard
-            key={item.id}
-            title={item.title}
-            price={item.price}
-            preview={item.preview}
-            stock={item.stock}
-            images={item.images}
-            layout={filterState.display}
-          />
-        );
-      });
+    return products.filter((el) => {
+      return (
+        (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
+        (filterState.product ? filterState.product.includes(el.type) : el) &&
+        (filterState.searchField
+          ? el.brand.toLowerCase().includes(filterState.searchField) ||
+            el.category.toLowerCase().includes(filterState.searchField) ||
+            el.description.toLowerCase().includes(filterState.searchField) ||
+            el.title.toLowerCase().includes(filterState.searchField) ||
+            el.type.toLowerCase().includes(filterState.searchField)
+          : el) &&
+        (filterState.minPrice ? el.price > filterState.minPrice : el) &&
+        (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
+        (filterState.minStock ? el.stock > filterState.minStock : el) &&
+        (filterState.maxStock ? el.stock < filterState.maxStock : el)
+      );
+    });
   }, [filterState]);
 
   return (
@@ -91,11 +78,23 @@ export const Catalog = () => {
           <div className={style.catalogWrapper}>
             <CatalogMenu />
             <div
-              className={`${style.productsWrapper} ${
-                filterState.display === 'table' ? '' : style.list
-              }`}
+              className={classNames(style.productsWrapper, {
+                [style.list]: filterState.display === 'list',
+              })}
             >
-              {filteredProducts}
+              {filteredProducts.map((item) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    title={item.title}
+                    price={item.price}
+                    preview={item.preview}
+                    stock={item.stock}
+                    images={item.images}
+                    layout={filterState.display}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
