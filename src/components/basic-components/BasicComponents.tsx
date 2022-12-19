@@ -89,7 +89,7 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
       `${minmax}${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
       value.toFixed(2).toString(),
     );
-  }, 500);
+  }, 300);
 
   const getPercent = useCallback(
     (value: number) => Math.round(((value - min) / (max - min)) * 100),

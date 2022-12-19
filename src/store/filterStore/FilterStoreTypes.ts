@@ -63,7 +63,7 @@ interface DisplayAction {
 }
 
 export interface FilterStoreState {
-  searchField: string;
+  searchField: string | null;
   brand: string[] | null;
   product: string[] | null;
   minPrice: number | null;
