@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useEffect, useMemo, useState } from 'react';
 import style from './Catalog.module.css';
 import { ProductCard } from './productCard/ProductCard';
@@ -77,9 +78,9 @@ export const Catalog = () => {
           <div className={style.catalogWrapper}>
             <CatalogMenu />
             <div
-              className={`${style.productsWrapper} ${
-                filterState.display === 'table' ? '' : style.list
-              }`}
+              className={classNames(style.productsWrapper, {
+                [style.list]: filterState.display === 'list',
+              })}
             >
               {filteredProducts.map((item) => {
                 return (

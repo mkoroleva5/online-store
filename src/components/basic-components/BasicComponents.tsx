@@ -1,30 +1,34 @@
+import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
-type SwitchProps = {
-  isOn: boolean;
-  handleToggle: () => void;
-};
+// type SwitchProps = {
+//   isOn: boolean;
+//   handleToggle: () => void;
+// };
 
-export const Switch = ({ isOn, handleToggle }: SwitchProps) => {
-  return (
-    <>
-      <input
-        checked={isOn}
-        onChange={handleToggle}
-        className={style.switchCheckbox}
-        id="switchNew"
-        type="checkbox"
-      />
-      <label className={`${style.switchLabel} ${isOn ? style.active : ''}`} htmlFor="switchNew">
-        <span className={style.switchButton} />
-      </label>
-    </>
-  );
-};
+// export const Switch = ({ isOn, handleToggle }: SwitchProps) => {
+//   return (
+//     <>
+//       <input
+//         checked={isOn}
+//         onChange={handleToggle}
+//         className={style.switchCheckbox}
+//         id="switchNew"
+//         type="checkbox"
+//       />
+//       <label
+//         className={classNames(style.switchLabel, { [style.active]: isOn })}
+//         htmlFor="switchNew"
+//       >
+//         <span className={style.switchButton} />
+//       </label>
+//     </>
+//   );
+// };
 
 interface OptionProps {
   value: string;
@@ -119,9 +123,9 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
           setMinVal(value);
           updateFilterState(value, 'min');
         }}
-        className={`${style.thumb} ${style.thumbLeft} ${
-          minVal > max - maxVal ? style.thumbTop : ''
-        }`}
+        className={classNames(style.thumb, style.thumbLeft, {
+          [style.thumbTop]: minVal > max - maxVal,
+        })}
       />
       <input
         type="range"
@@ -133,9 +137,9 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
           setMaxVal(value);
           updateFilterState(value, 'max');
         }}
-        className={`${style.thumb} ${style.thumbRight} ${
-          minVal < max - maxVal ? style.thumbTop : ''
-        }`}
+        className={classNames(style.thumb, style.thumbRight, {
+          [style.thumbTop]: minVal < max - maxVal,
+        })}
       />
 
       <div className={style.slider}>

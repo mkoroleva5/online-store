@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { FilterOption, DualSlider, Switch } from '../../basic-components/BasicComponents';
+import classNames from 'classnames';
+import { FilterOption, DualSlider } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
 import { SearchField } from '../search/Search';
@@ -10,18 +10,12 @@ const prices = products.map((item): number => item.price).sort((a, b) => a - b);
 const stock = products.map((item): number => item.stock).sort((a, b) => a - b);
 
 export const Filter = () => {
-  const [checked, setChecked] = useState(true);
-
   return (
     <div className={style.filterWrapper}>
       <div className={style.title}>Фильтры</div>
       <div className={style.field}>
-        <div className={`${style.block} ${style.inStock}`}>
+        <div className={classNames(style.block, style.searchBlock)}>
           <SearchField />
-        </div>
-        <div className={`${style.block} ${style.inStock}`}>
-          <div className={style.blockTitle}>В наличии</div>
-          <Switch isOn={checked} handleToggle={() => setChecked(!checked)} />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Цена</div>
