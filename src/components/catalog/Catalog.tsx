@@ -20,6 +20,7 @@ export const Catalog = () => {
       const maxPrice = getSearchValue('maxPrice');
       const minStock = getSearchValue('minStock');
       const maxStock = getSearchValue('maxStock');
+      const displayState = getSearchValue('display');
       return {
         ...prevState,
         searchField: searchFieldState ?? null,
@@ -29,6 +30,7 @@ export const Catalog = () => {
         maxPrice: maxPrice ? +maxPrice : null,
         minStock: minStock ? +minStock : null,
         maxStock: maxStock ? +maxStock : null,
+        display: displayState === 'list' ? 'list' : 'table',
       };
     });
   };
@@ -87,7 +89,7 @@ export const Catalog = () => {
         <div className={style.mainWrapper}>
           <Filter />
           <div className={style.catalogWrapper}>
-            <CatalogMenu onLayoutChange={() => {}} />
+            <CatalogMenu />
             <div
               className={`${style.productsWrapper} ${
                 filterState.display === 'table' ? '' : style.list

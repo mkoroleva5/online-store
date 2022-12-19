@@ -1,6 +1,7 @@
 .card-wrapper-table {
   width: 100%;
   max-width: 26rem;
+  height: 46rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
