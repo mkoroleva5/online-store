@@ -1,4 +1,5 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
+import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
@@ -33,13 +34,15 @@ interface OptionProps {
 
 export const FilterOption = ({ value, id, filterGroup }: OptionProps) => {
   const filterState = useContext(FilterState);
+  const filterOptionState = filterState[filterGroup];
+  const checked = filterOptionState ? filterOptionState.includes(value) : false;
   return (
     <div className={style.option}>
       <input
         className={style.optionInput}
         id={`${filterGroup}-${id}`}
         type="checkbox"
-        checked={filterState[filterGroup]?.includes(value)}
+        checked={checked}
         onChange={(e) => {
           const currentGroup = getSearchValue(filterGroup);
           if (e.target.checked) {
@@ -72,48 +75,37 @@ interface RangesType {
   min: number;
   max: number;
   sliderGroup: 'price' | 'stock';
-  onChange: ({ min, max }: { min: number; max: number }) => void;
 }
 
-export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
+export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
   const filterState = useContext(FilterState);
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
-  const minValRef = useRef(min);
-  const maxValRef = useRef(max);
-  const range = useRef<HTMLDivElement>(null);
+  const filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
+  const filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
+  const [minVal, setMinVal] = useState(filterMin ?? min);
+  const [maxVal, setMaxVal] = useState(filterMax ?? max);
 
-  // Convert to percentage
+  const updateFilterState = useDebounce((value: number, minmax: string) => {
+    updateSearchValue(
+      `${minmax}${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
+      value.toFixed(2).toString(),
+    );
+  }, 500);
+
   const getPercent = useCallback(
     (value: number) => Math.round(((value - min) / (max - min)) * 100),
     [min, max],
   );
 
-  // Set width of the range to decrease from the left side
+  const minPercent = getPercent(minVal);
+  const maxPercent = getPercent(maxVal);
+
   useEffect(() => {
-    const minPercent = getPercent(minVal);
-    const maxPercent = getPercent(maxValRef.current);
+    setMinVal(filterMin ?? min);
+  }, [filterMin, min]);
 
-    if (range.current) {
-      range.current.style.left = `${minPercent}%`;
-      range.current.style.width = `${maxPercent - minPercent}%`;
-    }
-  }, [minVal, getPercent]);
-
-  // Set width of the range to decrease from the right side
   useEffect(() => {
-    const minPercent = getPercent(minValRef.current);
-    const maxPercent = getPercent(maxVal);
-
-    if (range.current) {
-      range.current.style.width = `${maxPercent - minPercent}%`;
-    }
-  }, [maxVal, getPercent]);
-
-  // Get min and max values when their state changes
-  useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+    setMaxVal(filterMax ?? max);
+  }, [filterMax, max]);
 
   return (
     <div className={style.container}>
@@ -121,15 +113,11 @@ export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={filterState[`min${sliderGroup === 'price' ? 'Price' : 'Stock'}`] ?? minVal}
+        value={minVal}
         onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
+          const value = Math.min(Number(event.target?.value), filterMax ?? maxVal - 1);
           setMinVal(value);
-          minValRef.current = value;
-          updateSearchValue(
-            `min${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
-            value.toFixed(2).toString(),
-          );
+          updateFilterState(value, 'min');
         }}
         className={`${style.thumb} ${style.thumbLeft} ${
           minVal > max - maxVal ? style.thumbTop : ''
@@ -139,15 +127,11 @@ export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
         type="range"
         min={min}
         max={max}
-        value={filterState[`max${sliderGroup === 'price' ? 'Price' : 'Stock'}`] ?? maxVal}
+        value={maxVal}
         onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
+          const value = Math.max(Number(event.target.value), filterMin ?? minVal + 1);
           setMaxVal(value);
-          maxValRef.current = value;
-          updateSearchValue(
-            `max${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
-            value.toFixed(2).toString(),
-          );
+          updateFilterState(value, 'max');
         }}
         className={`${style.thumb} ${style.thumbRight} ${
           minVal < max - maxVal ? style.thumbTop : ''
@@ -156,9 +140,12 @@ export const DualSlider = ({ min, max, sliderGroup, onChange }: RangesType) => {
 
       <div className={style.slider}>
         <div className={style.sliderTrack} />
-        <div ref={range} className={style.sliderRange} />
-        <div className={style.sliderLeftValue}>{minVal}</div>
-        <div className={style.sliderRightValue}>{maxVal}</div>
+        <div
+          className={style.sliderRange}
+          style={{ left: `${minPercent}%`, width: `${maxPercent - minPercent}%` }}
+        />
+        <div className={style.sliderLeftValue}>{filterMin || minVal}</div>
+        <div className={style.sliderRightValue}>{filterMax || maxVal}</div>
       </div>
     </div>
   );
