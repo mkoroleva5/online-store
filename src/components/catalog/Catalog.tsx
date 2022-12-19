@@ -11,25 +11,33 @@ import { FilterState, initialFilterState } from './filterState';
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
 
+  const updateFilterState = () => {
+    setFilterState((prevState) => {
+      const brandState = getArraySearchValue('brand');
+      const productState = getArraySearchValue('product');
+      const minPrice = getSearchValue('minPrice');
+      const maxPrice = getSearchValue('maxPrice');
+      const minStock = getSearchValue('minStock');
+      const maxStock = getSearchValue('maxStock');
+      return {
+        ...prevState,
+        brand: brandState,
+        product: productState,
+        minPrice: minPrice ? +minPrice : null,
+        maxPrice: maxPrice ? +maxPrice : null,
+        minStock: minStock ? +minStock : null,
+        maxStock: maxStock ? +maxStock : null,
+      };
+    });
+  };
+
+  useEffect(() => {
+    updateFilterState();
+  }, []);
+
   useEffect(() => {
     const unlisten = history.listen(() => {
-      setFilterState((prevState) => {
-        const brandState = getArraySearchValue('brand');
-        const productState = getArraySearchValue('product');
-        const minPrice = getSearchValue('minPrice');
-        const maxPrice = getSearchValue('maxPrice');
-        const minStock = getSearchValue('minStock');
-        const maxStock = getSearchValue('maxStock');
-        return {
-          ...prevState,
-          brand: brandState,
-          product: productState,
-          minPrice: minPrice ? +minPrice : null,
-          maxPrice: maxPrice ? +maxPrice : null,
-          minStock: minStock ? +minStock : null,
-          maxStock: maxStock ? +maxStock : null,
-        };
-      });
+      updateFilterState();
     });
 
     return () => {
@@ -49,19 +57,37 @@ export const Catalog = () => {
                 filterState.display === 'table' ? '' : style.list
               }`}
             >
-              {products.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    title={item.title}
-                    price={item.price}
-                    preview={item.preview}
-                    stock={item.stock}
-                    images={item.images}
-                    layout={filterState.display}
-                  />
-                );
-              })}
+              {products
+                .filter((el) => {
+                  return (
+                    (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
+                    (filterState.product ? filterState.product.includes(el.type) : el) &&
+                    (filterState.searchField
+                      ? el.brand.includes(filterState.searchField) ||
+                        el.category.includes(filterState.searchField) ||
+                        el.description.includes(filterState.searchField) ||
+                        el.title.includes(filterState.searchField) ||
+                        el.type.includes(filterState.searchField)
+                      : el) &&
+                    (filterState.minPrice ? el.price > filterState.minPrice : el) &&
+                    (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
+                    (filterState.minStock ? el.stock > filterState.minStock : el) &&
+                    (filterState.maxStock ? el.stock < filterState.maxStock : el)
+                  );
+                })
+                .map((item) => {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      title={item.title}
+                      price={item.price}
+                      preview={item.preview}
+                      stock={item.stock}
+                      images={item.images}
+                      layout={filterState.display}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
