@@ -25,7 +25,7 @@
   transition: 0.2s;
 }
 
-.display-button:hover .display-icon {
+.display-icon:hover {
   filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
 }
 
@@ -64,4 +64,8 @@
 
 .sort-btn:hover .arrow {
   filter: unset;
+}
+
+.display-icon.active {
+  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(50%) contrast(64%);
 }
