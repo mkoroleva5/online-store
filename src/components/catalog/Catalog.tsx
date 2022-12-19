@@ -12,6 +12,26 @@ export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
 
   useEffect(() => {
+    setFilterState((prevState) => {
+      const brandState = getArraySearchValue('brand');
+      const productState = getArraySearchValue('product');
+      const minPrice = getSearchValue('minPrice');
+      const maxPrice = getSearchValue('maxPrice');
+      const minStock = getSearchValue('minStock');
+      const maxStock = getSearchValue('maxStock');
+      return {
+        ...prevState,
+        brand: brandState,
+        product: productState,
+        minPrice: minPrice ? +minPrice : null,
+        maxPrice: maxPrice ? +maxPrice : null,
+        minStock: minStock ? +minStock : null,
+        maxStock: maxStock ? +maxStock : null,
+      };
+    });
+  }, []);
+
+  useEffect(() => {
     const unlisten = history.listen(() => {
       setFilterState((prevState) => {
         const brandState = getArraySearchValue('brand');
