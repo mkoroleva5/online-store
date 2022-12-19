@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FilterOption, DualSlider, Switch } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
+import { SearchField } from '../search/Search';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
@@ -15,6 +16,9 @@ export const Filter = () => {
     <div className={style.filterWrapper}>
       <div className={style.title}>Фильтры</div>
       <div className={style.field}>
+        <div className={`${style.block} ${style.inStock}`}>
+          <SearchField />
+        </div>
         <div className={`${style.block} ${style.inStock}`}>
           <div className={style.blockTitle}>В наличии</div>
           <Switch isOn={checked} handleToggle={() => setChecked(!checked)} />
