@@ -27,7 +27,7 @@
   position: absolute;
   pointer-events: none;
   left: 2rem;
-  top: 2.5rem;
+  top: 2.6rem;
   color: var(--gray-color);
   transition: 0.2s ease all;
 }
