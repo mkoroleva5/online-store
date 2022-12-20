@@ -5,6 +5,7 @@ import style from './ProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
+import { ImageSpinner } from '../../basic-components/ImageSpinner';
 
 interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'> {
   layout: Layout;
@@ -12,6 +13,7 @@ interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'prev
 
 export const ProductCard = ({ title, stock, price, preview, images, layout }: ProductProps) => {
   const [hover, setHover] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const tableLayout = layout === 'table';
   const listLayout = layout === 'list';
@@ -28,10 +30,17 @@ export const ProductCard = ({ title, stock, price, preview, images, layout }: Pr
         className={classNames({
           [style.imgTable]: tableLayout,
           [style.imgList]: listLayout,
+          [style.loadedImg]: isImageLoaded,
         })}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        onLoad={(e) => {
+          const target = e.target as HTMLImageElement;
+          if (target.complete) setIsImageLoaded(true);
+          else setIsImageLoaded(false);
+        }}
       />
+      {!isImageLoaded && <ImageSpinner displayList={listLayout} />}
       <div
         className={classNames({
           [style.cardInfoTable]: tableLayout,
