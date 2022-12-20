@@ -7,6 +7,8 @@
 .title-block {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   align-items: baseline;
   padding-bottom: 1.5rem;
 }
@@ -20,7 +22,7 @@
   all: unset;
   width: 100%;
   max-width: 8rem;
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 2rem;
   margin-top: 0.8rem;
 
   background-color: var(--bg-color);
