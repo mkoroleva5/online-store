@@ -25,11 +25,28 @@ export const ProductCard = ({ title, stock, price, preview, images, layout }: Pr
       })}
     >
       <img
-        src={`${hover ? images[1] || noImage : preview || noImage}`}
+        src={preview || noImage}
         alt={title}
         className={classNames({
           [style.imgTable]: tableLayout,
           [style.imgList]: listLayout,
+          [style.loadedImg]: isImageLoaded,
+        })}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onLoad={(e) => {
+          const target = e.target as HTMLImageElement;
+          if (target.complete) setIsImageLoaded(true);
+          else setIsImageLoaded(false);
+        }}
+      />
+      <img
+        src={images[1] || noImage}
+        alt={title}
+        style={hover ? { opacity: '1' } : { opacity: '0' }}
+        className={classNames({
+          [style.secondImgTable]: tableLayout,
+          [style.secondImgList]: listLayout,
           [style.loadedImg]: isImageLoaded,
         })}
         onMouseEnter={() => setHover(true)}
