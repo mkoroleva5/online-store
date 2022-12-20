@@ -3,6 +3,7 @@ import { FilterOption, DualSlider } from '../../basic-components/BasicComponents
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
 import { SearchField } from '../search/Search';
+import { deleteSearchValue } from '../../../utils/searchHelpers';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
@@ -10,9 +11,24 @@ const prices = products.map((item): number => item.price).sort((a, b) => a - b);
 const stock = products.map((item): number => item.stock).sort((a, b) => a - b);
 
 export const Filter = () => {
+  const resetFilters = () => {
+    deleteSearchValue('search');
+    deleteSearchValue('brand');
+    deleteSearchValue('product');
+    deleteSearchValue('minPrice');
+    deleteSearchValue('maxPrice');
+    deleteSearchValue('minStock');
+    deleteSearchValue('maxStock');
+  };
+
   return (
     <div className={style.filterWrapper}>
-      <div className={style.title}>Фильтры</div>
+      <div className={style.titleBlock}>
+        <span className={style.title}>Фильтры</span>{' '}
+        <button type="button" className={style.reset} onClick={resetFilters}>
+          Сбросить
+        </button>
+      </div>
       <div className={style.field}>
         <div className={classNames(style.block, style.searchBlock)}>
           <SearchField />

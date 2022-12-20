@@ -2,11 +2,14 @@
   width: 100%;
   max-width: 26rem;
   height: 46rem;
+  padding-bottom: 20px;
+
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  gap: 1rem;
+
   border-radius: 1.4rem;
   overflow: hidden;
   cursor: pointer;
@@ -17,7 +20,10 @@
 .card-wrapper-list {
   width: 100%;
   height: fit-content;
+
   display: flex;
+  gap: 2rem;
+
   border-radius: 1.4rem;
   overflow: hidden;
   cursor: pointer;
