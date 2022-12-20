@@ -60,7 +60,8 @@ export const Catalog = () => {
             el.category.toLowerCase().includes(filterState.searchField) ||
             el.description.toLowerCase().includes(filterState.searchField) ||
             el.title.toLowerCase().includes(filterState.searchField) ||
-            el.type.toLowerCase().includes(filterState.searchField)
+            el.type.toLowerCase().includes(filterState.searchField) ||
+            el.price.toString().includes(filterState.searchField)
           : el) &&
         (filterState.minPrice ? el.price > filterState.minPrice : el) &&
         (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&

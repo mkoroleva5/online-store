@@ -8,8 +8,6 @@ export const deleteSearchValue = (key: string) => {
 
 export const getSearchValue = (key: string) => {
   const searchParams = new URLSearchParams(history.location.search);
-  // const params = Object.fromEntries(searchParams.entries());
-
   return searchParams.get(key);
 };
 
