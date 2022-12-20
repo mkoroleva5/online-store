@@ -1,0 +1,38 @@
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  height: 18rem;
+  width: 18rem;
+}
+
+.spinner:before {
+  content: '';
+  display: block;
+  height: 30%;
+  aspect-ratio: 1/1;
+  -webkit-animation: spin 0.5s infinite linear;
+  animation: spin 0.5s infinite linear;
+  border: 6px solid #ced4da;
+  border-left-color: var(--bg-color);
+  border-radius: 100%;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
