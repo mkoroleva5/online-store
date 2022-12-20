@@ -9,7 +9,7 @@
 .title-block {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding: 1.5rem 0;
 }
 
