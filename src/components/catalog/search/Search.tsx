@@ -9,7 +9,7 @@ export const SearchField = () => {
   const [searchVal, setSearchVal] = useState(filterState.searchField ?? '');
 
   const updateFilterState = useDebounce((value: string) => {
-    updateSearchValue('search', value);
+    updateSearchValue('search', value.trim());
   }, 500);
 
   useEffect(() => {
