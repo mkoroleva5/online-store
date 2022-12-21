@@ -22,7 +22,7 @@ export const Filter = () => {
   };
 
   return (
-    <div className={style.filterWrapper}>
+    <section className={style.filterWrapper}>
       <div className={style.titleBlock}>
         <span className={style.title}>Фильтры</span>{' '}
         <button type="button" className={style.reset} onClick={resetFilters}>
@@ -60,6 +60,6 @@ export const Filter = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

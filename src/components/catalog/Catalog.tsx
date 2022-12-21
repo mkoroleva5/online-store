@@ -8,10 +8,11 @@ import { Filter } from './filter/Filter';
 import { history } from '../../store/filterStore/History';
 import { getArraySearchValue, getSearchValue } from '../../utils/searchHelpers';
 import { FilterState, initialFilterState } from './filterState';
+import { Matches } from './matches/Matches';
+import { checkFilterState } from '../../utils/checkFilterState';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
-
   const updateFilterState = () => {
     setFilterState((prevState) => {
       const searchFieldState = getSearchValue('search');
@@ -76,8 +77,9 @@ export const Catalog = () => {
       <main className={style.main}>
         <div className={style.mainWrapper}>
           <Filter />
-          <div className={style.catalogWrapper}>
+          <section className={style.catalogWrapper}>
             <CatalogMenu />
+            {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
             <div
               className={classNames(style.productsWrapper, {
                 [style.list]: filterState.display === 'list',
@@ -97,7 +99,7 @@ export const Catalog = () => {
                 );
               })}
             </div>
-          </div>
+          </section>
         </div>
       </main>
     </FilterState.Provider>

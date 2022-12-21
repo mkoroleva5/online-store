@@ -2,9 +2,9 @@ import { createContext } from 'react';
 import { FilterStoreState } from '../../store/filterStore/FilterStoreTypes';
 
 export const initialFilterState: FilterStoreState = {
-  searchField: '',
-  brand: [],
-  product: [],
+  searchField: null,
+  brand: null,
+  product: null,
   minPrice: null,
   maxPrice: null,
   minStock: null,
