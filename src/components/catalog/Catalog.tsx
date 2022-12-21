@@ -77,7 +77,7 @@ export const Catalog = () => {
       <main className={style.main}>
         <div className={style.mainWrapper}>
           <Filter />
-          <div className={style.catalogWrapper}>
+          <section className={style.catalogWrapper}>
             <CatalogMenu />
             {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
             <div
@@ -99,7 +99,7 @@ export const Catalog = () => {
                 );
               })}
             </div>
-          </div>
+          </section>
         </div>
       </main>
     </FilterState.Provider>
