@@ -5,38 +5,14 @@ import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
-// type SwitchProps = {
-//   isOn: boolean;
-//   handleToggle: () => void;
-// };
-
-// export const Switch = ({ isOn, handleToggle }: SwitchProps) => {
-//   return (
-//     <>
-//       <input
-//         checked={isOn}
-//         onChange={handleToggle}
-//         className={style.switchCheckbox}
-//         id="switchNew"
-//         type="checkbox"
-//       />
-//       <label
-//         className={classNames(style.switchLabel, { [style.active]: isOn })}
-//         htmlFor="switchNew"
-//       >
-//         <span className={style.switchButton} />
-//       </label>
-//     </>
-//   );
-// };
-
 interface OptionProps {
   value: string;
   id: number;
   filterGroup: 'brand' | 'product';
+  quantity: string;
 }
 
-export const FilterOption = ({ value, id, filterGroup }: OptionProps) => {
+export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) => {
   const filterState = useContext(FilterState);
   const filterOptionState = filterState[filterGroup];
   const checked = filterOptionState ? filterOptionState.includes(value) : false;
@@ -69,7 +45,7 @@ export const FilterOption = ({ value, id, filterGroup }: OptionProps) => {
         }}
       />
       <label className={style.optionLabel} htmlFor={`${filterGroup}-${id}`}>
-        {value}
+        {value} ({quantity})
       </label>
     </div>
   );

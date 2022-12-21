@@ -76,7 +76,7 @@ export const Catalog = () => {
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
         <div className={style.mainWrapper}>
-          <Filter />
+          <Filter filteredProducts={filteredProducts} />
           <section className={style.catalogWrapper}>
             <CatalogMenu />
             {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
