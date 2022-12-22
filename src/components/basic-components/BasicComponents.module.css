@@ -50,6 +50,11 @@
   padding: 5px 0;
 }
 
+.option-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .option-input {
   width: 15px;
   height: 15px;

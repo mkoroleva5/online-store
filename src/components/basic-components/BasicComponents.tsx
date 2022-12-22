@@ -17,7 +17,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
   const filterOptionState = filterState[filterGroup];
   const checked = filterOptionState ? filterOptionState.includes(value) : false;
   return (
-    <div className={style.option}>
+    <div className={classNames(style.option, { [style.optionDisabled]: quantity[0] === '0' })}>
       <input
         className={style.optionInput}
         id={`${filterGroup}-${id}`}
