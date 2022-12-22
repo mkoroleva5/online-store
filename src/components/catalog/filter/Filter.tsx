@@ -31,7 +31,7 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
   return (
     <div className={style.filterWrapper}>
       <div className={style.titleBlock}>
-        <span className={style.title}>Фильтры</span>{' '}
+        <span className={style.title}>Фильтры</span>
         <button type="button" className={style.reset} onClick={resetFilters}>
           Сбросить
         </button>

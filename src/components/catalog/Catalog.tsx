@@ -10,9 +10,13 @@ import { getArraySearchValue, getSearchValue } from '../../utils/searchHelpers';
 import { FilterState, initialFilterState } from './filterState';
 import { Matches } from './matches/Matches';
 import { checkFilterState } from '../../utils/checkFilterState';
+import { parsePathname } from '../../utils/pathnameHelpers';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
+  const [categoryPath, setCategoryPath] = useState('/');
+  const [isProductPageView, setIsProductPageView] = useState(false);
+
   const updateFilterState = () => {
     setFilterState((prevState) => {
       const searchFieldState = getSearchValue('search');
@@ -38,11 +42,23 @@ export const Catalog = () => {
   };
 
   useEffect(() => {
-    updateFilterState();
-  }, []);
+    const pathChunksInitial = parsePathname(history.location.pathname);
 
-  useEffect(() => {
-    const unlisten = history.listen(() => {
+    if (pathChunksInitial.length < 2) {
+      setCategoryPath(pathChunksInitial[0]);
+    } else if (pathChunksInitial.length === 2) {
+      setIsProductPageView(true);
+    }
+    updateFilterState();
+    const unlisten = history.listen(({ location }) => {
+      const pathChunks = parsePathname(location.pathname);
+
+      if (pathChunks.length < 2) {
+        setCategoryPath(pathChunks[0]);
+      } else if (pathChunks.length === 2) {
+        setIsProductPageView(true);
+      }
+
       updateFilterState();
     });
 
@@ -53,53 +69,59 @@ export const Catalog = () => {
 
   const filteredProducts = useMemo(() => {
     return products.filter((el) => {
-      return (
-        (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
-        (filterState.product ? filterState.product.includes(el.type) : el) &&
-        (filterState.searchField
-          ? el.brand.toLowerCase().includes(filterState.searchField) ||
-            el.category.toLowerCase().includes(filterState.searchField) ||
-            el.description.toLowerCase().includes(filterState.searchField) ||
-            el.title.toLowerCase().includes(filterState.searchField) ||
-            el.type.toLowerCase().includes(filterState.searchField) ||
-            el.price.toString().includes(filterState.searchField)
-          : el) &&
-        (filterState.minPrice ? el.price > filterState.minPrice : el) &&
-        (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
-        (filterState.minStock ? el.stock > filterState.minStock : el) &&
-        (filterState.maxStock ? el.stock < filterState.maxStock : el)
-      );
+      return categoryPath === '/' || categoryPath === ''
+        ? el
+        : el.catPath === categoryPath &&
+            (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
+            (filterState.product ? filterState.product.includes(el.type) : el) &&
+            (filterState.searchField
+              ? el.brand.toLowerCase().includes(filterState.searchField) ||
+                el.category.toLowerCase().includes(filterState.searchField) ||
+                el.description.toLowerCase().includes(filterState.searchField) ||
+                el.title.toLowerCase().includes(filterState.searchField) ||
+                el.type.toLowerCase().includes(filterState.searchField) ||
+                el.price.toString().includes(filterState.searchField)
+              : el) &&
+            (filterState.minPrice ? el.price > filterState.minPrice : el) &&
+            (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
+            (filterState.minStock ? el.stock > filterState.minStock : el) &&
+            (filterState.maxStock ? el.stock < filterState.maxStock : el);
     });
-  }, [filterState]);
+  }, [filterState, categoryPath]);
 
   return (
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
         <div className={style.mainWrapper}>
-          <Filter filteredProducts={filteredProducts} />
-          <section className={style.catalogWrapper}>
-            <CatalogMenu />
-            {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
-            <div
-              className={classNames(style.productsWrapper, {
-                [style.list]: filterState.display === 'list',
-              })}
-            >
-              {filteredProducts.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    title={item.title}
-                    price={item.price}
-                    preview={item.preview}
-                    stock={item.stock}
-                    images={item.images}
-                    layout={filterState.display}
-                  />
-                );
-              })}
-            </div>
-          </section>
+          {!isProductPageView && (
+            <>
+              <Filter filteredProducts={filteredProducts} />
+              <section className={style.catalogWrapper}>
+                <CatalogMenu />
+                {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
+                <div
+                  className={classNames(style.productsWrapper, {
+                    [style.list]: filterState.display === 'list',
+                  })}
+                >
+                  {filteredProducts.map((item) => {
+                    return (
+                      <ProductCard
+                        key={item.id}
+                        title={item.title}
+                        price={item.price}
+                        preview={item.preview}
+                        stock={item.stock}
+                        images={item.images}
+                        layout={filterState.display}
+                        path={`/${item.catPath}/${item.id}`}
+                      />
+                    );
+                  })}
+                </div>
+              </section>
+            </>
+          )}
         </div>
       </main>
     </FilterState.Provider>
