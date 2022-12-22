@@ -11,6 +11,7 @@ import { FilterState, initialFilterState } from './filterState';
 import { Matches } from './matches/Matches';
 import { checkFilterState } from '../../utils/checkFilterState';
 import { parsePathname } from '../../utils/pathnameHelpers';
+import { CategoriesMenu } from './categoriesMenu/CategoriesMenu';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
@@ -46,6 +47,7 @@ export const Catalog = () => {
 
     if (pathChunksInitial.length < 2) {
       setCategoryPath(pathChunksInitial[0]);
+      setIsProductPageView(false);
     } else if (pathChunksInitial.length === 2) {
       setIsProductPageView(true);
     }
@@ -55,6 +57,7 @@ export const Catalog = () => {
 
       if (pathChunks.length < 2) {
         setCategoryPath(pathChunks[0]);
+        setIsProductPageView(false);
       } else if (pathChunks.length === 2) {
         setIsProductPageView(true);
       }
@@ -69,23 +72,23 @@ export const Catalog = () => {
 
   const filteredProducts = useMemo(() => {
     return products.filter((el) => {
-      return categoryPath === '/' || categoryPath === ''
-        ? el
-        : el.catPath === categoryPath &&
-            (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
-            (filterState.product ? filterState.product.includes(el.type) : el) &&
-            (filterState.searchField
-              ? el.brand.toLowerCase().includes(filterState.searchField) ||
-                el.category.toLowerCase().includes(filterState.searchField) ||
-                el.description.toLowerCase().includes(filterState.searchField) ||
-                el.title.toLowerCase().includes(filterState.searchField) ||
-                el.type.toLowerCase().includes(filterState.searchField) ||
-                el.price.toString().includes(filterState.searchField)
-              : el) &&
-            (filterState.minPrice ? el.price > filterState.minPrice : el) &&
-            (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
-            (filterState.minStock ? el.stock > filterState.minStock : el) &&
-            (filterState.maxStock ? el.stock < filterState.maxStock : el);
+      return (
+        (categoryPath ? el.catPath === categoryPath : el) &&
+        (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
+        (filterState.product ? filterState.product.includes(el.type) : el) &&
+        (filterState.searchField
+          ? el.brand.toLowerCase().includes(filterState.searchField) ||
+            el.category.toLowerCase().includes(filterState.searchField) ||
+            el.description.toLowerCase().includes(filterState.searchField) ||
+            el.title.toLowerCase().includes(filterState.searchField) ||
+            el.type.toLowerCase().includes(filterState.searchField) ||
+            el.price.toString().includes(filterState.searchField)
+          : el) &&
+        (filterState.minPrice ? el.price > filterState.minPrice : el) &&
+        (filterState.maxPrice ? el.price < filterState.maxPrice : el) &&
+        (filterState.minStock ? el.stock > filterState.minStock : el) &&
+        (filterState.maxStock ? el.stock < filterState.maxStock : el)
+      );
     });
   }, [filterState, categoryPath]);
 
@@ -97,6 +100,7 @@ export const Catalog = () => {
             <>
               <Filter filteredProducts={filteredProducts} />
               <section className={style.catalogWrapper}>
+                <CategoriesMenu products={products} activeCategory={categoryPath} />
                 <CatalogMenu />
                 {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
                 <div
