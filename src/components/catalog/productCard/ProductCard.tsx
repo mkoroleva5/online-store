@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
@@ -6,14 +6,25 @@ import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
+import { history } from '../../../store/filterStore/History';
 
 interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'> {
   layout: Layout;
+  path: string;
 }
 
-export const ProductCard = ({ title, stock, price, preview, images, layout }: ProductProps) => {
+export const ProductCard = ({
+  title,
+  stock,
+  price,
+  preview,
+  images,
+  layout,
+  path,
+}: ProductProps) => {
   const [hover, setHover] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const button = useRef(null);
 
   const tableLayout = layout === 'table';
   const listLayout = layout === 'list';
@@ -23,6 +34,15 @@ export const ProductCard = ({ title, stock, price, preview, images, layout }: Pr
         [style.cardWrapperTable]: tableLayout,
         [style.cardWrapperList]: listLayout,
       })}
+      onClick={(e) => {
+        const target = e.target as HTMLElement;
+        if (target !== button.current) {
+          history.push(path);
+        }
+      }}
+      onKeyDown={() => {}}
+      role="button"
+      tabIndex={0}
     >
       <img
         src={preview || noImage}
@@ -73,7 +93,7 @@ export const ProductCard = ({ title, stock, price, preview, images, layout }: Pr
         </h3>
         <p className={style.stock}>В наличии: {stock}</p>
         <p className={style.price}>{formatPrice(price)} BYN</p>
-        <button type="button" className={style.button}>
+        <button ref={button} type="button" className={style.button}>
           В корзину
         </button>
       </div>

@@ -7,10 +7,13 @@ export interface Product {
   stock: number;
   brand: string;
   category: string;
+  catPath?: string;
   type: string;
   preview: string;
   images: string[];
 }
+
+// export type CategoryPaths = 'sweets' | 'candles' | 'drinks';
 
 // export type ProductCategory = 'Полезные сладости' | 'Полезные напитки' | 'Свечи';
 

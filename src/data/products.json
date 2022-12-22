@@ -7,6 +7,7 @@
     "stock": 21,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/1.jpg",
     "images": [
@@ -22,6 +23,7 @@
     "stock": 43,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/2.jpg",
     "images": [
@@ -387,6 +389,7 @@
     "stock": 78,
     "brand": "Nature's own factory",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/26.jpg",
     "images": [
@@ -402,6 +405,7 @@
     "stock": 46,
     "brand": "Nature's own factory",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/27.jpg",
     "images": [
@@ -906,6 +910,7 @@
     "stock": 20,
     "brand": "Laboratorium",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/60.jpg",
     "images": [
@@ -921,6 +926,7 @@
     "stock": 14,
     "brand": "Laboratorium",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/61.jpg",
     "images": [
