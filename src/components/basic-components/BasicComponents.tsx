@@ -23,6 +23,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
         id={`${filterGroup}-${id}`}
         type="checkbox"
         checked={checked}
+        disabled={quantity[0] === '0'}
         onChange={(e) => {
           const currentGroup = getSearchValue(filterGroup);
           if (e.target.checked) {

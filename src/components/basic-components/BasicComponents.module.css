@@ -52,7 +52,6 @@
 
 .option-disabled {
   opacity: 0.3;
-  pointer-events: none;
 }
 
 .option-input {
@@ -65,6 +64,11 @@
   color: var(--gray-color);
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+.option-input:disabled + .option-label,
+.option-input:disabled {
+  cursor: default;
 }
 
 .container {
