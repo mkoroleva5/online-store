@@ -50,6 +50,10 @@
   padding: 5px 0;
 }
 
+.option-disabled {
+  opacity: 0.3;
+}
+
 .option-input {
   width: 15px;
   height: 15px;
@@ -60,6 +64,11 @@
   color: var(--gray-color);
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+.option-input:disabled + .option-label,
+.option-input:disabled {
+  cursor: default;
 }
 
 .container {
