@@ -39,6 +39,7 @@
     "stock": 21,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/3.jpg",
     "images": [
@@ -54,6 +55,7 @@
     "stock": 59,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/4.jpg",
     "images": [
@@ -69,6 +71,7 @@
     "stock": 53,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/5.jpg",
     "images": [
@@ -85,6 +88,7 @@
     "stock": 11,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/6.jpg",
     "images": [
@@ -100,6 +104,7 @@
     "stock": 14,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/7.jpg",
     "images": [
@@ -115,6 +120,7 @@
     "stock": 67,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/8.jpg",
     "images": [
@@ -130,6 +136,7 @@
     "stock": 75,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/9.jpg",
     "images": [
@@ -145,6 +152,7 @@
     "stock": 1,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/10.jpg",
     "images": [
@@ -160,6 +168,7 @@
     "stock": 18,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/11.jpg",
     "images": [
@@ -175,6 +184,7 @@
     "stock": 3,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/12.jpg",
     "images": [
@@ -190,6 +200,7 @@
     "stock": 10,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "печенье",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/13.jpg",
     "images": [
@@ -205,6 +216,7 @@
     "stock": 42,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "печенье",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/14.jpg",
     "images": [
@@ -220,6 +232,7 @@
     "stock": 51,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "печенье",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/15.jpg",
     "images": [
@@ -235,6 +248,7 @@
     "stock": 76,
     "brand": "Bite",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "печенье",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/16.jpg",
     "images": [
@@ -250,6 +264,7 @@
     "stock": 36,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/17.jpg",
     "images": [
@@ -266,6 +281,7 @@
     "stock": 37,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/18.jpg",
     "images": [
@@ -282,6 +298,7 @@
     "stock": 91,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/19.jpg",
     "images": [
@@ -297,6 +314,7 @@
     "stock": 68,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/20.jpg",
     "images": [
@@ -313,6 +331,7 @@
     "stock": 84,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/21.jpg",
     "images": [
@@ -328,6 +347,7 @@
     "stock": 100,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/22.jpg",
     "images": [
@@ -343,6 +363,7 @@
     "stock": 19,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/23.jpg",
     "images": [
@@ -358,6 +379,7 @@
     "stock": 34,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/24.jpg",
     "images": [
@@ -373,6 +395,7 @@
     "stock": 16,
     "brand": "Nature's own factory",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "шоколад",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/25.jpg",
     "images": [
@@ -422,6 +445,7 @@
     "stock": 44,
     "brand": "Nature's own factory",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/28.jpg",
     "images": [
@@ -437,6 +461,7 @@
     "stock": 38,
     "brand": "Nature's own factory",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/29.jpg",
     "images": [
@@ -452,6 +477,7 @@
     "stock": 63,
     "brand": "Ufeelgood",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/30.jpg",
     "images": [
@@ -467,6 +493,7 @@
     "stock": 74,
     "brand": "ТРАВКИ",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/31.jpg",
     "images": [
@@ -483,6 +510,7 @@
     "stock": 90,
     "brand": "ТРАВКИ",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/32.jpg",
     "images": [
@@ -499,6 +527,7 @@
     "stock": 66,
     "brand": "ТРАВКИ",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/33.jpg",
     "images": [
@@ -515,6 +544,7 @@
     "stock": 64,
     "brand": "ТРАВКИ",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/34.jpg",
     "images": [
@@ -531,6 +561,7 @@
     "stock": 0,
     "brand": "ТРАВКИ",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "чай",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/35.jpg",
     "images": [
@@ -547,6 +578,7 @@
     "stock": 55,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/36.jpg",
     "images": [
@@ -562,6 +594,7 @@
     "stock": 54,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/37.jpg",
     "images": [
@@ -577,6 +610,7 @@
     "stock": 82,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/38.jpg",
     "images": [
@@ -592,6 +626,7 @@
     "stock": 60,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/39.jpg",
     "images": [
@@ -607,6 +642,7 @@
     "stock": 37,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/40.jpg",
     "images": [
@@ -622,6 +658,7 @@
     "stock": 33,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/41.jpg",
     "images": [
@@ -637,6 +674,7 @@
     "stock": 94,
     "brand": "СМАКi",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "пастила",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/42.jpg",
     "images": [
@@ -652,6 +690,7 @@
     "stock": 91,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/43.jpg",
     "images": [
@@ -667,6 +706,7 @@
     "stock": 67,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/44.jpg",
     "images": [
@@ -682,6 +722,7 @@
     "stock": 64,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "батончик",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/45.jpg",
     "images": [
@@ -697,6 +738,7 @@
     "stock": 82,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "каша",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/46.jpg",
     "images": [
@@ -712,6 +754,7 @@
     "stock": 56,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "каша",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/47.jpg",
     "images": [
@@ -727,6 +770,7 @@
     "stock": 44,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "каша",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/48.jpg",
     "images": [
@@ -742,6 +786,7 @@
     "stock": 16,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "гранола",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/49.jpg",
     "images": [
@@ -757,6 +802,7 @@
     "stock": 12,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "гранола",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/50.jpg",
     "images": [
@@ -772,6 +818,7 @@
     "stock": 27,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "гранола",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/51.jpg",
     "images": [
@@ -787,6 +834,7 @@
     "stock": 0,
     "brand": "Ол'Лайт",
     "category": "Полезные сладости",
+    "catPath": "sweets",
     "type": "гранола",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/52.jpg",
     "images": [
@@ -802,6 +850,7 @@
     "stock": 6,
     "brand": "Ол'Лайт",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "цикорий",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/53.jpg",
     "images": [
@@ -817,6 +866,7 @@
     "stock": 17,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/54.jpg",
     "images": [
@@ -832,6 +882,7 @@
     "stock": 22,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/55.jpg",
     "images": [
@@ -848,6 +899,7 @@
     "stock": 45,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/56.jpg",
     "images": [
@@ -863,6 +915,7 @@
     "stock": 0,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/57.jpg",
     "images": [
@@ -879,6 +932,7 @@
     "stock": 30,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/58.jpg",
     "images": [
@@ -894,6 +948,7 @@
     "stock": 21,
     "brand": "HQ Kombucha",
     "category": "Полезные напитки",
+    "catPath": "drinks",
     "type": "комбуча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/59.jpg",
     "images": [
@@ -942,6 +997,7 @@
     "stock": 4,
     "brand": "Laboratorium",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/62.jpg",
     "images": [
@@ -957,6 +1013,7 @@
     "stock": 3,
     "brand": "SPCandle",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/63.jpg",
     "images": [
@@ -972,6 +1029,7 @@
     "stock": 24,
     "brand": "SPCandle",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/64.jpg",
     "images": [
@@ -987,6 +1045,7 @@
     "stock": 5,
     "brand": "SPCandle",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/65.jpg",
     "images": [
@@ -1002,6 +1061,7 @@
     "stock": 13,
     "brand": "SPCandle",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/66.jpg",
     "images": [
@@ -1017,6 +1077,7 @@
     "stock": 15,
     "brand": "SPCandle",
     "category": "Свечи",
+    "catPath": "candles",
     "type": "свеча",
     "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/67.jpg",
     "images": [

@@ -7,7 +7,7 @@ export interface Product {
   stock: number;
   brand: string;
   category: string;
-  catPath?: string;
+  catPath: string;
   type: string;
   preview: string;
   images: string[];
