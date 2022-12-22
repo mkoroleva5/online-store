@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky install",
-    "styles": "tcm --pattern 'src/**/*.module.css' --camelCase",
+    "styles": "tcm --outDir types --pattern 'src/**/*.module.css' --camelCase",
     "styles:watch": "npm run styles -- --watch"
   },
   "dependencies": {
