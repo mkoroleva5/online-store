@@ -8,7 +8,9 @@ import { Product } from '../../../data/product';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
-const prices = products.map((item): number => item.price).sort((a, b) => a - b);
+const prices = products
+  .map((item): number => parseInt(item.price.toString(), 10))
+  .sort((a, b) => a - b);
 const stock = products.map((item): number => item.stock).sort((a, b) => a - b);
 
 interface FilteredProducts {
