@@ -37,7 +37,18 @@ export const ProductPage = ({ product }: ProductPageProps) => {
         >
           {product.category}
         </a>{' '}
-        {'>'} <span>{product.brand}</span> {'>'} <span>{product.title}</span>
+        {'>'}{' '}
+        <a
+          className={style.link}
+          href={`/${product.catPath}`}
+          onClick={(e) => {
+            e.preventDefault();
+            history.push({ pathname: `/${product.catPath}`, search: `?brand=${product.brand}` });
+          }}
+        >
+          {product.brand}
+        </a>{' '}
+        {'>'} <span>{product.title}</span>
       </div>
       <h1 className={style.title}>{product.title}</h1>
       <div className={style.infoWrapper}>
