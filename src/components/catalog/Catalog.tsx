@@ -12,6 +12,7 @@ import { Matches } from './matches/Matches';
 import { checkFilterState } from '../../utils/checkFilterState';
 import { parsePathname } from '../../utils/pathnameHelpers';
 import { CategoriesMenu } from './categoriesMenu/CategoriesMenu';
+import { ProductPage } from './productPage/ProductPage';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
@@ -92,10 +93,13 @@ export const Catalog = () => {
     });
   }, [filterState, categoryPath]);
 
+  const product = products.find((el) => el.id === +parsePathname(history.location.pathname)[1]);
+
   return (
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
         <div className={style.mainWrapper}>
+          {isProductPageView && product && <ProductPage product={product} />}
           {!isProductPageView && (
             <>
               <Filter filteredProducts={filteredProducts} />

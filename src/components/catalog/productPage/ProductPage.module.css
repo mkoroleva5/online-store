@@ -1,0 +1,159 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.bread-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  color: var(--gray-color);
+  font-weight: 200;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--bg-color);
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  padding: 2rem;
+}
+
+.images {
+  display: flex;
+  gap: 2rem;
+}
+
+.images-array {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.img {
+  width: 5rem;
+  height: 5rem;
+  outline: 0 solid white;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+}
+
+.img:hover {
+  outline: 1px solid var(--gray-color);
+  filter: saturate(100%);
+  box-shadow: 2px 2px 13px 0px rgb(34 60 80 / 16%);
+}
+
+.full-img-wrapper {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+}
+
+.full-img {
+  position: absolute;
+  top: 0;
+  width: 40rem;
+  height: 40rem;
+  transition: all ease-out 0.5s;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem 0;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-bottom: 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.button {
+  all: unset;
+  width: 100%;
+  max-width: 12rem;
+  padding: 0.8rem 3rem;
+  margin-top: 0.8rem;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  border-radius: 1.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.description {
+  padding: 2rem 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.fast-purchase-button {
+  background-color: white;
+  border: 3px solid var(--bg-color);
+  color: var(--bg-color);
+  max-width: 15rem;
+}
+
+.fast-purchase-button:hover {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .info-wrapper {
+    flex-direction: column;
+  }
+
+  .images {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .images-array {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .full-img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .info {
+    align-items: center;
+    padding: 0;
+  }
+}
