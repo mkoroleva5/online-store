@@ -50,7 +50,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
         </a>{' '}
         {'>'} <span>{product.title}</span>
       </div>
-      <h1 className={style.title}>{product.title}</h1>
+      <h1>{product.title}</h1>
       <div className={style.infoWrapper}>
         <div className={style.images}>
           <div className={style.imagesArray}>
@@ -138,6 +138,9 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           <div>В наличии: {product.stock}</div>
           <button type="button" className={style.button}>
             В корзину
+          </button>
+          <button type="button" className={classNames(style.button, style.fastPurchaseButton)}>
+            Купить в 1 клик
           </button>
         </div>
       </div>
