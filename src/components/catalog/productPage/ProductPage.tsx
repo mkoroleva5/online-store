@@ -87,7 +87,53 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           </div>
         </div>
         <div className={style.info}>
-          <div>Бренд: {product.brand}</div>
+          <div className={style.infoItems}>
+            <div>
+              Категория:{' '}
+              <a
+                className={style.link}
+                href={`/${product.catPath}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push({ pathname: `/${product.catPath}` });
+                }}
+              >
+                {product.category}
+              </a>
+            </div>
+            <div>
+              Тип продукта:{' '}
+              <a
+                className={style.link}
+                href={`/${product.catPath}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push({
+                    pathname: `/${product.catPath}`,
+                    search: `?product=${product.type}`,
+                  });
+                }}
+              >
+                {product.type}
+              </a>
+            </div>
+            <div>
+              Бренд:{' '}
+              <a
+                className={style.link}
+                href={`/${product.catPath}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push({
+                    pathname: `/${product.catPath}`,
+                    search: `?brand=${product.brand}`,
+                  });
+                }}
+              >
+                {product.brand}
+              </a>
+            </div>
+          </div>
           <div className={style.price}>{formatPrice(product.price)} BYN</div>
           <div>В наличии: {product.stock}</div>
           <button type="button" className={style.button}>

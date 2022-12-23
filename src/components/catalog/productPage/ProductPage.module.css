@@ -78,6 +78,13 @@
   padding: 5rem 0;
 }
 
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-bottom: 2rem;
+}
+
 .price {
   font-size: 2rem;
   font-weight: 700;
