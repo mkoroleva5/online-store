@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+import { useState } from 'react';
 import { Product } from '../../../data/product';
 import { history } from '../../../store/filterStore/History';
 import { formatPrice } from '../../../utils/formatPrice';
@@ -9,6 +11,8 @@ interface ProductPageProps {
 }
 
 export const ProductPage = ({ product }: ProductPageProps) => {
+  const [isActive, setIsActive] = useState(0);
+
   return (
     <section className={style.wrapper}>
       <div className={style.breadCrumbs}>
@@ -38,9 +42,38 @@ export const ProductPage = ({ product }: ProductPageProps) => {
       <h1 className={style.title}>{product.title}</h1>
       <div className={style.infoWrapper}>
         <div className={style.images}>
-          {product.images.map((el) => {
-            return <img className={style.img} src={el} alt={product.title} key={el} />;
-          })}
+          <div className={style.imagesArray}>
+            {product.images.map((el, index) => {
+              return (
+                <div
+                  key={el}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsActive(index);
+                  }}
+                  onKeyDown={() => {}}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <img className={style.img} src={el} alt={product.title} key={el} />
+                </div>
+              );
+            })}
+          </div>
+          <div className={style.fullImgWrapper}>
+            {product.images.map((el, index) => {
+              return (
+                <img
+                  className={classNames(style.fullImg, {
+                    [style.active]: isActive === index,
+                  })}
+                  src={el}
+                  alt={product.title}
+                  key={el}
+                />
+              );
+            })}
+          </div>
         </div>
         <div className={style.info}>
           <div>Бренд: {product.brand}</div>
@@ -51,7 +84,6 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           </button>
         </div>
       </div>
-
       <div className={style.description}>{product.description}</div>
     </section>
   );
