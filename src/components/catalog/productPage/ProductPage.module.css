@@ -29,7 +29,6 @@
 }
 
 .images {
-  position: relative;
   display: flex;
   gap: 2rem;
 }
@@ -54,6 +53,7 @@
 }
 
 .full-img-wrapper {
+  position: relative;
   width: 40rem;
   height: 40rem;
 }
@@ -61,7 +61,8 @@
 .full-img {
   position: absolute;
   top: 0;
-  height: 100%;
+  width: 40rem;
+  height: 40rem;
   transition: all ease-out 0.5s;
   opacity: 0;
 }
@@ -105,6 +106,7 @@
 
 .description {
   padding: 2rem 0;
+  border-top: 1px solid #e5e5e5;
 }
 
 @media (max-width: 850px) {
@@ -125,6 +127,11 @@
   .images-array {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .full-img {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .info {
