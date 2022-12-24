@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import { CartProduct } from '../../data/product';
 import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { FilterState } from '../catalog/filterState';
@@ -129,6 +130,37 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
         <div className={style.sliderLeftValue}>{filterMin || minVal}</div>
         <div className={style.sliderRightValue}>{filterMax || maxVal}</div>
       </div>
+    </div>
+  );
+};
+
+interface AmountCounterProps {
+  item: CartProduct;
+}
+
+export const AmountCounter = ({ item }: AmountCounterProps) => {
+  const [amount, setAmount] = useState(item.amount);
+  return (
+    <div className={style.buttonsWrapper}>
+      <button
+        className={style.amountButton}
+        type="button"
+        onClick={() => {
+          setAmount((prevState) => (prevState > 0 ? prevState - 1 : prevState));
+        }}
+      >
+        -
+      </button>
+      <div className={style.amount}>{amount}</div>
+      <button
+        className={style.amountButton}
+        type="button"
+        onClick={() => {
+          setAmount((prevState) => (prevState < item.stock ? prevState + 1 : prevState));
+        }}
+      >
+        +
+      </button>
     </div>
   );
 };

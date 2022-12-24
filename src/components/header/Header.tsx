@@ -1,13 +1,9 @@
-import { createContext } from 'react';
 import style from './Header.module.css';
 import logoSource from '../../assets/images/healthy-logo.png';
 import cartIcon from '../../assets/icons/cart.svg';
-// import { CartState } from '../cartState';
 import { history } from '../../store/filterStore/History';
 
 export const Header = () => {
-  // const { cartState, setCartState } = useContext(CartState);
-
   return (
     <header className={style.headerWrapper}>
       <div className={style.header}>
@@ -43,5 +39,3 @@ export const Header = () => {
     </header>
   );
 };
-
-export const CartContext = createContext(false);

@@ -243,3 +243,36 @@
   pointer-events: all;
   position: relative;
 }
+
+.buttons-wrapper {
+  width: 12rem;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  border-radius: 0.8rem;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+}
+
+.amount-button {
+  background-color: #e5e5e5;
+  border: none;
+  color: var(--gray-color);
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.amount-button:hover {
+  background-color: #bbbbbb;
+  color: white;
+}
+
+.amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
