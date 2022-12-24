@@ -123,11 +123,7 @@ export const Catalog = () => {
                     return (
                       <ProductCard
                         key={item.id}
-                        title={item.title}
-                        price={item.price}
-                        preview={item.preview}
-                        stock={item.stock}
-                        images={item.images}
+                        product={item}
                         layout={filterState.display}
                         path={`/${item.catPath}/${item.id}`}
                       />
