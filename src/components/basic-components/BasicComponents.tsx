@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useDebounce } from '../../utils/debounce';
@@ -23,7 +24,6 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
         id={`${filterGroup}-${id}`}
         type="checkbox"
         checked={checked}
-        disabled={quantity[0] === '0'}
         onChange={(e) => {
           const currentGroup = getSearchValue(filterGroup);
           if (e.target.checked) {
@@ -45,6 +45,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
           }
         }}
       />
+      <label className={style.checkbox} htmlFor={`${filterGroup}-${id}`} />
       <label className={style.optionLabel} htmlFor={`${filterGroup}-${id}`}>
         {value} ({quantity})
       </label>

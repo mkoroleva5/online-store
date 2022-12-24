@@ -13,6 +13,7 @@ import { checkFilterState } from '../../utils/checkFilterState';
 import { parsePathname } from '../../utils/pathnameHelpers';
 import { CategoriesMenu } from './categoriesMenu/CategoriesMenu';
 import { ProductPage } from './productPage/ProductPage';
+import { Cart } from './cart/Cart';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
@@ -46,18 +47,19 @@ export const Catalog = () => {
   useEffect(() => {
     const pathChunksInitial = parsePathname(history.location.pathname);
 
+    setCategoryPath(pathChunksInitial[0]);
     if (pathChunksInitial.length < 2) {
-      setCategoryPath(pathChunksInitial[0]);
       setIsProductPageView(false);
     } else if (pathChunksInitial.length === 2) {
       setIsProductPageView(true);
     }
     updateFilterState();
+
     const unlisten = history.listen(({ location }) => {
       const pathChunks = parsePathname(location.pathname);
+      setCategoryPath(pathChunks[0]);
 
       if (pathChunks.length < 2) {
-        setCategoryPath(pathChunks[0]);
         setIsProductPageView(false);
       } else if (pathChunks.length === 2) {
         setIsProductPageView(true);
@@ -95,12 +97,17 @@ export const Catalog = () => {
 
   const product = products.find((el) => el.id === +parsePathname(history.location.pathname)[1]);
 
+  // const { cartState, setCartState } = useContext(CartState);
+
+  const isCartOpen = categoryPath === 'cart';
+
   return (
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
         <div className={style.mainWrapper}>
-          {isProductPageView && product && <ProductPage product={product} />}
-          {!isProductPageView && (
+          {isCartOpen && <Cart />}
+          {!isCartOpen && isProductPageView && product && <ProductPage product={product} />}
+          {!isCartOpen && !isProductPageView && (
             <>
               <Filter filteredProducts={filteredProducts} />
               <section className={style.catalogWrapper}>
