@@ -1,7 +1,7 @@
 import { Layout, SortBy, SortDirection } from '../../components/catalog/types';
 
-export type FilterActionType =
-  | BrandAction
+export type CartActionType =
+  | ProductAction
   | CategoryAction
   | MinPriceAction
   | MaxPriceAction
@@ -16,13 +16,15 @@ interface PayloadNum {
   payload: number;
 }
 
-interface SearchFieldAction {
-  type: 'SEARCH';
+interface ProductAction {
+  type: 'ADD_PROCUCT' | 'REMOVE_PRODUCT';
   payload: string;
 }
 
-interface BrandAction {
-  type: 'ADD_BRAND' | 'REMOVE_BRAND';
+/*
+
+interface SearchFieldAction {
+  type: 'SEARCH';
   payload: string;
 }
 
@@ -61,16 +63,4 @@ interface DisplayAction {
   type: 'DISPLAY';
   payload: Layout;
 }
-
-export interface FilterStoreState {
-  searchField: string | null;
-  brand: string[] | null;
-  product: string[] | null;
-  minPrice: number | null;
-  maxPrice: number | null;
-  minStock: number | null;
-  maxStock: number | null;
-  sortBy: SortBy;
-  sortDirection: SortDirection;
-  display: Layout;
-}
+*/

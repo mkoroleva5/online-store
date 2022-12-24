@@ -7,10 +7,15 @@ export interface CartStateProps {
   products: CartProduct[];
 }
 
+export interface CartContext {
+  cartState: CartStateProps;
+  dispatch: React.Dispatch<any>;
+}
+
 export const initialCartState: CartStateProps = {
   totalItems: 0,
   totalCost: 0,
   products: [],
 };
 
-export const CartState = createContext(null);
+export const CartState = createContext<CartContext>({} as CartContext);
