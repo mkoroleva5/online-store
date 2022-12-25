@@ -1,41 +1,31 @@
-import { history } from '../../../store/filterStore/History';
+import { useContext } from 'react';
+import { countTotalCost, countTotalItems } from '../../../store/filterStore/CartStore';
 import { countItems } from '../../../utils/countItems';
-import { initialCartState } from '../../cartState';
+import { CartState } from '../../cartState';
 import style from './Cart.module.css';
-import { CartProductCard } from './CartProduct';
+import { CartProductCard } from './CartProductCard';
+import { EmptyCart } from './EmptyCart';
 
 export const Cart = () => {
+  const { cartState } = useContext(CartState);
+  const totalCost = countTotalCost(cartState.products);
+  const totalItems = countTotalItems(cartState.products);
   return (
     <section className={style.cartWrapper}>
-      {!initialCartState.totalItems ? (
-        <div className={style.empty}>
-          <div>Ваша корзина пуста</div>
-          <div>
-            Исправить это недоразумение очень просто: выберите в каталоге интересующий товар и
-            нажмите кнопку «В корзину».
-          </div>
-          <button
-            type="button"
-            className={style.catalogButton}
-            onClick={() => {
-              history.push('/');
-            }}
-          >
-            Перейти в каталог
-          </button>
-        </div>
+      {!Object.keys(cartState.products).length ? (
+        <EmptyCart />
       ) : (
         <div className={style.fullCartWrapper}>
           <div className={style.itemsWrapper}>
-            <div className={style.itemsTitle}>
+            <div>
               В корзине{' '}
               <span className={style.boldText}>
-                {initialCartState.totalItems} {countItems(initialCartState.totalItems)}
+                {totalItems} {countItems(totalItems)}
               </span>{' '}
-              на сумму <span className={style.boldText}>{initialCartState.totalCost} BYN</span>:
+              на сумму <span className={style.boldText}>{totalCost} BYN</span>:
             </div>
             <div className={style.items}>
-              {initialCartState.products.map((item) => {
+              {Object.values(cartState.products).map((item) => {
                 return <CartProductCard item={item} />;
               })}
             </div>
@@ -48,7 +38,7 @@ export const Cart = () => {
                 Применить
               </button>
             </form>
-            <div className={style.total}>Итого: {initialCartState.totalCost} BYN</div>
+            <div className={style.total}>Итого: {totalCost} BYN</div>
           </div>
           <div className={style.orderWrapper}>
             <button type="button" className={style.orderButton} onClick={() => {}}>

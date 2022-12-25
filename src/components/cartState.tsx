@@ -2,20 +2,18 @@ import { createContext } from 'react';
 import { CartProduct } from '../data/product';
 
 export interface CartStateProps {
-  totalItems: number;
-  totalCost: number;
-  products: CartProduct[];
+  products: Record<number, CartProduct>;
+  promos: string[];
 }
 
 export interface CartContext {
   cartState: CartStateProps;
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<unknown>;
 }
 
 export const initialCartState: CartStateProps = {
-  totalItems: 0,
-  totalCost: 0,
   products: [],
+  promos: [],
 };
 
 export const CartState = createContext<CartContext>({} as CartContext);

@@ -4,6 +4,7 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import { CartProduct } from '../../data/product';
 import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
+import { CartState } from '../cartState';
 import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
@@ -135,28 +136,28 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
 };
 
 interface AmountCounterProps {
-  item: CartProduct;
+  id: CartProduct['id'];
 }
 
-export const AmountCounter = ({ item }: AmountCounterProps) => {
-  const [amount, setAmount] = useState(item.amount);
+export const AmountCounter = ({ id }: AmountCounterProps) => {
+  const { cartState, dispatch } = useContext(CartState);
   return (
     <div className={style.buttonsWrapper}>
       <button
         className={style.amountButton}
         type="button"
         onClick={() => {
-          setAmount((prevState) => (prevState > 0 ? prevState - 1 : prevState));
+          dispatch({ type: 'DECREASE_PRODUCT', payload: id });
         }}
       >
         -
       </button>
-      <div className={style.amount}>{amount}</div>
+      <div className={style.amount}>{cartState.products[id].amount}</div>
       <button
         className={style.amountButton}
         type="button"
         onClick={() => {
-          setAmount((prevState) => (prevState < item.stock ? prevState + 1 : prevState));
+          dispatch({ type: 'INCREASE_PRODUCT', payload: id });
         }}
       >
         +

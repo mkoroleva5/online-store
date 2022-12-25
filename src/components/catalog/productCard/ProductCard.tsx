@@ -19,7 +19,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
   const [hover, setHover] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const button = useRef(null);
-  const { cartState, dispatch } = useContext(CartState);
+  const { dispatch } = useContext(CartState);
 
   const tableLayout = layout === 'table';
   const listLayout = layout === 'list';
@@ -91,10 +91,9 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
         <button
           ref={button}
           type="button"
-          className={style.button}
+          className={classNames(style.button)}
           onClick={() => {
             dispatch({ type: 'ADD_PRODUCT', payload: product });
-            console.log(cartState);
           }}
         >
           В корзину

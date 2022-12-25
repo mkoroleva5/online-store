@@ -1,24 +1,14 @@
-import { Layout, SortBy, SortDirection } from '../../components/catalog/types';
+import { Product } from '../../data/product';
 
-export type CartActionType =
-  | ProductAction
-  | CategoryAction
-  | MinPriceAction
-  | MaxPriceAction
-  | MinStockAction
-  | MaxStockAction
-  | SortByAction
-  | SortDirectionAction
-  | DisplayAction
-  | SearchFieldAction;
-
-interface PayloadNum {
-  payload: number;
-}
+export type CartActionType = ProductAction | ProductAmountAction;
 
 interface ProductAction {
-  type: 'ADD_PROCUCT' | 'REMOVE_PRODUCT';
-  payload: string;
+  type: 'ADD_PRODUCT' | 'REMOVE_PRODUCT';
+  payload: Product;
+}
+interface ProductAmountAction {
+  type: 'INCREASE_PRODUCT' | 'DECREASE_PRODUCT';
+  payload: Product['id'];
 }
 
 /*

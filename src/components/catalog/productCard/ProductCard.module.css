@@ -130,6 +130,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+.in-cart {
+  background-color: red;
+}
+
 .button:hover {
   opacity: 0.8;
 }
