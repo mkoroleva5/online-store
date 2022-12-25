@@ -1,4 +1,4 @@
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
 import style from './Cart.module.css';
 
 export const EmptyCart = () => {

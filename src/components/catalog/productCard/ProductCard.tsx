@@ -6,7 +6,7 @@ import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 
 interface ProductProps {

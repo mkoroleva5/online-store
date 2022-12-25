@@ -4,7 +4,7 @@ import { CartProduct } from '../../../data/product';
 import { AmountCounter } from '../../basic-components/BasicComponents';
 import style from './CartProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 

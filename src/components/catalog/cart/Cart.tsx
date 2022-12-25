@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { countTotalCost, countTotalItems } from '../../../store/filterStore/CartStore';
+import { countTotalCost, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
 import { CartState } from '../../cartState';
 import style from './Cart.module.css';

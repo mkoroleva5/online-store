@@ -3,7 +3,7 @@ import { Header } from './components/header/Header';
 import { Catalog } from './components/catalog/Catalog';
 import { Footer } from './components/footer/Footer';
 import { CartState, initialCartState } from './components/cartState';
-import { cartReducer } from './store/filterStore/CartStore';
+import { cartReducer } from './store/CartStore';
 
 export const App = () => {
   const [cartState, dispatch] = useReducer(cartReducer, initialCartState);

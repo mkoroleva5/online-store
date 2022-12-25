@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import style from './Header.module.css';
 import logoSource from '../../assets/images/healthy-logo.png';
 import cartIcon from '../../assets/icons/cart.svg';
-import { history } from '../../store/filterStore/History';
+import { history } from '../../store/History';
 import { CartState } from '../cartState';
-import { countTotalCost, countTotalItems } from '../../store/filterStore/CartStore';
+import { countTotalCost, countTotalItems } from '../../store/CartStore';
 
 export const Header = () => {
   const { cartState } = useContext(CartState);

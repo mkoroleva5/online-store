@@ -5,7 +5,7 @@ import { ProductCard } from './productCard/ProductCard';
 import products from '../../data/products.json';
 import { CatalogMenu } from './sortMenu/CatalogMenu';
 import { Filter } from './filter/Filter';
-import { history } from '../../store/filterStore/History';
+import { history } from '../../store/History';
 import { getArraySearchValue, getSearchValue } from '../../utils/searchHelpers';
 import { FilterState, initialFilterState } from './filterState';
 import { Matches } from './matches/Matches';

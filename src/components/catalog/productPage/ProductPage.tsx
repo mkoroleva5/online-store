@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { Product } from '../../../data/product';
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
 import { formatPrice } from '../../../utils/formatPrice';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
