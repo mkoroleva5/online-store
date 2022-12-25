@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Product } from '../../../data/product';
 import { history } from '../../../store/filterStore/History';
 import { formatPrice } from '../../../utils/formatPrice';
-
 import style from './ProductPage.module.css';
+import { ProductPageImage } from './ProductPageImage';
 
 interface ProductPageProps {
   product: Product;
@@ -66,7 +66,8 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                   role="button"
                   tabIndex={0}
                 >
-                  <img className={style.img} src={el} alt={product.title} key={el} />
+                  <ProductPageImage key={el + 1} src={el} title={product.title} classN="img" />
+                  {/* <img className={style.img} src={el} alt={product.title} key={el} /> */}
                 </div>
               );
             })}
@@ -74,13 +75,13 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           <div className={style.fullImgWrapper}>
             {product.images.map((el, index) => {
               return (
-                <img
-                  className={classNames(style.fullImg, {
-                    [style.active]: isActive === index,
-                  })}
-                  src={el}
-                  alt={product.title}
+                <ProductPageImage
                   key={el}
+                  isActive={isActive}
+                  src={el}
+                  title={product.title}
+                  index={index}
+                  classN="fullImg"
                 />
               );
             })}
