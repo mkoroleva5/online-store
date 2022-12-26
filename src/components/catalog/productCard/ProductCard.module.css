@@ -87,6 +87,11 @@
   transition: 0.5s;
 }
 
+.second-img-table:hover,
+.second-img-list:hover {
+  opacity: 1;
+}
+
 .title {
   flex: 1;
   padding: 0 10px;

@@ -16,7 +16,6 @@ interface ProductProps {
 }
 
 export const ProductCard = ({ product, layout, path }: ProductProps) => {
-  const [hover, setHover] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const button = useRef(null);
   const { dispatch } = useContext(CartState);
@@ -47,8 +46,6 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           [style.imgList]: listLayout,
           [style.loadedImg]: isImageLoaded,
         })}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
         onLoad={(e) => {
           const target = e.target as HTMLImageElement;
           if (target.complete) setIsImageLoaded(true);
@@ -58,14 +55,11 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
       <img
         src={product.images[1] || noImage}
         alt={product.title}
-        style={hover ? { opacity: '1' } : { opacity: '0' }}
         className={classNames({
           [style.secondImgTable]: tableLayout,
           [style.secondImgList]: listLayout,
           [style.loadedImg]: isImageLoaded,
         })}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
         onLoad={(e) => {
           const target = e.target as HTMLImageElement;
           if (target.complete) setIsImageLoaded(true);
