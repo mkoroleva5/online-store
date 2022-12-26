@@ -125,6 +125,7 @@
   background-color: var(--bg-color);
   color: var(--white-color);
   border-radius: 1.4rem;
+  border: 3px solid transparent;
 
   font-size: 1.8rem;
   font-weight: 700;
@@ -141,4 +142,10 @@
 
 .button:hover {
   opacity: 0.8;
+}
+
+.in-cart {
+  background-color: white;
+  border: 3px solid var(--bg-color);
+  color: var(--bg-color);
 }

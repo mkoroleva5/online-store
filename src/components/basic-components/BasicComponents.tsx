@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
-import { CartProduct } from '../../data/product';
+import { CartProduct, Product } from '../../data/product';
 import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { CartState } from '../cartState';
 import { FilterState } from '../catalog/filterState';
+import { history } from '../../store/History';
 import style from './BasicComponents.module.css';
 
 interface OptionProps {
@@ -163,5 +164,29 @@ export const AmountCounter = ({ id }: AmountCounterProps) => {
         +
       </button>
     </div>
+  );
+};
+
+interface InCartButtonProps {
+  product: Product;
+}
+export const InCartButton = (props: InCartButtonProps) => {
+  const { cartState, dispatch } = useContext(CartState);
+  const { product } = props;
+  const { id } = product;
+
+  return (
+    <button
+      type="button"
+      className={classNames(style.button, { [style.inCart]: cartState.products[id] })}
+      onClick={(e) => {
+        e.stopPropagation();
+        dispatch({ type: 'ADD_PRODUCT', payload: product });
+        const target = e.target as HTMLElement;
+        if (target.textContent === 'В корзине') history.push('/cart');
+      }}
+    >
+      {!cartState.products[id] ? 'В корзину' : 'В корзине'}
+    </button>
   );
 };

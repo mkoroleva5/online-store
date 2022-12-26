@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames';
 import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
@@ -7,7 +7,7 @@ import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { history } from '../../../store/History';
-import { CartState } from '../../cartState';
+import { InCartButton } from '../../basic-components/BasicComponents';
 
 interface ProductProps {
   product: Product;
@@ -17,8 +17,6 @@ interface ProductProps {
 
 export const ProductCard = ({ product, layout, path }: ProductProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const button = useRef(null);
-  const { dispatch } = useContext(CartState);
 
   const tableLayout = layout === 'table';
   const listLayout = layout === 'list';
@@ -28,11 +26,8 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
         [style.cardWrapperTable]: tableLayout,
         [style.cardWrapperList]: listLayout,
       })}
-      onClick={(e) => {
-        const target = e.target as HTMLElement;
-        if (target !== button.current) {
-          history.push(path);
-        }
+      onClick={() => {
+        history.push(path);
       }}
       onKeyDown={() => {}}
       role="button"
@@ -82,16 +77,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
         </h3>
         <p className={style.stock}>В наличии: {product.stock}</p>
         <p className={style.price}>{formatPrice(product.price)} BYN</p>
-        <button
-          ref={button}
-          type="button"
-          className={classNames(style.button)}
-          onClick={() => {
-            dispatch({ type: 'ADD_PRODUCT', payload: product });
-          }}
-        >
-          В корзину
-        </button>
+        <InCartButton key={product.id} product={product} />
       </div>
     </div>
   );

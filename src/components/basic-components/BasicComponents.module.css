@@ -276,3 +276,31 @@
   align-items: center;
   cursor: default;
 }
+
+.button {
+  all: unset;
+  width: 100%;
+  max-width: 12rem;
+  padding: 0.8rem 3rem;
+  margin-top: 0.8rem;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  border-radius: 1.4rem;
+  border: 3px solid var(--bg-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.in-cart {
+  background-color: white;
+  border: 3px solid var(--bg-color);
+  color: var(--bg-color);
+}
