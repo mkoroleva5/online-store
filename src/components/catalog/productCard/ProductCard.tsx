@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
@@ -6,25 +6,20 @@ import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
+import { CartState } from '../../cartState';
 
-interface ProductProps extends Pick<Product, 'title' | 'stock' | 'price' | 'preview' | 'images'> {
+interface ProductProps {
+  product: Product;
   layout: Layout;
   path: string;
 }
 
-export const ProductCard = ({
-  title,
-  stock,
-  price,
-  preview,
-  images,
-  layout,
-  path,
-}: ProductProps) => {
+export const ProductCard = ({ product, layout, path }: ProductProps) => {
   const [hover, setHover] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const button = useRef(null);
+  const { dispatch } = useContext(CartState);
 
   const tableLayout = layout === 'table';
   const listLayout = layout === 'list';
@@ -45,8 +40,8 @@ export const ProductCard = ({
       tabIndex={0}
     >
       <img
-        src={preview || noImage}
-        alt={title}
+        src={product.preview || noImage}
+        alt={product.title}
         className={classNames({
           [style.imgTable]: tableLayout,
           [style.imgList]: listLayout,
@@ -61,8 +56,8 @@ export const ProductCard = ({
         }}
       />
       <img
-        src={images[1] || noImage}
-        alt={title}
+        src={product.images[1] || noImage}
+        alt={product.title}
         style={hover ? { opacity: '1' } : { opacity: '0' }}
         className={classNames({
           [style.secondImgTable]: tableLayout,
@@ -89,11 +84,18 @@ export const ProductCard = ({
             [style.titleList]: listLayout,
           })}
         >
-          {title}
+          {product.title}
         </h3>
-        <p className={style.stock}>В наличии: {stock}</p>
-        <p className={style.price}>{formatPrice(price)} BYN</p>
-        <button ref={button} type="button" className={style.button}>
+        <p className={style.stock}>В наличии: {product.stock}</p>
+        <p className={style.price}>{formatPrice(product.price)} BYN</p>
+        <button
+          ref={button}
+          type="button"
+          className={classNames(style.button)}
+          onClick={() => {
+            dispatch({ type: 'ADD_PRODUCT', payload: product });
+          }}
+        >
           В корзину
         </button>
       </div>

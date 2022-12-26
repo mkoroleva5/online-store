@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import { CartProduct } from '../../data/product';
 import { useDebounce } from '../../utils/debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
+import { CartState } from '../cartState';
 import { FilterState } from '../catalog/filterState';
 import style from './BasicComponents.module.css';
 
@@ -23,7 +26,6 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
         id={`${filterGroup}-${id}`}
         type="checkbox"
         checked={checked}
-        disabled={quantity[0] === '0'}
         onChange={(e) => {
           const currentGroup = getSearchValue(filterGroup);
           if (e.target.checked) {
@@ -45,6 +47,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
           }
         }}
       />
+      <label className={style.checkbox} htmlFor={`${filterGroup}-${id}`} />
       <label className={style.optionLabel} htmlFor={`${filterGroup}-${id}`}>
         {value} ({quantity})
       </label>
@@ -128,6 +131,37 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
         <div className={style.sliderLeftValue}>{filterMin || minVal}</div>
         <div className={style.sliderRightValue}>{filterMax || maxVal}</div>
       </div>
+    </div>
+  );
+};
+
+interface AmountCounterProps {
+  id: CartProduct['id'];
+}
+
+export const AmountCounter = ({ id }: AmountCounterProps) => {
+  const { cartState, dispatch } = useContext(CartState);
+  return (
+    <div className={style.buttonsWrapper}>
+      <button
+        className={style.amountButton}
+        type="button"
+        onClick={() => {
+          dispatch({ type: 'DECREASE_PRODUCT', payload: id });
+        }}
+      >
+        -
+      </button>
+      <div className={style.amount}>{cartState.products[id].amount}</div>
+      <button
+        className={style.amountButton}
+        type="button"
+        onClick={() => {
+          dispatch({ type: 'INCREASE_PRODUCT', payload: id });
+        }}
+      >
+        +
+      </button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Product } from '../../../data/product';
-import { history } from '../../../store/filterStore/History';
+import { history } from '../../../store/History';
 import style from './CategoriesMenu.module.css';
 
 interface CategoriesMenuProps {

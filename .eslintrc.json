@@ -5,6 +5,7 @@
     "airbnb",
     "airbnb/hooks",
     "airbnb-typescript",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
@@ -15,6 +16,7 @@
   "plugins": ["@typescript-eslint"],
   "root": true,
   "rules": {
+    "react/require-default-props": "off",
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "arrow-body-style": "off",

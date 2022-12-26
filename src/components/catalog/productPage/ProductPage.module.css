@@ -37,37 +37,10 @@
   gap: 2rem;
 }
 
-.img {
-  width: 5rem;
-  height: 5rem;
-  outline: 0 solid white;
-  cursor: pointer;
-  transition: all ease-out 0.2s;
-}
-
-.img:hover {
-  outline: 1px solid var(--gray-color);
-  filter: saturate(100%);
-  box-shadow: 2px 2px 13px 0px rgb(34 60 80 / 16%);
-}
-
 .full-img-wrapper {
   position: relative;
   width: 40rem;
   height: 40rem;
-}
-
-.full-img {
-  position: absolute;
-  top: 0;
-  width: 40rem;
-  height: 40rem;
-  transition: all ease-out 0.5s;
-  opacity: 0;
-}
-
-.active {
-  opacity: 1;
 }
 
 .info {

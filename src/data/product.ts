@@ -13,6 +13,10 @@ export interface Product {
   images: string[];
 }
 
+export interface CartProduct extends Product {
+  amount: number;
+}
+
 // export type CategoryPaths = 'sweets' | 'candles' | 'drinks';
 
 // export type ProductCategory = 'Полезные сладости' | 'Полезные напитки' | 'Свечи';

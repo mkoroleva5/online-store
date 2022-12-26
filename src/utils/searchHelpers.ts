@@ -1,4 +1,4 @@
-import { history } from '../store/filterStore/History';
+import { history } from '../store/History';
 
 export const deleteSearchValue = (key: string) => {
   const searchParams = new URLSearchParams(history.location.search);

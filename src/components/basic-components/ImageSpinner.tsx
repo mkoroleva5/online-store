@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import style from './ImageSpinner.module.css';
 
 interface ImageSpinnerProps {
-  displayList: boolean;
+  displayList?: boolean;
 }
 
-export const ImageSpinner = ({ displayList }: ImageSpinnerProps) => {
+export const ImageSpinner = ({ displayList = true }: ImageSpinnerProps) => {
   return <div className={classNames(style.spinner, { [style.list]: displayList })} />;
 };

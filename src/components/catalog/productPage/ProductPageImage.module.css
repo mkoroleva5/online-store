@@ -1,0 +1,32 @@
+.img {
+  width: 5rem;
+  height: 5rem;
+  outline: 0 solid white;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+  display: none;
+}
+
+.img:hover {
+  outline: 1px solid var(--gray-color);
+  filter: saturate(100%);
+  box-shadow: 2px 2px 13px 0px rgb(34 60 80 / 16%);
+}
+
+.full-img {
+  position: absolute;
+  top: 0;
+  width: 40rem;
+  height: 40rem;
+  transition: all ease-out 0.5s;
+  opacity: 0;
+  display: none;
+}
+
+.loaded-img {
+  display: block;
+}
+
+.active {
+  opacity: 1;
+}

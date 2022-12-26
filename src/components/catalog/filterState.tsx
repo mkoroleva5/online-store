@@ -1,5 +1,18 @@
 import { createContext } from 'react';
-import { FilterStoreState } from '../../store/filterStore/FilterStoreTypes';
+import { Layout, SortBy, SortDirection } from './types';
+
+export interface FilterStoreState {
+  searchField: string | null;
+  brand: string[] | null;
+  product: string[] | null;
+  minPrice: number | null;
+  maxPrice: number | null;
+  minStock: number | null;
+  maxStock: number | null;
+  sortBy: SortBy;
+  sortDirection: SortDirection;
+  display: Layout;
+}
 
 export const initialFilterState: FilterStoreState = {
   searchField: null,
