@@ -4,6 +4,7 @@ import { CartProduct } from '../../../data/product';
 import { AmountCounter } from '../../basic-components/BasicComponents';
 import style from './CartProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
+import trashIcon from '../../../assets/icons/trash.svg';
 import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
@@ -60,6 +61,7 @@ export const CartProductCard = ({ item }: CartProductCardProps) => {
       <div className={style.sum}>{(item.price * item.amount).toFixed(2)} BYN</div>
       <button
         type="button"
+        className={style.deleteButton}
         onClick={() =>
           dispatch({
             type: 'REMOVE_PRODUCT',
@@ -67,7 +69,7 @@ export const CartProductCard = ({ item }: CartProductCardProps) => {
           })
         }
       >
-        X
+        <img className={style.deleteIcon} src={trashIcon} alt="Delete button" />
       </button>
     </div>
   );
