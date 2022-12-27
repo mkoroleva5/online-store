@@ -1,5 +1,3 @@
 export type Layout = 'table' | 'list';
 
-export type SortBy = 'price' | 'name';
-
-export type SortDirection = 'asc' | 'desc';
+export type SortBy = 'priceup' | 'pricedown' | 'nameup' | 'namedown';

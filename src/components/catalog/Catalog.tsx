@@ -14,6 +14,8 @@ import { parsePathname } from '../../utils/pathnameHelpers';
 import { CategoriesMenu } from './categoriesMenu/CategoriesMenu';
 import { ProductPage } from './productPage/ProductPage';
 import { Cart } from './cart/Cart';
+import { SortBy } from './types';
+import { sortArray } from '../../utils/sortFunction';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
@@ -29,6 +31,7 @@ export const Catalog = () => {
       const maxPrice = getSearchValue('maxPrice');
       const minStock = getSearchValue('minStock');
       const maxStock = getSearchValue('maxStock');
+      const sortBy = getSearchValue('sort') as SortBy;
       const displayState = getSearchValue('display');
       return {
         ...prevState,
@@ -39,6 +42,7 @@ export const Catalog = () => {
         maxPrice: maxPrice ? +maxPrice : null,
         minStock: minStock ? +minStock : null,
         maxStock: maxStock ? +maxStock : null,
+        sort: sortBy ?? 'nameup',
         display: displayState === 'list' ? 'list' : 'table',
       };
     });
@@ -74,7 +78,7 @@ export const Catalog = () => {
   }, []);
 
   const filteredProducts = useMemo(() => {
-    return products.filter((el) => {
+    const filteredProductsArray = products.filter((el) => {
       return (
         (categoryPath ? el.catPath === categoryPath : el) &&
         (filterState.brand ? filterState.brand.includes(el.brand) : el) &&
@@ -93,11 +97,25 @@ export const Catalog = () => {
         (filterState.maxStock ? el.stock < filterState.maxStock : el)
       );
     });
+    const sortValue = getSearchValue('sort');
+    if (sortValue) {
+      if (sortValue === 'nameup') {
+        sortArray(filteredProductsArray, 'title', 'up');
+      }
+      if (sortValue === 'namedown') {
+        sortArray(filteredProductsArray, 'title', 'down');
+      }
+      if (sortValue === 'priceup') {
+        sortArray(filteredProductsArray, 'price', 'up');
+      }
+      if (sortValue === 'pricedown') {
+        sortArray(filteredProductsArray, 'price', 'down');
+      }
+    }
+    return filteredProductsArray;
   }, [filterState, categoryPath]);
 
   const product = products.find((el) => el.id === +parsePathname(history.location.pathname)[1]);
-
-  // const { cartState, setCartState } = useContext(CartState);
 
   const isCartOpen = categoryPath === 'cart';
 

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Layout, SortBy, SortDirection } from './types';
+import { Layout, SortBy } from './types';
 
 export interface FilterStoreState {
   searchField: string | null;
@@ -9,8 +9,7 @@ export interface FilterStoreState {
   maxPrice: number | null;
   minStock: number | null;
   maxStock: number | null;
-  sortBy: SortBy;
-  sortDirection: SortDirection;
+  sort: SortBy;
   display: Layout;
 }
 
@@ -22,8 +21,7 @@ export const initialFilterState: FilterStoreState = {
   maxPrice: null,
   minStock: null,
   maxStock: null,
-  sortBy: 'name',
-  sortDirection: 'asc',
+  sort: 'nameup',
   display: 'table',
 };
 
