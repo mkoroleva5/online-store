@@ -38,28 +38,32 @@
   gap: 0.5rem;
 
   font-size: 1.4rem;
-  color: var(--gray-color);
-  transition: all 0.2s ease-in-out;
-}
-
-.sort-btn-active {
-  color: var(--text-color);
-}
-
-.sort-btn:hover {
-  color: var(--text-color);
-}
-
-.arrow {
-  width: 1.3rem;
-  aspect-ratio: 1/1;
   filter: brightness(0) saturate(100%) invert(46%) sepia(2%) saturate(23%) hue-rotate(53deg)
     brightness(102%) contrast(91%);
   transition: all 0.2s ease-in-out;
 }
 
+.sort-btn-active {
+  filter: unset;
+}
+
+.sort-btn:hover {
+  filter: unset;
+}
+
+.arrow {
+  width: 1.3rem;
+  aspect-ratio: 1/1;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
 .arrow-down {
   transform: rotate(180deg);
+}
+
+.arrow-visible {
+  visibility: visible;
 }
 
 .sort-btn:hover .arrow {

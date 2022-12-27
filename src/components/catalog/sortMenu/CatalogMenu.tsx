@@ -1,23 +1,60 @@
 import { useContext } from 'react';
+import classNames from 'classnames';
 import style from './CatalogMenu.module.css';
 import tableIcon from '../../../assets/icons/grid.svg';
 import listIcon from '../../../assets/icons/list.svg';
 import arrow from '../../../assets/icons/arrow.svg';
 import { FilterState } from '../filterState';
-import { updateSearchValue } from '../../../utils/searchHelpers';
+import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 
 export const CatalogMenu = () => {
   const filterState = useContext(FilterState);
   return (
     <div className={style.buttonsWrapper}>
       <div className={style.blockContainer}>
-        <button type="button" className={style.sortBtn}>
+        <button
+          type="button"
+          className={classNames(style.sortBtn, {
+            [style.sortBtnActive]: filterState.sort === 'namedown' || filterState.sort === 'nameup',
+          })}
+          onClick={() => {
+            updateSearchValue('sort', getSearchValue('sort') === 'nameup' ? 'namedown' : 'nameup');
+          }}
+        >
           По алфавиту
-          <img src={arrow} alt="arrow" className={style.arrow} />
+          <img
+            src={arrow}
+            alt="arrow"
+            className={classNames(style.arrow, {
+              [style.arrowDown]: filterState.sort === 'namedown',
+              [style.arrowVisible]:
+                filterState.sort === 'namedown' || filterState.sort === 'nameup',
+            })}
+          />
         </button>
-        <button type="button" className={style.sortBtn}>
+        <button
+          type="button"
+          className={classNames(style.sortBtn, {
+            [style.sortBtnActive]:
+              filterState.sort === 'pricedown' || filterState.sort === 'priceup',
+          })}
+          onClick={() => {
+            updateSearchValue(
+              'sort',
+              getSearchValue('sort') === 'priceup' ? 'pricedown' : 'priceup',
+            );
+          }}
+        >
           По цене
-          <img src={arrow} alt="arrow" className={style.arrow} />
+          <img
+            src={arrow}
+            alt="arrow"
+            className={classNames(style.arrow, {
+              [style.arrowDown]: filterState.sort === 'pricedown',
+              [style.arrowVisible]:
+                filterState.sort === 'pricedown' || filterState.sort === 'priceup',
+            })}
+          />
         </button>
       </div>
       <div className={style.blockContainer}>

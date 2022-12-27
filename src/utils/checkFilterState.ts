@@ -1,4 +1,4 @@
-import { FilterStoreState } from '../store/filterStore/FilterStoreTypes';
+import { FilterStoreState } from '../components/catalog/filterState';
 
 export const checkFilterState = (state: FilterStoreState) => {
   if (
