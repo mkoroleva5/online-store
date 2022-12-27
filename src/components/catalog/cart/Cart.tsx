@@ -26,7 +26,7 @@ export const Cart = () => {
             </div>
             <div className={style.items}>
               {Object.values(cartState.products).map((item) => {
-                return <CartProductCard item={item} />;
+                return <CartProductCard key={item.id} item={item} />;
               })}
             </div>
           </div>

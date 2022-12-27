@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Product } from '../../../data/product';
 import { history } from '../../../store/History';
 import { formatPrice } from '../../../utils/formatPrice';
-import { CartState } from '../../cartState';
+import { InCartButton } from '../../basic-components/BasicComponents';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
 
@@ -13,7 +13,6 @@ interface ProductPageProps {
 
 export const ProductPage = ({ product }: ProductPageProps) => {
   const [isActive, setIsActive] = useState(0);
-  const { dispatch } = useContext(CartState);
 
   return (
     <section className={style.wrapper}>
@@ -69,7 +68,6 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                   tabIndex={0}
                 >
                   <ProductPageImage key={el + 1} src={el} title={product.title} classN="img" />
-                  {/* <img className={style.img} src={el} alt={product.title} key={el} /> */}
                 </div>
               );
             })}
@@ -139,15 +137,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           </div>
           <div className={style.price}>{formatPrice(product.price)} BYN</div>
           <div>В наличии: {product.stock}</div>
-          <button
-            type="button"
-            className={style.button}
-            onClick={() => {
-              dispatch({ type: 'ADD_PRODUCT', payload: product });
-            }}
-          >
-            В корзину
-          </button>
+          <InCartButton key={product.id} product={product} />
           <button type="button" className={classNames(style.button, style.fastPurchaseButton)}>
             Купить в 1 клик
           </button>

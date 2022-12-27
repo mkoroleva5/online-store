@@ -71,6 +71,7 @@
   background-color: var(--bg-color);
   color: var(--white-color);
   border-radius: 1.4rem;
+  border: 3px solid var(--bg-color);
   font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
