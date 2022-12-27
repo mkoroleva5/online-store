@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  align-items: baseline;
   padding-bottom: 1.5rem;
+  gap: 1rem;
 }
 
 .title {
@@ -18,16 +18,24 @@
   color: var(--text-color);
 }
 
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
 .reset {
   all: unset;
-  width: 100%;
-  max-width: 8rem;
-  padding: 0.8rem 2rem;
-  margin-top: 0.8rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.3rem;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg-color);
   color: var(--white-color);
-  border-radius: 1.4rem;
+  border-radius: 0.8rem;
 
   font-size: 1.8rem;
   font-weight: 700;
@@ -38,8 +46,18 @@
   transition: all 0.2s ease-in-out;
 }
 
+.copy {
+  position: relative;
+}
+
 .reset:hover {
   opacity: 0.8;
+}
+
+.reset-icon {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(100%) sepia(100%) saturate(22%) hue-rotate(252deg) brightness(104%) contrast(100%);
 }
 
 .field {

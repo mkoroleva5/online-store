@@ -1,7 +1,8 @@
 import classNames from 'classnames';
-import { FilterOption, DualSlider } from '../../basic-components/BasicComponents';
+import { FilterOption, DualSlider, CopyButton } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
+import resetIcon from '../../../assets/icons/refresh.svg';
 import { SearchField } from '../search/Search';
 import { deleteSearchValue } from '../../../utils/searchHelpers';
 import { Product } from '../../../data/product';
@@ -32,9 +33,17 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
     <div className={style.filterWrapper}>
       <div className={style.titleBlock}>
         <span className={style.title}>Фильтры</span>
-        <button type="button" className={style.reset} onClick={resetFilters}>
-          Сбросить
-        </button>
+        <div className={style.buttonsWrapper}>
+          <CopyButton />
+          <button
+            type="button"
+            className={style.reset}
+            title="Очистить фильтры"
+            onClick={resetFilters}
+          >
+            <img className={style.resetIcon} src={resetIcon} alt="Reset button" />
+          </button>
+        </div>
       </div>
       <div className={style.field}>
         <div className={classNames(style.block, style.searchBlock)}>
