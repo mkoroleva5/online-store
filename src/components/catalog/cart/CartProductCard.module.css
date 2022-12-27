@@ -4,7 +4,7 @@
   height: fit-content;
 
   display: grid;
-  grid-template-columns: 3fr repeat(2, 1fr) 0.5fr;
+  grid-template-columns: 3fr 1fr 0.7fr 0.3fr;
   grid-template-rows: 1fr;
   align-items: center;
   gap: 2rem;
@@ -52,7 +52,41 @@
 }
 
 .sum {
-  padding-right: 5rem;
   font-weight: 700;
   font-size: 2rem;
+}
+
+.delete-button {
+  all: unset;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.delete-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.delete-button:hover .delete-icon {
+  animation: rotate 1s normal linear infinite;
+  -webkit-animation: rotate 1s normal linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
