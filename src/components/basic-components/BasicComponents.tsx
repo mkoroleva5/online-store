@@ -8,6 +8,8 @@ import { CartState } from '../cartState';
 import { FilterState } from '../catalog/filterState';
 import { history } from '../../store/History';
 import style from './BasicComponents.module.css';
+import copyIcon from '../../assets/icons/copy.svg';
+import doneIcon from '../../assets/icons/check.svg';
 
 interface OptionProps {
   value: string;
@@ -187,6 +189,28 @@ export const InCartButton = (props: InCartButtonProps) => {
       }}
     >
       {!cartState.products[id] ? 'В корзину' : 'В корзине'}
+    </button>
+  );
+};
+
+export const CopyButton = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <button
+      type="button"
+      className={classNames(style.copy, { [style.active]: isActive })}
+      title="Скопировать фильтры"
+      onClick={() => {
+        setIsActive(true);
+        navigator.clipboard.writeText(window.location.href);
+        setTimeout(() => {
+          setIsActive(false);
+        }, 1000);
+      }}
+    >
+      <img className={style.copyIcon} src={copyIcon} alt="Copy button" />
+      <img className={style.doneIcon} src={doneIcon} alt="Done button" />
     </button>
   );
 };
