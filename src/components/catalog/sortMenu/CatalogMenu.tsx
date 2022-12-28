@@ -21,7 +21,7 @@ export const CatalogMenu = () => {
             updateSearchValue('sort', getSearchValue('sort') === 'nameup' ? 'namedown' : 'nameup');
           }}
         >
-          По алфавиту
+          По названию
           <img
             src={arrow}
             alt="arrow"
