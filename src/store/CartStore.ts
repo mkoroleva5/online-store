@@ -1,6 +1,6 @@
 import { CartStateProps } from '../components/cartState';
 import { CartProduct } from '../data/product';
-import { setLS } from '../utils/localStorageHelpers';
+import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
 
 export const countTotalItems = (productsObj: Record<number, CartProduct>) => {
@@ -22,13 +22,13 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
           [action.payload.id]: { ...action.payload, amount: 1 },
         },
       };
-      setLS('healthy_food_cart_state', newState);
+      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'REMOVE_PRODUCT': {
       const newState = { ...state };
       delete newState.products[action.payload.id];
-      setLS('healthy_food_cart_state', newState);
+      setLS(localStorageCartStateName, newState);
 
       return newState;
     }
@@ -44,7 +44,7 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS('healthy_food_cart_state', newState);
+      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'DECREASE_PRODUCT': {
@@ -54,7 +54,7 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       if (amount < 1) {
         const newState = { ...state };
         delete newState.products[action.payload];
-        setLS('healthy_food_cart_state', newState);
+        setLS(localStorageCartStateName, newState);
         return newState;
       }
       const newState = {
@@ -64,11 +64,11 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS('healthy_food_cart_state', newState);
+      setLS(localStorageCartStateName, newState);
       return newState;
     }
     default:
-      setLS('healthy_food_cart_state', state);
+      setLS(localStorageCartStateName, state);
       return state;
   }
 };
