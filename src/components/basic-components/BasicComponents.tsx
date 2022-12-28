@@ -22,6 +22,38 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
   const filterState = useContext(FilterState);
   const filterOptionState = filterState[filterGroup];
   const checked = filterOptionState ? filterOptionState.includes(value) : false;
+
+  const handleCheckBoxChange = useDebounce(
+    (
+      currentGroup: string | null,
+      filterGroupString: 'brand' | 'product',
+      isChecked: boolean,
+      searchValue: string,
+    ) => {
+      if (isChecked) {
+        if (currentGroup) {
+          updateSearchValue(
+            filterGroupString,
+            [...currentGroup.split('-and-'), searchValue].join('-and-'),
+          );
+        } else {
+          updateSearchValue(filterGroupString, searchValue);
+        }
+      } else if (!isChecked) {
+        if (currentGroup) {
+          updateSearchValue(
+            filterGroupString,
+            currentGroup
+              .split('-and-')
+              .filter((el) => el !== searchValue)
+              .join('-and-'),
+          );
+        }
+      }
+    },
+    200,
+  );
+
   return (
     <div className={classNames(style.option, { [style.optionDisabled]: quantity[0] === '0' })}>
       <input
@@ -31,23 +63,8 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
         checked={checked}
         onChange={(e) => {
           const currentGroup = getSearchValue(filterGroup);
-          if (e.target.checked) {
-            if (currentGroup) {
-              updateSearchValue(filterGroup, [...currentGroup.split('-and-'), value].join('-and-'));
-            } else {
-              updateSearchValue(filterGroup, value);
-            }
-          } else if (!e.target.checked) {
-            if (currentGroup) {
-              updateSearchValue(
-                filterGroup,
-                currentGroup
-                  .split('-and-')
-                  .filter((el) => el !== value)
-                  .join('-and-'),
-              );
-            }
-          }
+          const isChecked = e.target.checked;
+          handleCheckBoxChange(currentGroup, filterGroup, isChecked, value);
         }}
       />
       <label className={style.checkbox} htmlFor={`${filterGroup}-${id}`} />

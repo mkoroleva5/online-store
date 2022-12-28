@@ -8,6 +8,7 @@ import { cartReducer } from './store/CartStore';
 export const App = () => {
   const [cartState, dispatch] = useReducer(cartReducer, initialCartState);
   const cartContext = useMemo(() => ({ cartState, dispatch }), [cartState, dispatch]);
+
   return (
     <>
       <CartState.Provider value={cartContext}>

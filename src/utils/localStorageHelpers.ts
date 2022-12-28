@@ -15,3 +15,5 @@ export const removeLS = (key: string) => {
     localStorage.removeItem(key);
   }
 };
+
+export const localStorageCartStateName = 'healthy_food_store_cart_state';
