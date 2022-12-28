@@ -1,6 +1,8 @@
 import { createContext } from 'react';
 import { CartProduct } from '../data/product';
+import { CartActionType } from '../store/CartStoreTypes';
 import { getLS, localStorageCartStateName } from '../utils/localStorageHelpers';
+
 
 export interface CartStateProps {
   products: Record<number, CartProduct>;
@@ -9,7 +11,7 @@ export interface CartStateProps {
 
 export interface CartContext {
   cartState: CartStateProps;
-  dispatch: React.Dispatch<unknown>;
+  dispatch: React.Dispatch<CartActionType>;
 }
 
 const savedCartState = getLS(localStorageCartStateName) as CartStateProps;
