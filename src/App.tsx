@@ -1,4 +1,4 @@
-import { useMemo, useReducer, useState } from 'react';
+import { useMemo, useReducer } from 'react';
 import { Header } from './components/header/Header';
 import { Catalog } from './components/catalog/Catalog';
 import { Footer } from './components/footer/Footer';
