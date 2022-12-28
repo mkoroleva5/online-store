@@ -10,6 +10,7 @@ export const Cart = () => {
   const { cartState } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
+
   return (
     <section className={style.cartWrapper}>
       {!Object.keys(cartState.products).length ? (

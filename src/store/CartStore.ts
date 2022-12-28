@@ -1,5 +1,6 @@
 import { CartStateProps } from '../components/cartState';
 import { CartProduct } from '../data/product';
+import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
 
 export const countTotalItems = (productsObj: Record<number, CartProduct>) => {
@@ -14,17 +15,21 @@ export const countTotalCost = (productsObj: Record<number, CartProduct>) => {
 export const cartReducer = (state: CartStateProps, action: CartActionType) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
-      return {
+      const newState = {
         ...state,
         products: {
           ...state.products,
           [action.payload.id]: { ...action.payload, amount: 1 },
         },
       };
+      setLS(localStorageCartStateName, newState);
+      return newState;
     }
     case 'REMOVE_PRODUCT': {
       const newState = { ...state };
       delete newState.products[action.payload.id];
+      setLS(localStorageCartStateName, newState);
+
       return newState;
     }
     case 'INCREASE_PRODUCT': {
@@ -32,13 +37,15 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       if (amount > state.products[action.payload].stock) {
         return state;
       }
-      return {
+      const newState = {
         ...state,
         products: {
           ...state.products,
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
+      setLS(localStorageCartStateName, newState);
+      return newState;
     }
     case 'DECREASE_PRODUCT': {
       const amount = state.products[action.payload]?.amount
@@ -47,17 +54,21 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       if (amount < 1) {
         const newState = { ...state };
         delete newState.products[action.payload];
+        setLS(localStorageCartStateName, newState);
         return newState;
       }
-      return {
+      const newState = {
         ...state,
         products: {
           ...state.products,
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
+      setLS(localStorageCartStateName, newState);
+      return newState;
     }
     default:
+      setLS(localStorageCartStateName, state);
       return state;
   }
 };
