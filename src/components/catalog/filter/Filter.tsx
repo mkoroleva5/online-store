@@ -1,11 +1,13 @@
 import classNames from 'classnames';
-import { FilterOption, DualSlider, CopyButton } from '../../basic-components/BasicComponents';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
 import resetIcon from '../../../assets/icons/refresh.svg';
 import { SearchField } from '../search/Search';
 import { deleteSearchValue } from '../../../utils/searchHelpers';
 import { Product } from '../../../data/product';
+import { CopyButton } from '../../basic-components/CopyButton';
+import { DualSlider } from '../../basic-components/DualSlider';
+import { FilterOption } from '../../basic-components/FilterOption';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
