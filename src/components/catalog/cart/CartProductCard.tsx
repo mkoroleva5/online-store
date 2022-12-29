@@ -58,7 +58,10 @@ export const CartProductCard = ({ item }: CartProductCardProps) => {
         </div>
       </div>
       <AmountCounter id={item.id} />
-      <div className={style.sum}>{(item.price * item.amount).toFixed(2)} BYN</div>
+      <div className={style.sumWrapper}>
+        <div className={style.sum}>{(item.price * item.amount).toFixed(2)} BYN</div>
+        <div className={style.stock}>В наличии: {item.stock}</div>
+      </div>
       <button
         type="button"
         className={style.deleteButton}
