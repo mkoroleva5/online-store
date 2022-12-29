@@ -27,7 +27,7 @@ export const Cart = () => {
             </div>
             <div className={style.items}>
               {Object.values(cartState.products)
-                .sort((a, b) => (a.index > b.index ? 1 : -1))
+                .sort((a, b) => (a.productIndex > b.productIndex ? 1 : -1))
                 .map((item) => {
                   return <CartProductCard key={item.id} item={item} />;
                 })}

@@ -19,7 +19,7 @@ export const CartProductCard = ({ item }: CartProductCardProps) => {
 
   return (
     <div className={style.productWrapper}>
-      <div className={style.itemIndex}>{item.index}</div>
+      <div className={style.itemIndex}>{item.productIndex}</div>
       <div key={item.id} className={style.itemWrapper}>
         <div className={style.itemInfoWrapper}>
           <div
