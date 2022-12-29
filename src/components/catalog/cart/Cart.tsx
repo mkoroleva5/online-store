@@ -26,9 +26,11 @@ export const Cart = () => {
               на сумму <span className={style.boldText}>{totalCost} BYN</span>:
             </div>
             <div className={style.items}>
-              {Object.values(cartState.products).map((item) => {
-                return <CartProductCard key={item.id} item={item} />;
-              })}
+              {Object.values(cartState.products)
+                .sort((a, b) => (a.index > b.index ? 1 : -1))
+                .map((item) => {
+                  return <CartProductCard key={item.id} item={item} />;
+                })}
             </div>
           </div>
           <div className={style.totalWrapper}>
