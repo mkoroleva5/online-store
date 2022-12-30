@@ -7,7 +7,7 @@ import { Layout } from '../types';
 import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { history } from '../../../store/History';
-import { InCartButton } from '../../basic-components/BasicComponents';
+import { InCartButton } from '../../basic-components/InCartButton';
 
 interface ProductProps {
   product: Product;

@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { CartProduct } from '../../../data/product';
-import { AmountCounter } from '../../basic-components/BasicComponents';
 import style from './CartProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import trashIcon from '../../../assets/icons/trash.svg';
 import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
+import { AmountCounter } from '../../basic-components/AmountCounter';
 
 interface CartProductCardProps {
   item: CartProduct;
