@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Product } from '../../../data/product';
 import { history } from '../../../store/History';
 import { formatPrice } from '../../../utils/formatPrice';
-import { InCartButton } from '../../basic-components/BasicComponents';
+import { InCartButton } from '../../basic-components/InCartButton';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
 
