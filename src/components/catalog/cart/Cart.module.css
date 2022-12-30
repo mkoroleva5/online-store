@@ -65,6 +65,90 @@
   padding: 3rem 0;
 }
 
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+  gap: 3rem;
+}
+
+.cards-per-page-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+
+.cards-per-page-input {
+  width: 4.5rem;
+  height: 2.5rem;
+  text-indent: 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+.cards-per-page-input:focus {
+  outline: 1px solid var(--gray-color);
+}
+
+.pages-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.page-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-button:hover {
+  background-color: #e5e5e5;
+}
+
+.active-page {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.active-page:hover {
+  background-color: var(--bg-color);
+}
+
+.switch-page-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-image {
+  transition: all 0.2s ease-in-out;
+  filter: invert(52%) sepia(2%) saturate(10%) hue-rotate(338deg) brightness(90%) contrast(90%);
+}
+
+.switch-page-button:hover .arrow-image {
+  filter: invert(19%) sepia(2%) saturate(12%) hue-rotate(324deg) brightness(91%) contrast(84%);
+}
+
 .total-wrapper {
   display: flex;
   justify-content: space-between;
