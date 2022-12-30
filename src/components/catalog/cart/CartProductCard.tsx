@@ -11,15 +11,16 @@ import { ImageSpinner } from '../../basic-components/ImageSpinner';
 
 interface CartProductCardProps {
   item: CartProduct;
+  index: number;
 }
 
-export const CartProductCard = ({ item }: CartProductCardProps) => {
+export const CartProductCard = ({ item, index }: CartProductCardProps) => {
   const { dispatch } = useContext(CartState);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div className={style.productWrapper}>
-      <div className={style.itemIndex}>{item.productIndex}</div>
+      <div className={style.itemIndex}>{index}</div>
       <div key={item.id} className={style.itemWrapper}>
         <div className={style.itemInfoWrapper}>
           <div

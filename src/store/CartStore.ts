@@ -22,7 +22,6 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
           [action.payload.id]: {
             ...action.payload,
             amount: 1,
-            productIndex: Object.keys(state.products).length + 1,
           },
         },
       };

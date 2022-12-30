@@ -15,7 +15,6 @@ export interface Product {
 
 export interface CartProduct extends Product {
   amount: number;
-  productIndex: number;
 }
 
 // export type CategoryPaths = 'sweets' | 'candles' | 'drinks';
