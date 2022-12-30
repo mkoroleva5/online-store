@@ -26,8 +26,8 @@ export const Cart = () => {
               на сумму <span className={style.boldText}>{totalCost} BYN</span>:
             </div>
             <div className={style.items}>
-              {Object.values(cartState.products).map((item) => {
-                return <CartProductCard key={item.id} item={item} />;
+              {Object.values(cartState.products).map((item, index) => {
+                return <CartProductCard key={item.id} item={item} index={index + 1} />;
               })}
             </div>
           </div>

@@ -19,7 +19,10 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
         ...state,
         products: {
           ...state.products,
-          [action.payload.id]: { ...action.payload, amount: 1 },
+          [action.payload.id]: {
+            ...action.payload,
+            amount: 1,
+          },
         },
       };
       setLS(localStorageCartStateName, newState);
