@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { countTotalCost, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
@@ -15,6 +15,7 @@ export const Cart = () => {
   const totalItems = countTotalItems(cartState.products);
   const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage, setCardsPerPage] = useState(3);
+  const [lastPage, setLastPage] = useState(Object.values(cartState.products).length / cardsPerPage);
 
   const handleCardsPerPageInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { target } = e;
@@ -33,6 +34,14 @@ export const Cart = () => {
   const allCards = totalCartProducts.map((item, index) => {
     return <CartProductCard key={item.id} item={item} index={index + 1} />;
   });
+
+  useEffect(() => {
+    setLastPage(pages.length);
+  }, [pages]);
+
+  useEffect(() => {
+    setCurrentPage((prev) => (prev === 1 ? 1 : prev - 1));
+  }, [lastPage]);
 
   return (
     <section className={style.cartWrapper}>
