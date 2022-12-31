@@ -8,6 +8,8 @@ import { CartProductCard } from './CartProductCard';
 import { EmptyCart } from './EmptyCart';
 import arrowLeft from '../../../assets/icons/chevron-left.svg';
 import arrowRight from '../../../assets/icons/chevron-right.svg';
+import { history } from '../../../store/History';
+import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 
 export const Cart = () => {
   const { cartState } = useContext(CartState);
@@ -20,8 +22,7 @@ export const Cart = () => {
   const handleCardsPerPageInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { target } = e;
     if (target) {
-      setCardsPerPage(+target.value);
-      setCurrentPage(1);
+      updateSearchValue('limit', target.value);
     }
   };
 
@@ -36,12 +37,40 @@ export const Cart = () => {
   });
 
   useEffect(() => {
-    setLastPage(pages.length);
-  }, [pages]);
+    const pageQ = getSearchValue('page');
+    const limitQ = getSearchValue('limit');
+    if (pageQ && +pageQ > 0) {
+      setCurrentPage(+pageQ);
+    } else {
+      updateSearchValue('page', '1');
+    }
+    if (limitQ) {
+      setCardsPerPage(+limitQ);
+    } else {
+      updateSearchValue('limit', '3');
+    }
+
+    const unlisten = history.listen(() => {
+      const page = getSearchValue('page');
+      const limit = getSearchValue('limit');
+      if (page && +page > 0) setCurrentPage(+page);
+      if (limit) setCardsPerPage(+limit);
+      // setLastPage(pages.length);
+      return () => {
+        unlisten();
+      };
+    });
+  }, []);
 
   useEffect(() => {
-    setCurrentPage((prev) => (prev === 1 ? 1 : prev - 1));
-  }, [lastPage]);
+    setLastPage(pages.length);
+  }, [pages.length]);
+
+  useEffect(() => {
+    if (lastPage < currentPage) {
+      updateSearchValue('page', `${currentPage - 1}`);
+    }
+  }, [lastPage, currentPage]);
 
   return (
     <section className={style.cartWrapper}>
@@ -83,7 +112,14 @@ export const Cart = () => {
                 className={style.switchPageButton}
                 type="button"
                 onClick={() => {
-                  if (currentPage > 1) setCurrentPage(currentPage - 1);
+                  if (currentPage > 1) {
+                    const page = getSearchValue('page');
+                    if (page) {
+                      updateSearchValue('page', `${+page - 1}`);
+                    } else {
+                      updateSearchValue('page', '1');
+                    }
+                  }
                 }}
               >
                 <img className={style.arrowImage} src={arrowLeft} alt="Previous page" />
@@ -97,7 +133,7 @@ export const Cart = () => {
                     key={item}
                     type="button"
                     onClick={() => {
-                      setCurrentPage(item);
+                      updateSearchValue('page', `${item}`);
                     }}
                   >
                     {item}
@@ -108,7 +144,14 @@ export const Cart = () => {
                 className={style.switchPageButton}
                 type="button"
                 onClick={() => {
-                  if (currentPage < pages.length) setCurrentPage(currentPage + 1);
+                  if (currentPage < pages.length) {
+                    const page = getSearchValue('page');
+                    if (page) {
+                      updateSearchValue('page', `${+page + 1}`);
+                    } else {
+                      updateSearchValue('page', '1');
+                    }
+                  }
                 }}
               >
                 <img className={style.arrowImage} src={arrowRight} alt="Next page" />
