@@ -15,9 +15,11 @@ export const Cart = () => {
   const { cartState } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage, setCardsPerPage] = useState(3);
-  const [lastPage, setLastPage] = useState(Object.values(cartState.products).length / cardsPerPage);
+  const [currentPage, setCurrentPage] = useState(getSearchValue('page') ?? 1);
+  const [cardsPerPage, setCardsPerPage] = useState(getSearchValue('limit') ?? 3);
+  const [lastPage, setLastPage] = useState(
+    Math.ceil(Object.values(cartState.products).length / +cardsPerPage),
+  );
 
   const handleCardsPerPageInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { target } = e;
@@ -28,7 +30,7 @@ export const Cart = () => {
 
   const totalCartProducts = Object.values(cartState.products);
 
-  const pages = [...new Array(Math.ceil(totalCartProducts.length / cardsPerPage))].map(
+  const pages = [...new Array(Math.ceil(totalCartProducts.length / +cardsPerPage))].map(
     (_, index) => index + 1,
   );
 
@@ -55,7 +57,6 @@ export const Cart = () => {
       const limit = getSearchValue('limit');
       if (page && +page > 0) setCurrentPage(+page);
       if (limit) setCardsPerPage(+limit);
-      // setLastPage(pages.length);
       return () => {
         unlisten();
       };
@@ -68,7 +69,7 @@ export const Cart = () => {
 
   useEffect(() => {
     if (lastPage < currentPage) {
-      updateSearchValue('page', `${currentPage - 1}`);
+      updateSearchValue('page', `${+currentPage - 1}`);
     }
   }, [lastPage, currentPage]);
 
@@ -88,8 +89,8 @@ export const Cart = () => {
             </div>
             <div className={style.items}>
               {allCards.slice(
-                cardsPerPage * currentPage - cardsPerPage,
-                cardsPerPage * currentPage,
+                +cardsPerPage * +currentPage - +cardsPerPage,
+                +cardsPerPage * +currentPage,
               )}
             </div>
           </div>
