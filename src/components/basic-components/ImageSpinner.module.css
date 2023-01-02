@@ -23,6 +23,11 @@
   border-radius: 100%;
 }
 
+.card-spinner {
+  width: 10rem;
+  height: 10rem;
+}
+
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
