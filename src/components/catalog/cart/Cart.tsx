@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { countTotalCost, countTotalItems } from '../../../store/CartStore';
+import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
 import { CartState } from '../../cartState';
 import style from './Cart.module.css';
@@ -10,11 +10,17 @@ import arrowLeft from '../../../assets/icons/chevron-left.svg';
 import arrowRight from '../../../assets/icons/chevron-right.svg';
 import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
+import { PromoCodes } from '../../basic-components/PromoCodes';
 
 export const Cart = () => {
   const { cartState } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
+  const totalCostDiscounted = countTotalCostDiscount(
+    +totalCost,
+    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+  );
+
   const [currentPage, setCurrentPage] = useState(getSearchValue('page') ?? 1);
   const [cardsPerPage, setCardsPerPage] = useState(getSearchValue('limit') ?? 3);
   const [lastPage, setLastPage] = useState(
@@ -160,14 +166,20 @@ export const Cart = () => {
             </div>
           </div>
           <div className={style.totalWrapper}>
-            <form className={style.promo}>
-              <label htmlFor="promo">Промокод:</label>
-              <input className={style.promoInput} type="text" id="promo" />
-              <button className={style.submitButton} type="submit">
-                Применить
-              </button>
-            </form>
-            <div className={style.total}>Итого: {totalCost} BYN</div>
+            <PromoCodes />
+            <div className={style.totalCostWrapper}>
+              <div>Итого: </div>
+              <div className={style.total}>
+                <p
+                  className={classNames({
+                    [style.crossed]: Object.keys(cartState.promos).length > 0,
+                  })}
+                >
+                  {totalCost} BYN
+                </p>
+                {Object.keys(cartState.promos).length > 0 && <p>{totalCostDiscounted} BYN</p>}
+              </div>
+            </div>
           </div>
           <div className={style.orderWrapper}>
             <button type="button" className={style.orderButton} onClick={() => {}}>

@@ -3,10 +3,18 @@ import { CartProduct } from '../data/product';
 import { CartActionType } from '../store/CartStoreTypes';
 import { getLS, localStorageCartStateName } from '../utils/localStorageHelpers';
 
+export interface PossiblePromosInt {
+  string: number;
+}
+
+export const possiblePromos: Record<string, number> = {
+  RS: 10,
+  WINTER: 15,
+};
 
 export interface CartStateProps {
   products: Record<number, CartProduct>;
-  promos: string[];
+  promos: Record<string, number>;
 }
 
 export interface CartContext {
