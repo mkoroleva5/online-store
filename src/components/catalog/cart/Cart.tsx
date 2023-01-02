@@ -16,6 +16,11 @@ export const Cart = () => {
   const { cartState } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
+  const totalCostDiscounted = countTotalCostDiscount(
+    +totalCost,
+    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+  );
+
   const [currentPage, setCurrentPage] = useState(getSearchValue('page') ?? 1);
   const [cardsPerPage, setCardsPerPage] = useState(getSearchValue('limit') ?? 3);
   const [lastPage, setLastPage] = useState(
@@ -162,16 +167,18 @@ export const Cart = () => {
           </div>
           <div className={style.totalWrapper}>
             <PromoCodes />
-            <div className={style.total}>
-              Итого: <p>{totalCost} BYN</p>
-              {Object.keys(cartState.promos).length > 0 && (
-                <p>
-                  {countTotalCostDiscount(
-                    +totalCost,
-                    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
-                  )}
+            <div className={style.totalCostWrapper}>
+              <div>Итого: </div>
+              <div className={style.total}>
+                <p
+                  className={classNames({
+                    [style.crossed]: Object.keys(cartState.promos).length > 0,
+                  })}
+                >
+                  {totalCost} BYN
                 </p>
-              )}
+                {Object.keys(cartState.promos).length > 0 && <p>{totalCostDiscounted} BYN</p>}
+              </div>
             </div>
           </div>
           <div className={style.orderWrapper}>

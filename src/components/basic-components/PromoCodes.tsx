@@ -1,26 +1,45 @@
 import { useContext, useState } from 'react';
+import classNames from 'classnames';
 import { CartState, possiblePromos } from '../cartState';
 import style from './PromoCodes.module.css';
-import trashIcon from '../../assets/icons/trash.svg';
+import x from '../../assets/icons/x.svg';
 
 export const PromoCodes = () => {
   const { cartState, dispatch } = useContext(CartState);
   const [input, setInput] = useState('');
 
   return (
-    <div>
-      <label htmlFor="promo">Промокод:</label>
-      <input
-        className={style.promoInput}
-        type="text"
-        id="promo"
-        value={input}
-        onChange={(e) => {
-          const { value } = e.target;
-          setInput(value);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+    <div className={style.promoWrapper}>
+      <div className={style.promoInputWrapper}>
+        <label htmlFor="promo">Промокод:</label>
+        <input
+          className={style.promoInput}
+          type="text"
+          id="promo"
+          value={input}
+          onChange={(e) => {
+            const { value } = e.target;
+            setInput(value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              if (Object.keys(possiblePromos).includes(input)) {
+                dispatch({
+                  type: 'ADD_PROMO',
+                  payload: input,
+                });
+                setInput('');
+              }
+            }
+          }}
+        />
+        <button
+          className={classNames(style.submitButton, {
+            [style.active]: Object.keys(possiblePromos).includes(input),
+          })}
+          disabled={!Object.keys(possiblePromos).includes(input)}
+          type="button"
+          onClick={() => {
             if (Object.keys(possiblePromos).includes(input)) {
               dispatch({
                 type: 'ADD_PROMO',
@@ -28,30 +47,18 @@ export const PromoCodes = () => {
               });
               setInput('');
             }
-          }
-        }}
-      />
-      <button
-        className={style.submitButton}
-        disabled={!Object.keys(possiblePromos).includes(input)}
-        type="button"
-        onClick={() => {
-          if (Object.keys(possiblePromos).includes(input)) {
-            dispatch({
-              type: 'ADD_PROMO',
-              payload: input,
-            });
-            setInput('');
-          }
-        }}
-      >
-        Применить
-      </button>
+          }}
+        >
+          Применить
+        </button>
+      </div>
       {Object.keys(cartState.promos).length > 0 && (
-        <div>
-          {Object.keys(cartState.promos).map((promo) => (
-            <div key={promo}>
-              <p>{promo}</p>
+        <div className={style.promocodesWrapper}>
+          {Object.entries(cartState.promos).map(([promo, discount]) => (
+            <div className={style.promo} key={promo}>
+              <p>
+                {promo} -{discount}%
+              </p>
               <button
                 type="button"
                 className={style.deleteButton}
@@ -62,12 +69,13 @@ export const PromoCodes = () => {
                   });
                 }}
               >
-                <img className={style.deleteIcon} src={trashIcon} alt="Delete button" />
+                <img className={style.deleteIcon} src={x} alt="Delete button" />
               </button>
             </div>
           ))}
         </div>
       )}
+      <p className={style.hint}>Промокоды для теста: RS, WINTER</p>
     </div>
   );
 };
