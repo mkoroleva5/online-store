@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { IMaskInput } from 'react-imask';
 import style from './CheckoutPage.module.css';
 
 interface CheckoutPageProps {
@@ -5,6 +7,14 @@ interface CheckoutPageProps {
 }
 
 export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
+  const ref = useRef(null);
+  const inputRef = useRef(null);
+  /* const phoneMask = IMask(ref, {
+    mask: '+{7}(000)000-00-00',
+    lazy: false, // make placeholder always visible
+    placeholderChar: '#', // defaults to '_'
+  }); */
+
   return (
     <div
       className={style.checkoutPageWrapper}
@@ -28,7 +38,29 @@ export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
           <span className={style.inputTitle}>Имя и Фамилия</span>
         </div>
         <div className={style.inputWrapper}>
-          <input className={style.input} type="text" required />
+          <IMaskInput
+            className={style.input}
+            mask="+{375}(00)000-00-00"
+            radix="."
+            value=""
+            lazy={false}
+            unmask // true|false|'typed'
+            ref={ref}
+            inputRef={inputRef} // access to nested input
+            // DO NOT USE onChange TO HANDLE CHANGES!
+            // USE onAccept INSTEAD
+            onAccept={
+              // depending on prop above first argument is
+              // `value` if `unmask=false`,
+              // `unmaskedValue` if `unmask=true`,
+              // `typedValue` if `unmask='typed'`
+              (value) => console.log(value)
+            }
+            // ...and more mask props in a guide
+
+            // input props also available
+            // placeholder="Enter number here"
+          />
           <span className={style.inputTitle}>Телефон</span>
         </div>
         <div className={style.inputWrapper}>
