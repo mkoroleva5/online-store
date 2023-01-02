@@ -91,7 +91,7 @@ export const Cart = () => {
               <span className={style.boldText}>
                 {totalItems} {countItems(totalItems)}
               </span>{' '}
-              на сумму <span className={style.boldText}>{totalCost} BYN</span>:
+              на сумму <span className={style.boldText}>{totalCostDiscounted} BYN</span>:
             </div>
             <div className={style.items}>
               {allCards.slice(
