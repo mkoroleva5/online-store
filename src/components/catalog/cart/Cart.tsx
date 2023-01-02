@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { countTotalCost, countTotalItems } from '../../../store/CartStore';
+import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
 import { CartState } from '../../cartState';
 import style from './Cart.module.css';
@@ -10,6 +10,7 @@ import arrowLeft from '../../../assets/icons/chevron-left.svg';
 import arrowRight from '../../../assets/icons/chevron-right.svg';
 import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
+import { PromoCodes } from '../../basic-components/PromoCodes';
 
 export const Cart = () => {
   const { cartState } = useContext(CartState);
@@ -160,14 +161,18 @@ export const Cart = () => {
             </div>
           </div>
           <div className={style.totalWrapper}>
-            <form className={style.promo}>
-              <label htmlFor="promo">Промокод:</label>
-              <input className={style.promoInput} type="text" id="promo" />
-              <button className={style.submitButton} type="submit">
-                Применить
-              </button>
-            </form>
-            <div className={style.total}>Итого: {totalCost} BYN</div>
+            <PromoCodes />
+            <div className={style.total}>
+              Итого: <p>{totalCost} BYN</p>
+              {Object.keys(cartState.promos).length > 0 && (
+                <p>
+                  {countTotalCostDiscount(
+                    +totalCost,
+                    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+                  )}
+                </p>
+              )}
+            </div>
           </div>
           <div className={style.orderWrapper}>
             <button type="button" className={style.orderButton} onClick={() => {}}>

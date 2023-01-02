@@ -1,0 +1,67 @@
+.promo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.promo-input {
+  height: 3rem;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  text-indent: 5px;
+}
+
+.promo-input:focus {
+  outline: 1px solid var(--gray-color);
+}
+
+.submit-button {
+  height: 3rem;
+  padding: 0 1rem;
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.8rem;
+  color: var(--gray-color);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #bbbbbb;
+  color: white;
+}
+.delete-button {
+  all: unset;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.delete-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.delete-button:hover .delete-icon {
+  animation: rotate 1s normal linear infinite;
+  -webkit-animation: rotate 1s normal linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
