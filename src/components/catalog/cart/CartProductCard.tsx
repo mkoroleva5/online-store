@@ -41,7 +41,7 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
                 else setIsImageLoaded(false);
               }}
             />
-            {!isImageLoaded && <ImageSpinner />}
+            {!isImageLoaded && <ImageSpinner sizeClass="card-spinner" />}
           </div>
 
           <div className={style.itemInfo}>
