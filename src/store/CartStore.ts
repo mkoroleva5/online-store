@@ -1,4 +1,4 @@
-import { CartStateProps } from '../components/cartState';
+import { CartStateProps, possiblePromos } from '../components/cartState';
 import { CartProduct } from '../data/product';
 import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
@@ -10,6 +10,10 @@ export const countTotalCost = (productsObj: Record<number, CartProduct>) => {
   return Object.values(productsObj)
     .reduce((acc, item) => acc + item.amount * item.price, 0)
     .toFixed(2);
+};
+
+export const countTotalCostDiscount = (totalCost: number, totalDiscount: number) => {
+  return (totalCost - (totalCost / 100) * totalDiscount).toFixed(2);
 };
 
 export const cartReducer = (state: CartStateProps, action: CartActionType) => {
@@ -69,6 +73,31 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       };
       setLS(localStorageCartStateName, newState);
       return newState;
+    }
+    case 'ADD_PROMO': {
+      if (Object.keys(state.promos).includes(action.payload)) {
+        return state;
+      }
+      const newState = {
+        ...state,
+        promos: {
+          ...state.promos,
+          [action.payload]: possiblePromos[action.payload],
+        },
+      };
+      setLS(localStorageCartStateName, newState);
+      return newState;
+    }
+    case 'REMOVE_PROMO': {
+      if (Object.keys(state.promos).includes(action.payload)) {
+        const newState = {
+          ...state,
+        };
+        delete newState.promos[action.payload];
+        setLS(localStorageCartStateName, newState);
+        return newState;
+      }
+      return state;
     }
     default:
       setLS(localStorageCartStateName, state);

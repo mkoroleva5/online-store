@@ -1,9 +1,27 @@
 import style from './CheckoutPage.module.css';
 
-export const CheckoutPage = () => {
+interface CheckoutPageProps {
+  onClose: () => void;
+}
+
+export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
   return (
-    <div className={style.checkoutPageWrapper}>
-      <div className={style.checkoutModalWrapper}>
+    <div
+      className={style.checkoutPageWrapper}
+      onClick={() => onClose()}
+      onKeyDown={() => {}}
+      role="button"
+      tabIndex={0}
+    >
+      <div
+        className={style.checkoutModalWrapper}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        onKeyDown={() => {}}
+        role="button"
+        tabIndex={0}
+      >
         <div className={style.modalTitle}>Персональная информация</div>
         <div className={style.inputWrapper}>
           <input className={style.input} type="text" required />

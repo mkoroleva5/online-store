@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { countTotalCost, countTotalItems } from '../../../store/CartStore';
+import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
 import { CartState } from '../../cartState';
 import style from './Cart.module.css';
@@ -11,12 +11,18 @@ import arrowLeft from '../../../assets/icons/chevron-left.svg';
 import arrowRight from '../../../assets/icons/chevron-right.svg';
 import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
+import { PromoCodes } from '../../basic-components/PromoCodes';
 
 export const Cart = () => {
   const { cartState } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
   const [isCheckout, setIsCheckout] = useState(false);
+  const totalCostDiscounted = countTotalCostDiscount(
+    +totalCost,
+    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+  );
+
   const [currentPage, setCurrentPage] = useState(getSearchValue('page') ?? 1);
   const [cardsPerPage, setCardsPerPage] = useState(getSearchValue('limit') ?? 3);
   const [lastPage, setLastPage] = useState(
@@ -75,9 +81,13 @@ export const Cart = () => {
     }
   }, [lastPage, currentPage]);
 
+  const handleModalClose = () => {
+    setIsCheckout(false);
+  };
+
   return (
     <>
-      {isCheckout && <CheckoutPage />}
+      {isCheckout && <CheckoutPage onClose={handleModalClose} />}
       <section className={style.cartWrapper}>
         {!Object.keys(cartState.products).length ? (
           <EmptyCart />
@@ -89,91 +99,96 @@ export const Cart = () => {
                 <span className={style.boldText}>
                   {totalItems} {countItems(totalItems)}
                 </span>{' '}
-                на сумму <span className={style.boldText}>{totalCost} BYN</span>:
+                на сумму <span className={style.boldText}>{totalCostDiscounted} BYN</span>:
               </div>
-            </div>
-            <div className={style.items}>
-              {allCards.slice(
-                +cardsPerPage * +currentPage - +cardsPerPage,
-                +cardsPerPage * +currentPage,
-              )}
-            </div>
-            <div className={style.paginationWrapper}>
-              <label className={style.cardsPerPageLabel} htmlFor="cardsPerPage">
-                Отображать на странице:
-                <input
-                  className={style.cardsPerPageInput}
-                  id="cardsPerPage"
-                  type="number"
-                  min="1"
-                  value={cardsPerPage}
-                  onChange={(e) => {
-                    handleCardsPerPageInput(e);
-                  }}
-                />
-              </label>
-              <div className={style.pagesWrapper}>
-                <button
-                  className={style.switchPageButton}
-                  type="button"
-                  onClick={() => {
-                    if (currentPage > 1) {
-                      const page = getSearchValue('page');
-                      if (page) {
-                        updateSearchValue('page', `${+page - 1}`);
-                      } else {
-                        updateSearchValue('page', '1');
+              <div className={style.items}>
+                {allCards.slice(
+                  +cardsPerPage * +currentPage - +cardsPerPage,
+                  +cardsPerPage * +currentPage,
+                )}
+              </div>
+              <div className={style.paginationWrapper}>
+                <label className={style.cardsPerPageLabel} htmlFor="cardsPerPage">
+                  Отображать на странице:
+                  <input
+                    className={style.cardsPerPageInput}
+                    id="cardsPerPage"
+                    type="number"
+                    min="1"
+                    value={cardsPerPage}
+                    onChange={(e) => {
+                      handleCardsPerPageInput(e);
+                    }}
+                  />
+                </label>
+                <div className={style.pagesWrapper}>
+                  <button
+                    className={style.switchPageButton}
+                    type="button"
+                    onClick={() => {
+                      if (currentPage > 1) {
+                        const page = getSearchValue('page');
+                        if (page) {
+                          updateSearchValue('page', `${+page - 1}`);
+                        } else {
+                          updateSearchValue('page', '1');
+                        }
                       }
-                    }
-                  }}
-                >
-                  <img className={style.arrowImage} src={arrowLeft} alt="Previous page" />
-                </button>
-                <div className={style.pages}>
-                  {pages.map((item) => (
-                    <button
-                      className={classNames(style.pageButton, {
-                        [style.activePage]: item === currentPage,
-                      })}
-                      key={item}
-                      type="button"
-                      onClick={() => {
-                        updateSearchValue('page', `${item}`);
-                      }}
-                    >
-                      {item}
-                    </button>
-                  ))}
+                    }}
+                  >
+                    <img className={style.arrowImage} src={arrowLeft} alt="Previous page" />
+                  </button>
+                  <div className={style.pages}>
+                    {pages.map((item) => (
+                      <button
+                        className={classNames(style.pageButton, {
+                          [style.activePage]: item === currentPage,
+                        })}
+                        key={item}
+                        type="button"
+                        onClick={() => {
+                          updateSearchValue('page', `${item}`);
+                        }}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    className={style.switchPageButton}
+                    type="button"
+                    onClick={() => {
+                      if (currentPage < pages.length) {
+                        const page = getSearchValue('page');
+                        if (page) {
+                          updateSearchValue('page', `${+page + 1}`);
+                        } else {
+                          updateSearchValue('page', '1');
+                        }
+                      }
+                    }}
+                  >
+                    <img className={style.arrowImage} src={arrowRight} alt="Next page" />
+                  </button>
                 </div>
-                <button
-                  className={style.switchPageButton}
-                  type="button"
-                  onClick={() => {
-                    if (currentPage < pages.length) {
-                      const page = getSearchValue('page');
-                      if (page) {
-                        updateSearchValue('page', `${+page + 1}`);
-                      } else {
-                        updateSearchValue('page', '1');
-                      }
-                    }
-                  }}
-                >
-                  <img className={style.arrowImage} src={arrowRight} alt="Next page" />
-                </button>
               </div>
             </div>
             <div className={style.totalWrapper}>
-              <form className={style.promo}>
-                <label htmlFor="promo">Промокод:</label>
-                <input className={style.promoInput} type="text" id="promo" />
-                <button className={style.submitButton} type="submit">
-                  Применить
-                </button>
-              </form>
-              <div className={style.total}>Итого: {totalCost} BYN</div>
+              <PromoCodes />
+              <div className={style.totalCostWrapper}>
+                <div>Итого: </div>
+                <div className={style.total}>
+                  <p
+                    className={classNames({
+                      [style.crossed]: Object.keys(cartState.promos).length > 0,
+                    })}
+                  >
+                    {totalCost} BYN
+                  </p>
+                  {Object.keys(cartState.promos).length > 0 && <p>{totalCostDiscounted} BYN</p>}
+                </div>
+              </div>
             </div>
-
             <div className={style.orderWrapper}>
               <button
                 type="button"
