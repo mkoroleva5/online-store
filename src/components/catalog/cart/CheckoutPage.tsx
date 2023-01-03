@@ -1,6 +1,29 @@
 import { useRef } from 'react';
 import { IMaskInput } from 'react-imask';
+import { Input } from '../../basic-components/Input';
 import style from './CheckoutPage.module.css';
+
+/* const dateMask = () => {
+    return {
+      mask: Date, // enable date mask
+      // other options are optional
+      pattern: 'MM/YY', // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
+      // you can provide your own blocks definitions, default blocks for date mask are:
+      blocks: {
+        MM: {
+          mask: IMask.MaskedRange,
+          from: 1,
+          to: 12,
+          maxLength: 2,
+        },
+        YY: {
+          mask: IMask.MaskedRange,
+          from: 2023,
+          to: 9999,
+        },
+      },
+    };
+  }; */
 
 interface CheckoutPageProps {
   onClose: () => void;
@@ -9,11 +32,11 @@ interface CheckoutPageProps {
 export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
   const ref = useRef(null);
   const inputRef = useRef(null);
-  /* const phoneMask = IMask(ref, {
-    mask: '+{7}(000)000-00-00',
-    lazy: false, // make placeholder always visible
-    placeholderChar: '#', // defaults to '_'
-  }); */
+
+  const CVVRef = useRef();
+  const handleCVVChange = (element: HTMLInputElement) => {
+    console.log(element);
+  };
 
   return (
     <div
@@ -33,10 +56,8 @@ export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
         tabIndex={0}
       >
         <div className={style.modalTitle}>Персональная информация</div>
-        <div className={style.inputWrapper}>
-          <input className={style.input} type="text" required />
-          <span className={style.inputTitle}>Имя и Фамилия</span>
-        </div>
+        <Input type="text" pattern="[a-zA-Z]{3,}(\s[a-zA-Z]{3,})+" title="Имя и Фамилия" />
+
         <div className={style.inputWrapper}>
           <IMaskInput
             className={style.input}
@@ -63,29 +84,37 @@ export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
           />
           <span className={style.inputTitle}>Телефон</span>
         </div>
-        <div className={style.inputWrapper}>
-          <input className={style.input} type="text" required />
-          <span className={style.inputTitle}>Адрес доставки</span>
-        </div>
-        <div className={style.inputWrapper}>
-          <input className={style.input} type="e-mail" required />
-          <span className={style.inputTitle}>E-mail</span>
-        </div>
+        <Input
+          type="text"
+          pattern="[a-zA-Z]{5,}\s[a-zA-Z]{5,}(\s[a-zA-Z]{5,})+"
+          title="Адрес доставки"
+        />
+        <Input
+          type="e-mail"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          title="E-mail"
+        />
 
         <div className={style.creditCardDetails}>
           <div className={style.creditCardTitle}>Данные кредитной карты</div>
           <div className={style.creditCard}>
-            <div className={style.inputWrapper}>
-              <input className={style.input} type="text" required />
-              <span className={style.inputTitle}>Номер карты</span>
-            </div>
-            <div className={style.inputWrapper}>
-              <input className={style.input} type="text" required />
-              <span className={style.inputTitle}>Годен до</span>
-            </div>
-            <div className={style.inputWrapper}>
-              <input className={style.input} type="text" required />
-              <span className={style.inputTitle}>CVV</span>
+            <Input
+              type="text"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              title="Номер карты"
+            />
+
+            <div className={style.creditNumbersWrapper}>
+              <Input type="text" pattern="[0-9][0-9]/[0-9][0-9]" title="Годен до" />
+              <Input
+                type="text"
+                pattern="[0-9]{3}"
+                title="CVV"
+                ref={CVVRef}
+                onChange={() => {
+                  if (CVVRef.current) handleCVVChange(CVVRef);
+                }}
+              />
             </div>
           </div>
         </div>
