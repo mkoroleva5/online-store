@@ -110,6 +110,7 @@ export const Catalog = () => {
         (filterState.maxStock ? el.stock < filterState.maxStock : el)
       );
     });
+
     const sortValue = getSearchValue('sort');
     if (sortValue) {
       if (sortValue === 'nameup') {
