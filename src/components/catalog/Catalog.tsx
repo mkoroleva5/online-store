@@ -57,7 +57,11 @@ export const Catalog = () => {
 
     setIsPathError(false);
 
-    if (categoryRoutes.includes(pathChunksInitial[0]) || pathChunksInitial[0] === undefined) {
+    if (
+      categoryRoutes.includes(pathChunksInitial[0]) ||
+      pathChunksInitial[0] === undefined ||
+      pathChunksInitial[0] === 'cart'
+    ) {
       if (pathChunksInitial.length < 2) {
         setIsProductPageView(false);
       } else if (
