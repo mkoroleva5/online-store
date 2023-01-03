@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { Product } from '../../../data/product';
+import { categoryRoutes } from '../../../services/routes';
 import { history } from '../../../store/History';
 import style from './CategoriesMenu.module.css';
 
@@ -9,9 +10,6 @@ interface CategoriesMenuProps {
 }
 export const CategoriesMenu = ({ products, activeCategory }: CategoriesMenuProps) => {
   const categories = [...new Set(products.map((item): string => item.category))];
-  const paths = [
-    ...new Set(products.filter((el) => el.catPath).map((item): string => item.catPath)),
-  ];
 
   return (
     <ul className={style.list}>
@@ -33,11 +31,11 @@ export const CategoriesMenu = ({ products, activeCategory }: CategoriesMenuProps
             <button
               type="button"
               className={classNames(style.item, {
-                [style.active]: activeCategory === paths[index],
+                [style.active]: activeCategory === categoryRoutes[index],
               })}
               onClick={() => {
                 const searchParams = new URLSearchParams(history.location.search);
-                history.push({ pathname: paths[index], search: searchParams.toString() });
+                history.push({ pathname: categoryRoutes[index], search: searchParams.toString() });
               }}
             >
               {item}

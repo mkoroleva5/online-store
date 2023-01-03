@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import style from './Catalog.module.css';
 import { ProductCard } from './productCard/ProductCard';
 import products from '../../data/products.json';
@@ -16,11 +16,14 @@ import { ProductPage } from './productPage/ProductPage';
 import { Cart } from './cart/Cart';
 import { SortBy } from './types';
 import { sortArray } from '../../utils/sortFunction';
+import { categoryRoutes, productRoutes } from '../../services/routes';
+import { Page404 } from '../basic-components/Page404';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
   const [categoryPath, setCategoryPath] = useState('/');
   const [isProductPageView, setIsProductPageView] = useState(false);
+  const [isPathError, setIsPathError] = useState(false);
 
   const updateFilterState = () => {
     setFilterState((prevState) => {
@@ -48,34 +51,44 @@ export const Catalog = () => {
     });
   };
 
-  useEffect(() => {
-    const pathChunksInitial = parsePathname(history.location.pathname);
-
+  const checkRouting = useCallback((pathname: string) => {
+    const pathChunksInitial = parsePathname(pathname);
     setCategoryPath(pathChunksInitial[0]);
-    if (pathChunksInitial.length < 2) {
-      setIsProductPageView(false);
-    } else if (pathChunksInitial.length === 2) {
-      setIsProductPageView(true);
+
+    setIsPathError(false);
+
+    if (categoryRoutes.includes(pathChunksInitial[0]) || pathChunksInitial[0] === undefined) {
+      if (pathChunksInitial.length < 2) {
+        setIsProductPageView(false);
+      } else if (
+        pathChunksInitial.length === 2 &&
+        productRoutes.filter(
+          (prod) => prod[0] === pathChunksInitial[0] && prod[1] === +pathChunksInitial[1],
+        ).length > 0
+      ) {
+        setIsProductPageView(true);
+      } else {
+        setIsProductPageView(false);
+        setIsPathError(true);
+      }
+    } else {
+      setIsPathError(true);
     }
+
     updateFilterState();
+  }, []);
+
+  useEffect(() => {
+    checkRouting(history.location.pathname);
 
     const unlisten = history.listen(({ location }) => {
-      const pathChunks = parsePathname(location.pathname);
-      setCategoryPath(pathChunks[0]);
-
-      if (pathChunks.length < 2) {
-        setIsProductPageView(false);
-      } else if (pathChunks.length === 2) {
-        setIsProductPageView(true);
-      }
-
-      updateFilterState();
+      checkRouting(location.pathname);
     });
 
     return () => {
       unlisten();
     };
-  }, []);
+  }, [checkRouting]);
 
   const filteredProducts = useMemo(() => {
     const filteredProductsArray = products.filter((el) => {
@@ -123,32 +136,38 @@ export const Catalog = () => {
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
         <div className={style.mainWrapper}>
-          {isCartOpen && <Cart />}
-          {!isCartOpen && isProductPageView && product && <ProductPage product={product} />}
-          {!isCartOpen && !isProductPageView && (
+          {isPathError ? (
+            <Page404 />
+          ) : (
             <>
-              <Filter filteredProducts={filteredProducts} />
-              <section className={style.catalogWrapper}>
-                <CategoriesMenu products={products} activeCategory={categoryPath} />
-                <CatalogMenu />
-                {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
-                <div
-                  className={classNames(style.productsWrapper, {
-                    [style.list]: filterState.display === 'list',
-                  })}
-                >
-                  {filteredProducts.map((item) => {
-                    return (
-                      <ProductCard
-                        key={item.id}
-                        product={item}
-                        layout={filterState.display}
-                        path={`/${item.catPath}/${item.id}`}
-                      />
-                    );
-                  })}
-                </div>
-              </section>
+              {isCartOpen && <Cart />}
+              {!isCartOpen && isProductPageView && product && <ProductPage product={product} />}
+              {!isCartOpen && !isProductPageView && (
+                <>
+                  <Filter filteredProducts={filteredProducts} />
+                  <section className={style.catalogWrapper}>
+                    <CategoriesMenu products={products} activeCategory={categoryPath} />
+                    <CatalogMenu />
+                    {checkFilterState(filterState) && <Matches length={filteredProducts.length} />}
+                    <div
+                      className={classNames(style.productsWrapper, {
+                        [style.list]: filterState.display === 'list',
+                      })}
+                    >
+                      {filteredProducts.map((item) => {
+                        return (
+                          <ProductCard
+                            key={item.id}
+                            product={item}
+                            layout={filterState.display}
+                            path={`/${item.catPath}/${item.id}`}
+                          />
+                        );
+                      })}
+                    </div>
+                  </section>
+                </>
+              )}
             </>
           )}
         </div>
