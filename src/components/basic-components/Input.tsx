@@ -1,24 +1,13 @@
-import { MutableRefObject } from 'react';
 import style from './Input.module.css';
 
-interface InputProps {
-  type: string;
-  pattern: string;
+type InputProps = {
   title: string;
-  onChange?: () => void;
-  ref?: MutableRefObject<undefined>;
-}
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ type, pattern, title, ref, onChange }: InputProps) => {
+export const Input = ({ title, value, ...rest }: InputProps) => {
   return (
     <div className={style.inputWrapper}>
-      <input
-        className={style.input}
-        type={type}
-        pattern={pattern}
-        ref={ref?.current}
-        onChange={onChange}
-      />
+      <input className={style.input} value={value} {...rest} />
       <span className={style.inputTitle}>{title}</span>
     </div>
   );

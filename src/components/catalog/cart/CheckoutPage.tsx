@@ -1,14 +1,46 @@
-import { useRef } from 'react';
-import { IMaskInput } from 'react-imask';
-import { Input } from '../../basic-components/Input';
+import IMask from 'imask';
+import { useIMask } from 'react-imask';
+import { useState } from 'react';
+import classNames from 'classnames';
 import style from './CheckoutPage.module.css';
+import world from '../../../assets/images/world.png';
+import visa from '../../../assets/images/visa.png';
+import mastercard from '../../../assets/images/mastercard.png';
+import americanExpress from '../../../assets/images/american-express.png';
 
-/* const dateMask = () => {
-    return {
-      mask: Date, // enable date mask
-      // other options are optional
-      pattern: 'MM/YY', // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
-      // you can provide your own blocks definitions, default blocks for date mask are:
+interface CheckoutPageProps {
+  onClose: () => void;
+}
+
+export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
+  const { ref: phone, unmaskedValue: PHONE } = useIMask(
+    {
+      mask: '+{375}(00)000-00-00',
+      radix: '.',
+      lazy: true,
+      unmask: true,
+    },
+    {
+      onAccept: () => {},
+    },
+  );
+
+  const { ref: card, unmaskedValue: CARD } = useIMask(
+    {
+      mask: '0000 0000 0000 0000',
+      radix: '.',
+      lazy: true,
+      unmask: true,
+    },
+    {
+      onAccept: () => {},
+    },
+  );
+
+  const { ref: expire, unmaskedValue: EXPIRE } = useIMask(
+    {
+      radix: '.',
+      mask: 'MM/YY',
       blocks: {
         MM: {
           mask: IMask.MaskedRange,
@@ -18,25 +50,40 @@ import style from './CheckoutPage.module.css';
         },
         YY: {
           mask: IMask.MaskedRange,
-          from: 2023,
-          to: 9999,
+          from: 23,
+          to: 99,
         },
       },
-    };
-  }; */
+      lazy: true,
+      unmask: true,
+    },
+    {
+      onAccept: () => {},
+    },
+  );
 
-interface CheckoutPageProps {
-  onClose: () => void;
-}
+  const { ref: cvv, typedValue: CVV } = useIMask(
+    {
+      mask: '000',
+      radix: '.',
+      lazy: true,
+      unmask: true,
+    },
+    {
+      onAccept: () => {},
+    },
+  );
 
-export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
-  const ref = useRef(null);
-  const inputRef = useRef(null);
-
-  const CVVRef = useRef();
-  const handleCVVChange = (element: HTMLInputElement) => {
-    console.log(element);
+  const changePaymentSystem = (digit: string) => {
+    if (digit === '3') return americanExpress;
+    if (digit === '4') return visa;
+    if (digit === '5') return mastercard;
+    return world;
   };
+
+  const [isEmptyName, setIsEmptyName] = useState(true);
+  const [isEmptyAddress, setIsEmptyAddress] = useState(true);
+  const [isEmptyEmail, setIsEmptyEmail] = useState(true);
 
   return (
     <div
@@ -55,73 +102,120 @@ export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
         role="button"
         tabIndex={0}
       >
-        <div className={style.modalTitle}>Персональная информация</div>
-        <Input type="text" pattern="[a-zA-Z]{3,}(\s[a-zA-Z]{3,})+" title="Имя и Фамилия" />
-
-        <div className={style.inputWrapper}>
-          <IMaskInput
-            className={style.input}
-            mask="+{375}(00)000-00-00"
-            radix="."
-            value=""
-            lazy={false}
-            unmask // true|false|'typed'
-            ref={ref}
-            inputRef={inputRef} // access to nested input
-            // DO NOT USE onChange TO HANDLE CHANGES!
-            // USE onAccept INSTEAD
-            onAccept={
-              // depending on prop above first argument is
-              // `value` if `unmask=false`,
-              // `unmaskedValue` if `unmask=true`,
-              // `typedValue` if `unmask='typed'`
-              (value) => console.log(value)
-            }
-            // ...and more mask props in a guide
-
-            // input props also available
-            // placeholder="Enter number here"
-          />
-          <span className={style.inputTitle}>Телефон</span>
-        </div>
-        <Input
-          type="text"
-          pattern="[a-zA-Z]{5,}\s[a-zA-Z]{5,}(\s[a-zA-Z]{5,})+"
-          title="Адрес доставки"
-        />
-        <Input
-          type="e-mail"
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-          title="E-mail"
-        />
-
-        <div className={style.creditCardDetails}>
-          <div className={style.creditCardTitle}>Данные кредитной карты</div>
-          <div className={style.creditCard}>
-            <Input
+        <form className={style.formWrapper}>
+          <div className={style.modalTitle}>Персональная информация</div>
+          <div className={style.inputWrapper}>
+            <input
+              className={style.input}
+              pattern="[a-zA-Zа-яА-Я]{3,}(\s[a-zA-Zа-яА-Я]{3,})+"
               type="text"
-              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-              title="Номер карты"
+              onChange={(e) => {
+                const { value } = e.target;
+                if (value) {
+                  setIsEmptyName(false);
+                } else {
+                  setIsEmptyName(true);
+                }
+              }}
             />
+            <span className={classNames(style.inputTitle, { [style.empty]: isEmptyName })}>
+              Имя и Фамилия
+            </span>
+          </div>
+          <div className={style.inputWrapper}>
+            <input
+              ref={phone}
+              className={style.input}
+              pattern="^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9]){7}$"
+              type="text"
+            />
+            <span className={classNames(style.inputTitle, { [style.empty]: !PHONE })}>Телефон</span>
+          </div>
+          <div className={style.inputWrapper}>
+            <input
+              className={style.input}
+              pattern="[a-zA-Zа-яА-Я]{5,}\s[a-zA-Zа-яА-Я]{5,}(\s[a-zA-Zа-яА-Я]{5,})+"
+              type="text"
+              onChange={(e) => {
+                const { value } = e.target;
+                if (value) {
+                  setIsEmptyAddress(false);
+                } else {
+                  setIsEmptyAddress(true);
+                }
+              }}
+            />
+            <span className={classNames(style.inputTitle, { [style.empty]: isEmptyAddress })}>
+              Адрес доставки
+            </span>
+          </div>
+          <div className={style.inputWrapper}>
+            <input
+              className={style.input}
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              type="e-mail"
+              onChange={(e) => {
+                const { value } = e.target;
+                if (value) {
+                  setIsEmptyEmail(false);
+                } else {
+                  setIsEmptyEmail(true);
+                }
+              }}
+            />
+            <span className={classNames(style.inputTitle, { [style.empty]: isEmptyEmail })}>
+              E-mail
+            </span>
+          </div>
 
-            <div className={style.creditNumbersWrapper}>
-              <Input type="text" pattern="[0-9][0-9]/[0-9][0-9]" title="Годен до" />
-              <Input
-                type="text"
-                pattern="[0-9]{3}"
-                title="CVV"
-                ref={CVVRef}
-                onChange={() => {
-                  if (CVVRef.current) handleCVVChange(CVVRef);
-                }}
-              />
+          <div className={style.creditCardDetails}>
+            <div className={style.creditCardTitle}>Данные кредитной карты</div>
+            <div className={style.creditCard}>
+              <div className={style.creditNumberWrapper}>
+                <div className={style.paymentSystem}>
+                  <img
+                    className={style.paymentSystemLogo}
+                    src={changePaymentSystem(CARD[0])}
+                    alt="Payment system"
+                  />
+                </div>
+                <div className={style.inputWrapper}>
+                  <input
+                    ref={card}
+                    className={style.input}
+                    pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}"
+                    type="text"
+                  />
+                  <span className={classNames(style.inputTitle, { [style.empty]: !CARD })}>
+                    Номер карты
+                  </span>
+                </div>
+              </div>
+
+              <div className={style.creditDataWrapper}>
+                <div className={style.inputWrapper}>
+                  <input
+                    ref={expire}
+                    className={style.input}
+                    pattern="[0-9]{2}\/[0-9]{2}"
+                    type="text"
+                  />
+                  <span className={classNames(style.inputTitle, { [style.empty]: !EXPIRE })}>
+                    Годен до
+                  </span>
+                </div>
+                <div className={style.inputWrapper}>
+                  <input ref={cvv} className={style.input} pattern="[0-9]{3}" type="text" />
+                  <span className={classNames(style.inputTitle, { [style.empty]: !CVV })}>CVV</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <button type="button" className={style.orderButton} onClick={() => {}}>
-          Оформить заказ
-        </button>
+          <button type="submit" className={style.orderButton} onClick={() => {}}>
+            Оформить заказ
+          </button>
+        </form>
       </div>
     </div>
   );
