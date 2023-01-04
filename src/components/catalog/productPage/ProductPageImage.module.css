@@ -21,6 +21,16 @@
   transition: all ease-out 0.5s;
   opacity: 0;
   display: none;
+  cursor: pointer;
+}
+
+.enlarged-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.4rem;
+  outline: 3px solid white;
+  transition: all ease-out 0.5s;
+  display: none;
 }
 
 .loaded-img {

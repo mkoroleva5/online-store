@@ -8,7 +8,7 @@ interface ProductPageImageProps {
   src: string;
   title: string;
   index?: number;
-  classN: 'fullImg' | 'img';
+  classN: 'fullImg' | 'img' | 'enlargedImg';
 }
 
 export const ProductPageImage = ({
