@@ -45,7 +45,7 @@ export const Catalog = () => {
         maxPrice: maxPrice ? +maxPrice : null,
         minStock: minStock ? +minStock : null,
         maxStock: maxStock ? +maxStock : null,
-        sort: sortBy ?? 'nameup',
+        sort: sortBy ?? 'pricedown',
         display: displayState === 'list' ? 'list' : 'table',
       };
     });
@@ -115,7 +115,7 @@ export const Catalog = () => {
       );
     });
 
-    const sortValue = getSearchValue('sort');
+    const sortValue = filterState.sort;
     if (sortValue) {
       if (sortValue === 'nameup') {
         sortArray(filteredProductsArray, 'title', 'up');
