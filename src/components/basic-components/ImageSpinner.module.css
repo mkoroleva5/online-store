@@ -28,6 +28,12 @@
   height: 10rem;
 }
 
+.layered {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);

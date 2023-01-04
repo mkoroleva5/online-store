@@ -13,6 +13,7 @@ interface ProductPageProps {
 
 export const ProductPage = ({ product }: ProductPageProps) => {
   const [isActive, setIsActive] = useState(0);
+  const [isEnlarged, setIsEnlarged] = useState(false);
 
   return (
     <section className={style.wrapper}>
@@ -72,7 +73,13 @@ export const ProductPage = ({ product }: ProductPageProps) => {
               );
             })}
           </div>
-          <div className={style.fullImgWrapper}>
+          <div
+            className={style.fullImgWrapper}
+            onClick={() => setIsEnlarged(true)}
+            onKeyDown={() => {}}
+            role="button"
+            tabIndex={0}
+          >
             {product.images.map((el, index) => {
               return (
                 <ProductPageImage
@@ -86,6 +93,22 @@ export const ProductPage = ({ product }: ProductPageProps) => {
               );
             })}
           </div>
+          {isEnlarged && (
+            <button
+              className={style.enlargedImageWrapper}
+              type="button"
+              onClick={(e) => {
+                if (e.currentTarget === e.target) setIsEnlarged(false);
+              }}
+            >
+              <ProductPageImage
+                isActive={isActive}
+                src={product.images[isActive]}
+                title={product.title}
+                classN="enlargedImg"
+              />
+            </button>
+          )}
         </div>
         <div className={style.info}>
           <div className={style.infoItems}>

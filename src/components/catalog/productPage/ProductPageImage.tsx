@@ -8,7 +8,7 @@ interface ProductPageImageProps {
   src: string;
   title: string;
   index?: number;
-  classN: 'fullImg' | 'img';
+  classN: 'fullImg' | 'img' | 'enlargedImg';
 }
 
 export const ProductPageImage = ({
@@ -35,7 +35,7 @@ export const ProductPageImage = ({
           else setIsImageLoaded(false);
         }}
       />
-      {!isImageLoaded && <ImageSpinner displayList={false} />}
+      {!isImageLoaded && <ImageSpinner classN={classN} displayList={false} />}
     </>
   );
 };

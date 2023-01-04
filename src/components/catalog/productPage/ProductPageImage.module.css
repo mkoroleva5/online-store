@@ -21,6 +21,16 @@
   transition: all ease-out 0.5s;
   opacity: 0;
   display: none;
+  cursor: pointer;
+}
+
+.enlarged-img {
+  max-width: 90vh;
+  max-height: 90vh;
+  border-radius: 1.4rem;
+  outline: 3px solid white;
+  transition: all ease-out 0.5s;
+  display: none;
 }
 
 .loaded-img {
