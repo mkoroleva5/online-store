@@ -10,6 +10,12 @@
   opacity: 0.3;
 }
 
+.label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .option-input {
   display: none;
   width: 15px;
@@ -49,13 +55,13 @@
   transition-delay: 0.15s;
 }
 
-.option-input:checked ~ .checkbox {
+.option-input:checked ~ .label > .checkbox {
   border-color: transparent;
   background: #93d037;
   animation: jelly 0.6s ease;
 }
 
-.option-input:checked ~ .checkbox:after {
+.option-input:checked ~ .label > .checkbox:after {
   opacity: 1;
   transform: rotate(45deg) scale(1);
 }

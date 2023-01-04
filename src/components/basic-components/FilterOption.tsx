@@ -61,9 +61,11 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
           handleCheckBoxChange(currentGroup, filterGroup, isChecked, value);
         }}
       />
-      <label className={style.checkbox} htmlFor={`${filterGroup}-${id}`} />
-      <label className={style.optionLabel} htmlFor={`${filterGroup}-${id}`}>
-        {value} ({quantity})
+      <label className={style.label} htmlFor={`${filterGroup}-${id}`}>
+        <div className={style.checkbox} />
+        <div className={style.optionLabel}>
+          {value} ({quantity})
+        </div>
       </label>
     </div>
   );
