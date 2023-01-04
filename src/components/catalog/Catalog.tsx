@@ -45,7 +45,7 @@ export const Catalog = () => {
         maxPrice: maxPrice ? +maxPrice : null,
         minStock: minStock ? +minStock : null,
         maxStock: maxStock ? +maxStock : null,
-        sort: sortBy ?? 'nameup',
+        sort: sortBy ?? 'titleup',
         display: displayState === 'list' ? 'list' : 'table',
       };
     });
