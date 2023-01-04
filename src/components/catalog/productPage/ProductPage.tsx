@@ -94,28 +94,20 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             })}
           </div>
           {isEnlarged && (
-            <div
+            <button
               className={style.enlargedImageWrapper}
-              onClick={() => setIsEnlarged(false)}
-              onKeyDown={() => {}}
-              role="button"
-              tabIndex={0}
+              type="button"
+              onClick={(e) => {
+                if (e.currentTarget === e.target) setIsEnlarged(false);
+              }}
             >
-              <div
-                className={style.enlargedImage}
-                onClick={(e) => e.stopPropagation()}
-                onKeyDown={() => {}}
-                role="button"
-                tabIndex={0}
-              >
-                <ProductPageImage
-                  isActive={isActive}
-                  src={product.images[isActive]}
-                  title={product.title}
-                  classN="enlargedImg"
-                />
-              </div>
-            </div>
+              <ProductPageImage
+                isActive={isActive}
+                src={product.images[isActive]}
+                title={product.title}
+                classN="enlargedImg"
+              />
+            </button>
           )}
         </div>
         <div className={style.info}>
