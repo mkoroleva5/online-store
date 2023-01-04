@@ -1,6 +1,6 @@
 import { Product } from '../data/product';
 
-export type CartActionType = ProductAction | ProductAmountAction | PromosAction;
+export type CartActionType = ProductAction | ProductAmountAction | CartAction | PromosAction;
 
 interface ProductAction {
   type: 'ADD_PRODUCT' | 'REMOVE_PRODUCT';
@@ -9,6 +9,10 @@ interface ProductAction {
 interface ProductAmountAction {
   type: 'INCREASE_PRODUCT' | 'DECREASE_PRODUCT';
   payload: Product['id'];
+}
+
+interface CartAction {
+  type: 'CLEAR_CART';
 }
 
 interface PromosAction {
