@@ -39,7 +39,7 @@
 .modal-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .input-wrapper {
@@ -75,7 +75,8 @@
   outline: 1px solid var(--gray-color);
 }
 
-.input:invalid {
+.input:focus:invalid,
+.input:not(:focus):invalid {
   outline: 1px solid red;
 }
 
@@ -88,10 +89,15 @@
   opacity: 1;
 }
 
-.input:not(:focus):valid ~ .empty {
+.input:not(:focus):invalid ~ .empty {
   left: 1rem;
   top: 1.8rem;
   font-size: 1.6rem;
+}
+
+.input:focus:invalid.empty-input,
+.input:not(:focus):invalid.empty-input {
+  outline: none;
 }
 
 .credit-card-details {
@@ -102,8 +108,9 @@
 }
 
 .credit-card-title {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
+
 .credit-card {
   max-width: 40rem;
   height: 20rem;
@@ -177,7 +184,7 @@
 
 .order-page-wrapper {
   min-width: 40rem;
-  min-height: 50rem;
+  min-height: 57rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
