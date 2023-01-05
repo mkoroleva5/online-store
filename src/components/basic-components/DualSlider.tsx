@@ -12,17 +12,23 @@ interface RangesType {
 }
 
 export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
+  const sliderName = sliderGroup[0].toUpperCase() + sliderGroup.slice(1);
   const filterState = useContext(FilterState);
-  const filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
-  const filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
+  let filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
+  if (filterMin) {
+    if (filterMin < min) filterMin = min;
+    else if (filterMin > max) filterMin = max - 1;
+  }
+  let filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
+  if (filterMax) {
+    if (filterMax > max) filterMax = max;
+    else if (filterMax < min) filterMax = min + 1;
+  }
   const [minVal, setMinVal] = useState(filterMin ?? min);
   const [maxVal, setMaxVal] = useState(filterMax ?? max);
 
   const updateFilterState = useDebounce((value: number, minmax: string) => {
-    updateSearchValue(
-      `${minmax}${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
-      value.toFixed(2).toString(),
-    );
+    updateSearchValue(`${minmax}${sliderName}`, value.toFixed(0));
   }, 300);
 
   const getPercent = useCallback(
@@ -34,11 +40,15 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
   const maxPercent = getPercent(maxVal);
 
   useEffect(() => {
-    setMinVal(filterMin ?? min);
+    if (filterMin) {
+      setMinVal(filterMin < min ? min : filterMin);
+    }
   }, [filterMin, min]);
 
   useEffect(() => {
-    setMaxVal(filterMax ?? max);
+    if (filterMax) {
+      setMaxVal(filterMax > max ? max : filterMax);
+    }
   }, [filterMax, max]);
 
   return (
