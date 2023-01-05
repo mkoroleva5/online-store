@@ -8,21 +8,36 @@ import style from './DualSlider.module.css';
 interface RangesType {
   min: number;
   max: number;
+  filteredMin: number;
+  filteredMax: number;
   sliderGroup: 'price' | 'stock';
 }
 
-export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
+export const DualSlider = ({ min, max, filteredMin, filteredMax, sliderGroup }: RangesType) => {
+  const sliderName = sliderGroup[0].toUpperCase() + sliderGroup.slice(1);
   const filterState = useContext(FilterState);
-  const filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
-  const filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
-  const [minVal, setMinVal] = useState(filterMin ?? min);
-  const [maxVal, setMaxVal] = useState(filterMax ?? max);
+
+  let filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
+  let filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
+  if (filterMin && filterMax) {
+    if (filterMin > max && filterMax < min) {
+      filterMin = (filteredMax ?? filterMax ?? max) - 1;
+      filterMax = (filteredMin ?? filterMin ?? min) + 1;
+    }
+  }
+  if (filterMin) {
+    if (filterMin < min) filterMin = min;
+    else if (filterMin > max) filterMin = (filteredMax ?? filterMax ?? max) - 1;
+  }
+  if (filterMax) {
+    if (filterMax > max) filterMax = max;
+    else if (filterMax < min) filterMax = (filteredMin ?? filterMin ?? min) + 1;
+  }
+  const [minVal, setMinVal] = useState(filteredMin ?? filterMin ?? min);
+  const [maxVal, setMaxVal] = useState(filteredMax ?? filterMax ?? max);
 
   const updateFilterState = useDebounce((value: number, minmax: string) => {
-    updateSearchValue(
-      `${minmax}${sliderGroup === 'price' ? 'Price' : 'Stock'}`,
-      value.toFixed(2).toString(),
-    );
+    updateSearchValue(`${minmax}${sliderName}`, value.toFixed(0));
   }, 300);
 
   const getPercent = useCallback(
@@ -34,12 +49,12 @@ export const DualSlider = ({ min, max, sliderGroup }: RangesType) => {
   const maxPercent = getPercent(maxVal);
 
   useEffect(() => {
-    setMinVal(filterMin ?? min);
-  }, [filterMin, min]);
+    setMinVal(filterMin ?? filteredMin ?? min);
+  }, [filteredMin, filterMin, min]);
 
   useEffect(() => {
-    setMaxVal(filterMax ?? max);
-  }, [filterMax, max]);
+    setMaxVal(filterMax ?? filteredMax ?? max);
+  }, [filteredMax, filterMax, max]);
 
   return (
     <div className={style.container}>
