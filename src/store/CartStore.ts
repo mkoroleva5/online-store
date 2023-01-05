@@ -108,6 +108,11 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       }
       return state;
     }
+    case 'SET_CHECKOUT': {
+      const newState = { ...state, isCheckout: action.payload };
+      setLS(localStorageCartStateName, newState);
+      return newState;
+    }
     default:
       setLS(localStorageCartStateName, state);
       return state;

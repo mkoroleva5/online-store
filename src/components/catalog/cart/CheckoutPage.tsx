@@ -10,11 +10,7 @@ import americanExpress from '../../../assets/images/american-express.png';
 import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 
-interface CheckoutPageProps {
-  onClose: () => void;
-}
-
-export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
+export const CheckoutPage = () => {
   const { dispatch } = useContext(CartState);
   const [isEmptyName, setIsEmptyName] = useState(true);
   const [isEmptyAddress, setIsEmptyAddress] = useState(true);
@@ -96,7 +92,7 @@ export const CheckoutPage = ({ onClose }: CheckoutPageProps) => {
   return (
     <div
       className={style.checkoutPageWrapper}
-      onClick={() => onClose()}
+      onClick={() => dispatch({ type: 'SET_CHECKOUT', payload: false })}
       onKeyDown={() => {}}
       role="button"
       tabIndex={0}
