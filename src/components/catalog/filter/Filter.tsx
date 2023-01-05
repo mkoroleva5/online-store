@@ -21,6 +21,11 @@ interface FilteredProducts {
 }
 
 export const Filter = ({ filteredProducts }: FilteredProducts) => {
+  const filteredPrices = filteredProducts
+    .map((item): number => parseInt(item.price.toString(), 10))
+    .sort((a, b) => a - b);
+  const filteredStock = filteredProducts.map((item): number => item.stock).sort((a, b) => a - b);
+
   const resetFilters = () => {
     deleteSearchValue('search');
     deleteSearchValue('brand');
@@ -53,11 +58,23 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Цена</div>
-          <DualSlider min={prices[0]} max={prices[prices.length - 1]} sliderGroup="price" />
+          <DualSlider
+            min={prices[0]}
+            max={prices[prices.length - 1]}
+            filteredMin={filteredPrices[0]}
+            filteredMax={filteredPrices[filteredPrices.length - 1]}
+            sliderGroup="price"
+          />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Количество на складе</div>
-          <DualSlider min={stock[0]} max={stock[stock.length - 1]} sliderGroup="stock" />
+          <DualSlider
+            min={stock[0]}
+            max={stock[stock.length - 1]}
+            filteredMin={filteredStock[0]}
+            filteredMax={filteredStock[filteredStock.length - 1]}
+            sliderGroup="stock"
+          />
         </div>
         <div className={style.block}>
           <div className={style.blockTitle}>Бренд</div>
