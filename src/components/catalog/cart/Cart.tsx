@@ -14,10 +14,9 @@ import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers'
 import { PromoCodes } from '../../basic-components/PromoCodes';
 
 export const Cart = () => {
-  const { cartState } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartState);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const [isCheckout, setIsCheckout] = useState(false);
   const totalCostDiscounted = countTotalCostDiscount(
     +totalCost,
     Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
@@ -81,13 +80,9 @@ export const Cart = () => {
     }
   }, [lastPage, currentPage]);
 
-  const handleModalClose = () => {
-    setIsCheckout(false);
-  };
-
   return (
     <>
-      {isCheckout && <CheckoutPage onClose={handleModalClose} />}
+      {cartState.isCheckout && <CheckoutPage />}
       <section className={style.cartWrapper}>
         {!Object.keys(cartState.products).length ? (
           <EmptyCart />
@@ -194,7 +189,7 @@ export const Cart = () => {
                 type="button"
                 className={style.orderButton}
                 onClick={() => {
-                  setIsCheckout(true);
+                  dispatch({ type: 'SET_CHECKOUT', payload: true });
                 }}
               >
                 Оформить заказ
