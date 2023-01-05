@@ -4,7 +4,7 @@ import style from './ImageSpinner.module.css';
 interface ImageSpinnerProps {
   displayList?: boolean;
   sizeClass?: string;
-  classN: string;
+  classN?: string;
 }
 
 export const ImageSpinner = ({ displayList = true, sizeClass = '', classN }: ImageSpinnerProps) => {
