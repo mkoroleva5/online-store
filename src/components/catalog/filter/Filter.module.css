@@ -13,9 +13,25 @@
   gap: 1rem;
 }
 
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .title {
   font-size: 1.8rem;
   color: var(--text-color);
+}
+
+.open-button {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .buttons-wrapper {
@@ -88,4 +104,46 @@
 
 .optionsWrapper {
   padding: 1rem 0;
+}
+
+@media (max-width: 1000px) {
+  .filter-wrapper {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-wrapper {
+    width: 75%;
+  }
+
+  .title-block {
+    padding: 0;
+  }
+
+  .open-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons-wrapper,
+  .field {
+    display: none;
+  }
+
+  .open {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-wrapper {
+    width: 90%;
+  }
 }
