@@ -103,3 +103,10 @@
     transform: rotate(0deg);
   }
 }
+
+@media (max-width: 450px) {
+  .promo-input-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

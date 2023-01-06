@@ -176,3 +176,21 @@
   justify-content: center;
   padding: 2rem;
 }
+
+@media (max-width: 880px) {
+  .total-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .total {
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .full-cart-wrapper {
+    padding: 0 1rem;
+  }
+}

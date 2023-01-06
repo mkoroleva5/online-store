@@ -38,6 +38,10 @@
   transition: 0.2s;
 }
 
+.github-name {
+  color: var(--gray-color);
+}
+
 .github-link:hover .github-name {
   color: black;
 }

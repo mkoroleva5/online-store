@@ -43,7 +43,6 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
             />
             {!isImageLoaded && <ImageSpinner sizeClass="card-spinner" />}
           </div>
-
           <div className={style.itemInfo}>
             <div
               className={style.itemTitle}
@@ -60,23 +59,25 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
             <div>Категория: {item.category}</div>
           </div>
         </div>
-        <AmountCounter id={item.id} />
-        <div className={style.sumWrapper}>
-          <div className={style.sum}>{(item.price * item.amount).toFixed(2)} BYN</div>
-          <div className={style.stock}>В наличии: {item.stock}</div>
+        <div className={style.controlsWrapper}>
+          <AmountCounter id={item.id} />
+          <div className={style.sumWrapper}>
+            <div className={style.sum}>{(item.price * item.amount).toFixed(2)} BYN</div>
+            <div className={style.stock}>В наличии: {item.stock}</div>
+          </div>
+          <button
+            type="button"
+            className={style.deleteButton}
+            onClick={() =>
+              dispatch({
+                type: 'REMOVE_PRODUCT',
+                payload: item,
+              })
+            }
+          >
+            <img className={style.deleteIcon} src={trashIcon} alt="Delete button" />
+          </button>
         </div>
-        <button
-          type="button"
-          className={style.deleteButton}
-          onClick={() =>
-            dispatch({
-              type: 'REMOVE_PRODUCT',
-              payload: item,
-            })
-          }
-        >
-          <img className={style.deleteIcon} src={trashIcon} alt="Delete button" />
-        </button>
       </div>
     </div>
   );

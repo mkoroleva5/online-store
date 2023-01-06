@@ -149,3 +149,10 @@
   border: 3px solid var(--bg-color);
   color: var(--bg-color);
 }
+
+@media (max-width: 480px) {
+  .img-list,
+  .second-img-list {
+    height: 8rem;
+  }
+}

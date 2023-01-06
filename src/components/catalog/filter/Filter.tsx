@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 import style from './Filter.module.css';
 import products from '../../../data/products.json';
@@ -8,6 +9,7 @@ import { Product } from '../../../data/product';
 import { CopyButton } from '../../basic-components/CopyButton';
 import { DualSlider } from '../../basic-components/DualSlider';
 import { FilterOption } from '../../basic-components/FilterOption';
+import arrow from '../../../assets/icons/arrow.svg';
 
 const brands = new Set(products.map((item): string => item.brand).sort());
 const productTypes = new Set(products.map((item): string => item.type).sort());
@@ -21,6 +23,8 @@ interface FilteredProducts {
 }
 
 export const Filter = ({ filteredProducts }: FilteredProducts) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const filteredPrices = filteredProducts
     .map((item): number => parseInt(item.price.toString(), 10))
     .sort((a, b) => a - b);
@@ -39,7 +43,19 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
   return (
     <div className={style.filterWrapper}>
       <div className={style.titleBlock}>
-        <span className={style.title}>Фильтры</span>
+        <div className={style.titleWrapper}>
+          <span className={style.title}>Фильтры</span>
+          <button
+            type="button"
+            className={classNames(style.openButton, { [style.rotate]: isOpen })}
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            <img src={arrow} alt="Open/close filters" />
+          </button>
+        </div>
+
         <div className={style.buttonsWrapper}>
           <CopyButton />
           <button
@@ -52,7 +68,7 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
           </button>
         </div>
       </div>
-      <div className={style.field}>
+      <div className={classNames(style.field, { [style.open]: isOpen })}>
         <div className={classNames(style.block, style.searchBlock)}>
           <SearchField />
         </div>
