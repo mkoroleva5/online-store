@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
@@ -17,16 +17,15 @@ import { BackToTop } from '../../basic-components/BackToTop';
 export const Cart = () => {
   const { cartState, dispatch } = useContext(CartState);
 
-  const defaultValues = {
-    page: '1',
-    limit: '3',
-  };
-
-  const checkSearch = (val: 'page' | 'limit'): string => {
+  const checkSearch = useCallback((val: 'page' | 'limit'): string => {
+    const defaultValues = {
+      page: '1',
+      limit: '3',
+    };
     const result = getSearchValue(val);
     if (result && +result > 0 && !Number.isNaN(parseInt(result, 10))) return result;
     return defaultValues[val];
-  };
+  }, []);
 
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
@@ -73,14 +72,14 @@ export const Cart = () => {
         unlisten();
       };
     });
-  }, []);
+  }, [checkSearch]);
 
   useEffect(() => {
     setLastPage(pages.length);
   }, [pages.length]);
 
   useEffect(() => {
-    if (lastPage < currentPage) {
+    if (lastPage < +currentPage) {
       updateSearchValue('page', `${+currentPage - 1}`);
     }
   }, [lastPage, currentPage]);
@@ -127,7 +126,7 @@ export const Cart = () => {
                     className={style.switchPageButton}
                     type="button"
                     onClick={() => {
-                      if (currentPage > 1) {
+                      if (+currentPage > 1) {
                         const page = getSearchValue('page');
                         if (page) {
                           updateSearchValue('page', `${+page - 1}`);
@@ -143,7 +142,7 @@ export const Cart = () => {
                     {pages.map((item) => (
                       <button
                         className={classNames(style.pageButton, {
-                          [style.activePage]: item === currentPage,
+                          [style.activePage]: item === +currentPage,
                         })}
                         key={item}
                         type="button"
@@ -159,7 +158,7 @@ export const Cart = () => {
                     className={style.switchPageButton}
                     type="button"
                     onClick={() => {
-                      if (currentPage < pages.length) {
+                      if (+currentPage < pages.length) {
                         const page = getSearchValue('page');
                         if (page) {
                           updateSearchValue('page', `${+page + 1}`);
