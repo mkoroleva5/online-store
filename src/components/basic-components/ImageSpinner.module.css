@@ -1,6 +1,7 @@
 .spinner {
   width: 100%;
   height: 100%;
+  padding: 64px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +10,13 @@
 .list {
   height: 18rem;
   width: 18rem;
+  padding: 0;
 }
 
 .spinner:before {
   content: '';
   display: block;
-  height: 30%;
+  width: 50%;
   aspect-ratio: 1/1;
   -webkit-animation: spin 0.5s infinite linear;
   animation: spin 0.5s infinite linear;
@@ -26,6 +28,7 @@
 .card-spinner {
   width: 10rem;
   height: 10rem;
+  padding: 0;
 }
 
 .layered {

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useContext } from 'react';
-import { useDebounce } from '../../utils/debounce';
+import { useDebounce } from '../../hooks/use-debounce';
 import { getSearchValue, updateSearchValue } from '../../utils/searchHelpers';
 import { FilterState } from '../catalog/filterState';
 import style from './FilterOption.module.css';
