@@ -3,10 +3,12 @@
   flex-direction: column;
   margin: 0 auto;
   width: 80%;
+  padding: 0 1rem;
 }
 
 .bread-crumbs {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
@@ -14,9 +16,19 @@
   font-weight: 200;
 }
 
+.chevron {
+  width: 25px;
+  height: 15px;
+  filter: opacity(0.3);
+}
+
 .link {
   text-decoration: none;
   color: var(--bg-color);
+}
+
+.title {
+  text-align: center;
 }
 
 .info-wrapper {
@@ -41,7 +53,7 @@
 .full-img-wrapper {
   position: relative;
   width: 40rem;
-  height: 40rem;
+  aspect-ratio: 1/1;
 }
 
 .enlarged-image-wrapper {
@@ -136,13 +148,12 @@
     justify-content: center;
   }
 
-  .full-img {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .info {
     align-items: center;
     padding: 0;
+  }
+
+  .full-img-wrapper {
+    width: 30rem;
   }
 }
