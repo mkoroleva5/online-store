@@ -1,6 +1,6 @@
 import IMask from 'imask';
 import { useIMask } from 'react-imask';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import style from './CheckoutPage.module.css';
 import world from '../../../assets/images/world.png';
@@ -88,6 +88,17 @@ export const CheckoutPage = () => {
     if (digit === '5') return mastercard;
     return world;
   };
+
+  useEffect(() => {
+    const unlisten = history.listen(({ action }) => {
+      if (action === 'POP') {
+        dispatch({ type: 'SET_CHECKOUT', payload: false });
+      }
+    });
+    return () => {
+      unlisten();
+    };
+  }, [dispatch]);
 
   return (
     <div

@@ -49,16 +49,9 @@ export const Cart = () => {
   useEffect(() => {
     const pageQ = getSearchValue('page');
     const limitQ = getSearchValue('limit');
-    if (pageQ && +pageQ > 0) {
-      setCurrentPage(+pageQ);
-    } else {
-      updateSearchValue('page', '1');
-    }
-    if (limitQ) {
-      setCardsPerPage(+limitQ);
-    } else {
-      updateSearchValue('limit', '3');
-    }
+
+    if (pageQ && +pageQ > 0) setCurrentPage(+pageQ);
+    if (limitQ) setCardsPerPage(+limitQ);
 
     const unlisten = history.listen(() => {
       const page = getSearchValue('page');
