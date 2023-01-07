@@ -72,6 +72,12 @@
   overflow: hidden;
 }
 
+.enlarged-img-container {
+  outline: 3px solid white;
+  border-radius: 1.4rem;
+  overflow: hidden;
+}
+
 .info {
   display: flex;
   flex-direction: column;

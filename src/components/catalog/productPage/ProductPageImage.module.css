@@ -28,8 +28,6 @@
   max-width: 90vw;
   max-height: 90vh;
   transition: all ease-out 0.5s;
-  outline: 3px solid white;
-  border-radius: 1.4rem;
   display: none;
   cursor: default;
 }
