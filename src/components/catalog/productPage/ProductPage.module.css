@@ -69,12 +69,13 @@
   background-color: rgb(0, 0, 0, 0.5);
   z-index: 3;
   cursor: url(../../../assets/icons/exit.svg), pointer;
-  overflow: hidden;
 }
 
 .enlarged-img-container {
-  outline: 3px solid white;
+  width: 90vmin;
+  height: 90vmin;
   border-radius: 1.4rem;
+  box-shadow: 0 0 0 3px white;
   overflow: hidden;
 }
 
