@@ -1,5 +1,6 @@
 .container {
   position: fixed;
+  z-index: 2;
   bottom: 5%;
   right: 5%;
   width: 50px;
@@ -9,9 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 .container:hover {
-  opacity: 0.8;
+  filter: brightness(1.2);
 }
 
 .arrow {

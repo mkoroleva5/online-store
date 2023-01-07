@@ -25,3 +25,9 @@
   border: 3px solid var(--bg-color);
   color: var(--bg-color);
 }
+
+@media screen and (max-width: 480px) {
+  .button {
+    max-width: 9.5rem;
+  }
+}
