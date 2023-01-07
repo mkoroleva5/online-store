@@ -79,6 +79,7 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
         ...state,
         products: [],
         promos: [],
+        isCheckout: false,
       };
       setLS(localStorageCartStateName, newState);
       return newState;
