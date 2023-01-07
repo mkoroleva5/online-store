@@ -27,9 +27,6 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
   const isVisible = useOnScreen(containerRef);
 
   useEffect(() => {
-    // if (!isVisible || isImageLoaded) {
-    //   return;
-    // }
     if (imageRef.current) {
       imageRef.current.onload = () => {
         setIsImageLoaded(true);

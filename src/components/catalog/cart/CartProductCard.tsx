@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { CartProduct } from '../../../data/product';
 import style from './CartProductCard.module.css';
@@ -8,6 +8,7 @@ import { history } from '../../../store/History';
 import { CartState } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { AmountCounter } from '../../basic-components/AmountCounter';
+import { useOnScreen } from '../../../hooks/use-on-screen';
 
 interface CartProductCardProps {
   item: CartProduct;
@@ -18,11 +19,23 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
   const { dispatch } = useContext(CartState);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const isVisible = useOnScreen(containerRef);
+
+  useEffect(() => {
+    if (imageRef.current) {
+      imageRef.current.onload = () => {
+        setIsImageLoaded(true);
+      };
+    }
+  }, [isVisible, isImageLoaded]);
+
   return (
     <div className={style.productWrapper}>
       <div className={style.itemIndex}>{index}</div>
       <div key={item.id} className={style.itemWrapper}>
-        <div className={style.itemInfoWrapper}>
+        <div className={style.itemInfoWrapper} ref={containerRef}>
           <div
             onClick={() => {
               history.push(`/${item.catPath}/${item.id}`);
@@ -31,16 +44,19 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
             role="button"
             tabIndex={0}
           >
-            <img
-              className={classNames(style.itemImage, { [style.loadedImg]: isImageLoaded })}
-              src={item.images[0] || noImage}
-              alt={item.title}
-              onLoad={(e) => {
-                const target = e.target as HTMLImageElement;
-                if (target.complete) setIsImageLoaded(true);
-                else setIsImageLoaded(false);
-              }}
-            />
+            {(isVisible || isImageLoaded) && (
+              <img
+                className={classNames(style.itemImage, { [style.loadedImg]: isImageLoaded })}
+                src={item.images[0] || noImage}
+                alt={item.title}
+                ref={imageRef}
+                onLoad={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (target.complete) setIsImageLoaded(true);
+                  else setIsImageLoaded(false);
+                }}
+              />
+            )}
             {!isImageLoaded && <ImageSpinner sizeClass="card-spinner" />}
           </div>
           <div className={style.itemInfo}>
