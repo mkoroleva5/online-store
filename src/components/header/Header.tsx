@@ -35,18 +35,16 @@ export const Header = () => {
               {Number(totalCost) > 0 ? `Итого: ${totalCostDiscounted} BYN` : 'Корзина пуста'}
             </div>
           </div>
-          <div
+          <a
+            href="/cart"
             className={style.cart}
             onClick={() => {
               history.push('/cart');
             }}
-            onKeyDown={() => {}}
-            role="button"
-            tabIndex={0}
           >
             <img className={style.cartImage} src={cartIcon} alt="Cart" />
             <div className={style.counter}>{totalItems}</div>
-          </div>
+          </a>
         </div>
       </div>
     </header>
