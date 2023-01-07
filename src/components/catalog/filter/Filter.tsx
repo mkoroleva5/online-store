@@ -52,7 +52,7 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
               setIsOpen(!isOpen);
             }}
           >
-            <img src={arrow} alt="Open/close filters" />
+            <img className={style.arrowImg} src={arrow} alt="Open/close filters" />
           </button>
         </div>
 
