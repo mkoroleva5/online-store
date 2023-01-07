@@ -157,7 +157,7 @@ export const CheckoutPage = () => {
                 ref={phone}
                 className={classNames(style.input, { [style.emptyInput]: !PHONE })}
                 pattern="^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9]){7}$"
-                type="text"
+                type="tel"
                 title="Номер телефона должен содержать 12 цифр"
                 required
               />
@@ -191,7 +191,7 @@ export const CheckoutPage = () => {
                 ref={emailRef}
                 className={classNames(style.input, { [style.emptyInput]: isEmptyEmail })}
                 pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                type="e-mail"
+                type="email"
                 title="E-mail должен содержать @ и иметь правильный домен"
                 onChange={(e) => {
                   const { value } = e.target;
@@ -223,7 +223,7 @@ export const CheckoutPage = () => {
                       ref={card}
                       className={classNames(style.input, { [style.emptyInput]: !CARD })}
                       pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}"
-                      type="text"
+                      type="tel"
                       title="Количество введенных цифр должно быть ровно 16, допускается ввод только цифр"
                       required
                     />
@@ -233,25 +233,33 @@ export const CheckoutPage = () => {
                   </div>
                 </div>
                 <div className={style.creditDataWrapper}>
-                  <div className={style.inputWrapper}>
+                  <div className={classNames(style.inputWrapper, style.cardInputWrapper)}>
                     <input
                       ref={expire}
-                      className={classNames(style.input, { [style.emptyInput]: !EXPIRE })}
+                      className={classNames(style.input, style.cardInput, {
+                        [style.emptyInput]: !EXPIRE,
+                      })}
                       pattern="[0-9]{2}\/[0-9]{2}"
-                      type="text"
+                      type="tel"
                       title="Месяц не может быть больше 12, год - меньше 23"
                       required
                     />
-                    <span className={classNames(style.inputTitle, { [style.empty]: !EXPIRE })}>
+                    <span
+                      className={classNames(style.inputTitle, {
+                        [style.empty]: !EXPIRE,
+                      })}
+                    >
                       Годен до
                     </span>
                   </div>
-                  <div className={style.inputWrapper}>
+                  <div className={classNames(style.inputWrapper, style.cardInputWrapper)}>
                     <input
                       ref={cvv}
-                      className={classNames(style.input, { [style.emptyInput]: !CVV })}
+                      className={classNames(style.input, style.cardInput, {
+                        [style.emptyInput]: !CVV,
+                      })}
                       pattern="[0-9]{3}"
-                      type="text"
+                      type="tel"
                       title="Длина 3 символа, допускается ввод только цифр"
                       required
                     />
