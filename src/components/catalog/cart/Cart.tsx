@@ -12,6 +12,7 @@ import arrowRight from '../../../assets/icons/chevron-right.svg';
 import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 import { PromoCodes } from '../../basic-components/PromoCodes';
+import { BackToTop } from '../../basic-components/BackToTop';
 
 export const Cart = () => {
   const { cartState, dispatch } = useContext(CartState);
@@ -102,6 +103,7 @@ export const Cart = () => {
                   +cardsPerPage * +currentPage,
                 )}
               </div>
+              <BackToTop />
               <div className={style.paginationWrapper}>
                 <label className={style.cardsPerPageLabel} htmlFor="cardsPerPage">
                   Отображать на странице:

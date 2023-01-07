@@ -18,6 +18,7 @@ import { SortBy } from './types';
 import { sortArray } from '../../utils/sortFunction';
 import { categoryRoutes, productRoutes } from '../../services/routes';
 import { Page404 } from '../basic-components/Page404';
+import { BackToTop } from '../basic-components/BackToTop';
 
 export const Catalog = () => {
   const [filterState, setFilterState] = useState(initialFilterState);
@@ -169,6 +170,7 @@ export const Catalog = () => {
                           />
                         );
                       })}
+                      <BackToTop />
                     </div>
                   </section>
                 </>
