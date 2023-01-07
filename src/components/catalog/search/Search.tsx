@@ -19,7 +19,7 @@ export const SearchField = () => {
   return (
     <div className={style.searchWrapper}>
       <input
-        type="text"
+        type="search"
         className={style.searchInput}
         value={searchVal}
         onChange={(event) => {
