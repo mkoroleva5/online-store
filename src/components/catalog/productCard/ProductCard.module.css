@@ -58,10 +58,14 @@
 .img-table {
   width: 100%;
   display: none;
+  object-fit: cover;
 }
 
 .img-list {
   height: 18rem;
+  width: 18rem;
+  object-fit: cover;
+  flex-shrink: 0;
   display: none;
 }
 
@@ -71,6 +75,7 @@
 
 .second-img-table {
   width: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -80,6 +85,7 @@
 
 .second-img-list {
   height: 18rem;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -115,44 +121,20 @@
   font-weight: 700;
 }
 
-.button {
-  all: unset;
-  width: 100%;
-  max-width: 12rem;
-  padding: 0.8rem 3rem;
-  margin-top: 0.8rem;
-
-  background-color: var(--bg-color);
-  color: var(--white-color);
-  border-radius: 1.4rem;
-  border: 3px solid transparent;
-
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s ease-in-out;
-}
-
-.in-cart {
-  background-color: red;
-}
-
-.button:hover {
-  opacity: 0.8;
-}
-
-.in-cart {
-  background-color: white;
-  border: 3px solid var(--bg-color);
-  color: var(--bg-color);
-}
-
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .img-list,
   .second-img-list {
     height: 8rem;
+    width: 8rem;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  .second-img-list {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .card-wrapper-list {
+    gap: 0;
+    align-items: center;
   }
 }

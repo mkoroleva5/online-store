@@ -7,6 +7,7 @@ import { InCartButton } from '../../basic-components/InCartButton';
 import { CartState } from '../../cartState';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
+import chevronRight from '../../../assets/icons/chevron-right.svg';
 
 interface ProductPageProps {
   product: Product;
@@ -30,7 +31,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
         >
           Главная
         </a>
-        {'>'}
+        <img src={chevronRight} alt="arrow" className={style.chevron} />
         <a
           className={style.link}
           href={`/${product.catPath}`}
@@ -40,8 +41,8 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           }}
         >
           {product.category}
-        </a>{' '}
-        {'>'}{' '}
+        </a>
+        <img src={chevronRight} alt="arrow" className={style.chevron} />
         <a
           className={style.link}
           href={`/${product.catPath}`}
@@ -51,10 +52,11 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           }}
         >
           {product.brand}
-        </a>{' '}
-        {'>'} <span>{product.title}</span>
+        </a>
+        <img src={chevronRight} alt="arrow" className={style.chevron} />
+        <span>{product.title}</span>
       </div>
-      <h1>{product.title}</h1>
+      <h1 className={style.title}>{product.title}</h1>
       <div className={style.infoWrapper}>
         <div className={style.images}>
           <div className={style.imagesArray}>
