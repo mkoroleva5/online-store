@@ -38,7 +38,8 @@ export const Header = () => {
           <a
             href="/cart"
             className={style.cart}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               history.push('/cart');
             }}
           >

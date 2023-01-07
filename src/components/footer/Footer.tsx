@@ -27,7 +27,7 @@ export const Footer = () => {
           </a>
         </div>
         <div className={style.footer}>
-          <div className={style.credits}>Online store 2022</div>
+          <p>Online store 2022</p>
         </div>
         <a className={style.rsLink} href="https://rs.school/js/" target="_blank" rel="noreferrer">
           <img className={style.rsLogo} src={rsLogo} alt="Rolling Scopes School" />
