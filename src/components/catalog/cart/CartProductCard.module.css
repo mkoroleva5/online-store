@@ -5,7 +5,7 @@
 
 .item-wrapper {
   position: relative;
-  width: auto;
+  width: 100%;
   height: fit-content;
 
   display: grid;
