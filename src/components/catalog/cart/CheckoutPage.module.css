@@ -26,8 +26,21 @@
   border-radius: 15px;
   opacity: 1;
   gap: 1rem;
-  overflow: scroll;
+  overflow: auto;
+
   cursor: default;
+}
+
+.checkout-modal-wrapper::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+.checkout-modal-wrapper::-webkit-scrollbar-thumb {
+  height: 10px;
+  background: var(--bg-color);
+  border-radius: 5px;
 }
 
 .form-wrapper {
