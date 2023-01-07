@@ -43,18 +43,20 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
   return (
     <div className={style.filterWrapper}>
       <div className={style.titleBlock}>
-        <div className={style.titleWrapper}>
+        <button
+          type="button"
+          className={style.titleWrapper}
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
           <span className={style.title}>Фильтры</span>
-          <button
-            type="button"
-            className={classNames(style.openButton, { [style.rotate]: isOpen })}
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            <img className={style.arrowImg} src={arrow} alt="Open/close filters" />
-          </button>
-        </div>
+          <img
+            className={classNames(style.arrowImg, { [style.rotate]: isOpen })}
+            src={arrow}
+            alt="Open/close filters"
+          />
+        </button>
 
         <div className={style.buttonsWrapper}>
           <CopyButton />
