@@ -80,7 +80,7 @@
 @media (max-width: 576px) {
   .main-wrapper {
     max-width: 500px;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
   }
 
   .catalog-wrapper {
