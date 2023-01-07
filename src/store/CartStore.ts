@@ -1,3 +1,4 @@
+import { Reducer } from 'react';
 import { CartStateProps, possiblePromos } from '../components/cartState';
 import { CartProduct } from '../data/product';
 import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
@@ -16,7 +17,7 @@ export const countTotalCostDiscount = (totalCost: number, totalDiscount: number)
   return (totalCost - (totalCost / 100) * totalDiscount).toFixed(2);
 };
 
-export const cartReducer = (state: CartStateProps, action: CartActionType) => {
+export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
       const newState = {
@@ -78,7 +79,7 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
       const newState = {
         ...state,
         products: [],
-        promos: [],
+        promos: {},
         isCheckout: false,
       };
       setLS(localStorageCartStateName, newState);
@@ -100,10 +101,14 @@ export const cartReducer = (state: CartStateProps, action: CartActionType) => {
     }
     case 'REMOVE_PROMO': {
       if (Object.keys(state.promos).includes(action.payload)) {
+        const newPromos = {
+          ...state.promos,
+        };
+        delete newPromos[action.payload];
         const newState = {
           ...state,
+          promos: newPromos,
         };
-        delete newState.promos[action.payload];
         setLS(localStorageCartStateName, newState);
         return newState;
       }
