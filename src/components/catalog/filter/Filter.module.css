@@ -126,9 +126,13 @@
     cursor: pointer;
   }
 
-  .buttons-wrapper,
-  .field {
+  .field,
+  .buttons-wrapper {
     display: none;
+  }
+
+  .visible {
+    display: flex;
   }
 
   .open,

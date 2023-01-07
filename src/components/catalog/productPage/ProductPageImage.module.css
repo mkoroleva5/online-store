@@ -27,9 +27,9 @@
 .enlarged-img {
   max-width: 90vw;
   max-height: 90vh;
-  border-radius: 1.4rem;
-  outline: 3px solid white;
   transition: all ease-out 0.5s;
+  outline: 3px solid white;
+  border-radius: 1.4rem;
   display: none;
   cursor: default;
 }

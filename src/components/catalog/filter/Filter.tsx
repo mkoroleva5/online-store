@@ -57,8 +57,7 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
             alt="Open/close filters"
           />
         </button>
-
-        <div className={style.buttonsWrapper}>
+        <div className={classNames(style.buttonsWrapper, { [style.visible]: isOpen })}>
           <CopyButton />
           <button
             type="button"

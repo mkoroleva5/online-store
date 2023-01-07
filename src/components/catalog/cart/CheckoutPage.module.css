@@ -191,7 +191,6 @@
 }
 
 .order-page-wrapper {
-  min-width: 40rem;
   min-height: 57rem;
   display: flex;
   flex-direction: column;
@@ -254,8 +253,4 @@
   .credit-card {
     max-width: 80vw;
   }
-  /* .card-input-wrapper,
-  .card-input {
-    max-width: 100px;
-  } */
 }
