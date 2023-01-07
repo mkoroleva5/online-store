@@ -105,12 +105,14 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                 if (e.currentTarget === e.target) setIsEnlarged(false);
               }}
             >
-              <ProductPageImage
-                isActive={isActive}
-                src={product.images[isActive]}
-                title={product.title}
-                classN="enlargedImg"
-              />
+              <div className={style.enlargedImgContainer}>
+                <ProductPageImage
+                  isActive={isActive}
+                  src={product.images[isActive]}
+                  title={product.title}
+                  classN="enlargedImg"
+                />
+              </div>
             </button>
           )}
         </div>
