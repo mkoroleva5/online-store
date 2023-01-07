@@ -179,7 +179,13 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           </button>
         </div>
       </div>
-      <div className={style.description}>{product.description}</div>
+      {product.description.split('\n').map((el) => {
+        return (
+          <p key={el} className={style.description}>
+            {el}
+          </p>
+        );
+      })}
     </section>
   );
 };
