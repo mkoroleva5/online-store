@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
@@ -16,6 +16,17 @@ import { BackToTop } from '../../basic-components/BackToTop';
 
 export const Cart = () => {
   const { cartState, dispatch } = useContext(CartState);
+
+  const checkSearch = useCallback((val: 'page' | 'limit'): string => {
+    const defaultValues = {
+      page: '1',
+      limit: '3',
+    };
+    const result = getSearchValue(val);
+    if (result && +result > 0 && !Number.isNaN(parseInt(result, 10))) return result;
+    return defaultValues[val];
+  }, []);
+
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
   const totalCostDiscounted = countTotalCostDiscount(
@@ -23,15 +34,15 @@ export const Cart = () => {
     Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
   );
 
-  const [currentPage, setCurrentPage] = useState(getSearchValue('page') ?? 1);
-  const [cardsPerPage, setCardsPerPage] = useState(getSearchValue('limit') ?? 3);
+  const [currentPage, setCurrentPage] = useState(() => checkSearch('page'));
+  const [cardsPerPage, setCardsPerPage] = useState(() => checkSearch('limit'));
   const [lastPage, setLastPage] = useState(
     Math.ceil(Object.values(cartState.products).length / +cardsPerPage),
   );
 
   const handleCardsPerPageInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { target } = e;
-    if (target) {
+    if (target && +target.value > 0) {
       updateSearchValue('limit', target.value);
     }
   };
@@ -49,27 +60,26 @@ export const Cart = () => {
   useEffect(() => {
     const pageQ = getSearchValue('page');
     const limitQ = getSearchValue('limit');
-
-    if (pageQ && +pageQ > 0) setCurrentPage(+pageQ);
-    if (limitQ) setCardsPerPage(+limitQ);
+    if (pageQ) setCurrentPage(checkSearch('page'));
+    if (limitQ) setCardsPerPage(checkSearch('limit'));
 
     const unlisten = history.listen(() => {
       const page = getSearchValue('page');
       const limit = getSearchValue('limit');
-      if (page && +page > 0) setCurrentPage(+page);
-      if (limit) setCardsPerPage(+limit);
+      if (page) setCurrentPage(checkSearch('page'));
+      if (limit) setCardsPerPage(checkSearch('limit'));
       return () => {
         unlisten();
       };
     });
-  }, []);
+  }, [checkSearch]);
 
   useEffect(() => {
     setLastPage(pages.length);
   }, [pages.length]);
 
   useEffect(() => {
-    if (lastPage < currentPage) {
+    if (lastPage < +currentPage) {
       updateSearchValue('page', `${+currentPage - 1}`);
     }
   }, [lastPage, currentPage]);
@@ -116,7 +126,7 @@ export const Cart = () => {
                     className={style.switchPageButton}
                     type="button"
                     onClick={() => {
-                      if (currentPage > 1) {
+                      if (+currentPage > 1) {
                         const page = getSearchValue('page');
                         if (page) {
                           updateSearchValue('page', `${+page - 1}`);
@@ -132,7 +142,7 @@ export const Cart = () => {
                     {pages.map((item) => (
                       <button
                         className={classNames(style.pageButton, {
-                          [style.activePage]: item === currentPage,
+                          [style.activePage]: item === +currentPage,
                         })}
                         key={item}
                         type="button"
@@ -148,7 +158,7 @@ export const Cart = () => {
                     className={style.switchPageButton}
                     type="button"
                     onClick={() => {
-                      if (currentPage < pages.length) {
+                      if (+currentPage < pages.length) {
                         const page = getSearchValue('page');
                         if (page) {
                           updateSearchValue('page', `${+page + 1}`);
