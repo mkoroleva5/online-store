@@ -57,8 +57,6 @@ export const Cart = () => {
     return <CartProductCard key={item.id} item={item} index={index + 1} />;
   });
 
-  console.log(totalCartProducts);
-
   useEffect(() => {
     const pageQ = getSearchValue('page');
     const limitQ = getSearchValue('limit');
