@@ -57,6 +57,8 @@ export const Cart = () => {
     return <CartProductCard key={item.id} item={item} index={index + 1} />;
   });
 
+  console.log(totalCartProducts);
+
   useEffect(() => {
     const pageQ = getSearchValue('page');
     const limitQ = getSearchValue('limit');
@@ -127,7 +129,7 @@ export const Cart = () => {
                     type="button"
                     onClick={() => {
                       if (+currentPage > 1) {
-                        const page = getSearchValue('page');
+                        const page = getSearchValue('page') ?? currentPage;
                         if (page) {
                           updateSearchValue('page', `${+page - 1}`);
                         } else {
@@ -159,7 +161,7 @@ export const Cart = () => {
                     type="button"
                     onClick={() => {
                       if (+currentPage < pages.length) {
-                        const page = getSearchValue('page');
+                        const page = getSearchValue('page') ?? currentPage;
                         if (page) {
                           updateSearchValue('page', `${+page + 1}`);
                         } else {
