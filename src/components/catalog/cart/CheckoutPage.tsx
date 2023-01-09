@@ -169,7 +169,7 @@ export const CheckoutPage = () => {
               <input
                 ref={addressRef}
                 className={classNames(style.input, { [style.emptyInput]: isEmptyAddress })}
-                pattern="[a-zA-Zа-яА-Я]{5,}\s[a-zA-Zа-яА-Я]{5,}(\s[a-zA-Zа-яА-Я]{5,})+"
+                pattern="[a-zA-Zа-яА-Я0-9]{5,}\s[a-zA-Zа-яА-Я0-9]{5,}(\s[a-zA-Zа-яА-Я0-9]{5,})+"
                 type="text"
                 title="Адрес должен содержать не менее трех слов, длина каждого не менее 5 символов"
                 onChange={(e) => {
