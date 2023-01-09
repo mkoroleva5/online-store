@@ -127,7 +127,7 @@ export const Cart = () => {
                     type="button"
                     onClick={() => {
                       if (+currentPage > 1) {
-                        const page = getSearchValue('page');
+                        const page = getSearchValue('page') ?? currentPage;
                         if (page) {
                           updateSearchValue('page', `${+page - 1}`);
                         } else {
@@ -159,7 +159,7 @@ export const Cart = () => {
                     type="button"
                     onClick={() => {
                       if (+currentPage < pages.length) {
-                        const page = getSearchValue('page');
+                        const page = getSearchValue('page') ?? currentPage;
                         if (page) {
                           updateSearchValue('page', `${+page + 1}`);
                         } else {
