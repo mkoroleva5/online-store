@@ -26,8 +26,8 @@ export interface CartContext {
 const savedCartState = getLS(localStorageCartStateName) as CartStateProps;
 
 export const initialCartState: CartStateProps = {
-  products: savedCartState?.products ?? [],
-  promos: savedCartState?.promos ?? [],
+  products: savedCartState?.products ?? {},
+  promos: savedCartState?.promos ?? {},
   isCheckout: savedCartState?.isCheckout ?? false,
 };
 
