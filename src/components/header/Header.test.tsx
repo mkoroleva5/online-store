@@ -40,7 +40,7 @@ describe('Header tests', () => {
     );
     expect(screen.getByRole('link', { name: /cart/i })).toHaveTextContent('3');
   });
-  it('Cart total price displays correct amount without promos', () => {
+  it('Cart total price displays correct price without promos', () => {
     cartContext.cartState.products[productsArr[0].id] = { ...productsArr[0], amount: 1 };
     cartContext.cartState.products[productsArr[1].id] = { ...productsArr[1], amount: 2 };
     const totalPrice = Object.values(cartContext.cartState.products)
@@ -53,7 +53,7 @@ describe('Header tests', () => {
     );
     expect(screen.getByText(/итого:/i)).toHaveTextContent(`Итого: ${totalPrice} BYN`);
   });
-  it('Cart total price displays correct amount with promos', () => {
+  it('Cart total price displays correct price with promos', () => {
     cartContext.cartState.products[productsArr[0].id] = { ...productsArr[0], amount: 1 };
     cartContext.cartState.products[productsArr[1].id] = { ...productsArr[1], amount: 2 };
     cartContext.cartState.promos = {
