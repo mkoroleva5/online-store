@@ -2,10 +2,10 @@ import { useContext } from 'react';
 import style from './Header.module.css';
 import logoSource from '../../assets/images/healthy-logo.png';
 import cartIcon from '../../assets/icons/cart.svg';
-import { history } from '../../store/History';
 import { CartStateContext } from '../cartState';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../store/CartStore';
 import { formatPrice } from '../../utils/formatPrice';
+import { Link } from '../basic-components/Link';
 
 export const Header = () => {
   const { cartState } = useContext(CartStateContext);
@@ -21,34 +21,19 @@ export const Header = () => {
   return (
     <header className={style.headerWrapper}>
       <div className={style.header}>
-        <a
-          href="/"
-          className={style.logoWrapper}
-          onClick={(e) => {
-            e.preventDefault();
-            history.push('/');
-          }}
-        >
+        <Link className={style.logoWrapper} href="/">
           <img className={style.logo} src={logoSource} alt="Logo" />
-          <div className={style.title} />
-        </a>
+        </Link>
         <div className={style.cartWrapper}>
           <div className={style.total}>
             <div>
               {Number(totalCost) > 0 ? `Итого: ${totalCostDiscounted} BYN` : 'Корзина пуста'}
             </div>
           </div>
-          <a
-            href="/cart"
-            className={style.cart}
-            onClick={(e) => {
-              e.preventDefault();
-              history.push('/cart');
-            }}
-          >
+          <Link className={style.cart} href="/cart">
             <img className={style.cartImage} src={cartIcon} alt="Cart" />
             <div className={style.counter}>{totalItems}</div>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

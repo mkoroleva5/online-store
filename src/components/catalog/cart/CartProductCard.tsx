@@ -4,11 +4,11 @@ import { CartProduct } from '../../../data/product';
 import style from './CartProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import trashIcon from '../../../assets/icons/trash.svg';
-import { history } from '../../../store/History';
 import { CartStateContext } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { AmountCounter } from '../../basic-components/AmountCounter';
 import { useOnScreen } from '../../../hooks/use-on-screen';
+import { Link } from '../../basic-components/Link';
 
 interface CartProductCardProps {
   item: CartProduct;
@@ -36,14 +36,7 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
       <div className={style.itemIndex}>{index}</div>
       <div key={item.id} className={style.itemWrapper}>
         <div className={style.itemInfoWrapper} ref={containerRef}>
-          <div
-            onClick={() => {
-              history.push(`/${item.catPath}/${item.id}`);
-            }}
-            onKeyDown={() => {}}
-            role="button"
-            tabIndex={0}
-          >
+          <Link href={`/${item.catPath}/${item.id}`}>
             {(isVisible || isImageLoaded) && (
               <img
                 className={classNames(style.itemImage, { [style.loadedImg]: isImageLoaded })}
@@ -58,19 +51,11 @@ export const CartProductCard = ({ item, index }: CartProductCardProps) => {
               />
             )}
             {!isImageLoaded && <ImageSpinner small />}
-          </div>
+          </Link>
           <div className={style.itemInfo}>
-            <div
-              className={style.itemTitle}
-              onClick={() => {
-                history.push(`/${item.catPath}/${item.id}`);
-              }}
-              onKeyDown={() => {}}
-              role="button"
-              tabIndex={0}
-            >
+            <Link className={style.itemTitle} href={`/${item.catPath}/${item.id}`}>
               {item.title}
-            </div>
+            </Link>
             <div>Бренд: {item.brand}</div>
             <div>Категория: {item.category}</div>
           </div>

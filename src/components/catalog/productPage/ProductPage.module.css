@@ -49,6 +49,11 @@
   gap: 2rem;
 }
 
+.image-button {
+  border: none;
+  background-color: transparent;
+}
+
 .full-img-wrapper {
   position: relative;
   width: 40rem;
@@ -134,6 +139,10 @@
 .fast-purchase-button:hover {
   background-color: var(--bg-color);
   color: var(--white-color);
+}
+
+.active {
+  box-shadow: 0 0 0 1px var(--gray-color);
 }
 
 @media (max-width: 850px) {

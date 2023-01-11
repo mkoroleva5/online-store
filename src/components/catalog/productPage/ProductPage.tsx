@@ -8,6 +8,7 @@ import { CartStateContext } from '../../cartState';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
 import chevronRight from '../../../assets/icons/chevron-right.svg';
+import { Link } from '../../basic-components/Link';
 
 interface ProductPageProps {
   product: Product;
@@ -15,44 +16,23 @@ interface ProductPageProps {
 
 export const ProductPage = ({ product }: ProductPageProps) => {
   const { cartState, dispatch } = useContext(CartStateContext);
-  const [isActive, setIsActive] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isEnlarged, setIsEnlarged] = useState(false);
 
   return (
     <section className={style.wrapper}>
       <div className={style.breadCrumbs}>
-        <a
-          className={style.link}
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            history.push({ pathname: '/' });
-          }}
-        >
+        <Link className={style.link} href="/">
           Главная
-        </a>
+        </Link>
         <img src={chevronRight} alt="arrow" className={style.chevron} />
-        <a
-          className={style.link}
-          href={`/${product.catPath}`}
-          onClick={(e) => {
-            e.preventDefault();
-            history.push({ pathname: `/${product.catPath}` });
-          }}
-        >
+        <Link className={style.link} href={`/${product.catPath}`}>
           {product.category}
-        </a>
+        </Link>
         <img src={chevronRight} alt="arrow" className={style.chevron} />
-        <a
-          className={style.link}
-          href={`/${product.catPath}`}
-          onClick={(e) => {
-            e.preventDefault();
-            history.push({ pathname: `/${product.catPath}`, search: `?brand=${product.brand}` });
-          }}
-        >
+        <Link className={style.link} href={`/${product.catPath}?brand=${product.brand}`}>
           {product.brand}
-        </a>
+        </Link>
         <img src={chevronRight} alt="arrow" className={style.chevron} />
         <span>{product.title}</span>
       </div>
@@ -62,18 +42,19 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           <div className={style.imagesArray}>
             {product.images.map((el, index) => {
               return (
-                <div
+                <button
                   key={el}
+                  className={classNames(style.imageButton, {
+                    [style.active]: activeImageIndex === index,
+                  })}
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    setIsActive(index);
+                    setActiveImageIndex(index);
                   }}
-                  onKeyDown={() => {}}
-                  role="button"
-                  tabIndex={0}
                 >
                   <ProductPageImage key={el + 1} src={el} title={product.title} imageSize="img" />
-                </div>
+                </button>
               );
             })}
           </div>
@@ -88,7 +69,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
               return (
                 <ProductPageImage
                   key={el}
-                  isActive={isActive}
+                  isActive={activeImageIndex}
                   src={el}
                   title={product.title}
                   index={index}
@@ -107,8 +88,8 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             >
               <div className={style.enlargedImgContainer}>
                 <ProductPageImage
-                  isActive={isActive}
-                  src={product.images[isActive]}
+                  isActive={activeImageIndex}
+                  src={product.images[activeImageIndex]}
                   title={product.title}
                   imageSize="enlargedImg"
                 />
@@ -120,48 +101,21 @@ export const ProductPage = ({ product }: ProductPageProps) => {
           <div className={style.infoItems}>
             <div>
               Категория:{' '}
-              <a
-                className={style.link}
-                href={`/${product.catPath}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  history.push({ pathname: `/${product.catPath}` });
-                }}
-              >
+              <Link className={style.link} href={`/${product.catPath}`}>
                 {product.category}
-              </a>
+              </Link>
             </div>
             <div>
               Тип продукта:{' '}
-              <a
-                className={style.link}
-                href={`/${product.catPath}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  history.push({
-                    pathname: `/${product.catPath}`,
-                    search: `?product=${product.type}`,
-                  });
-                }}
-              >
+              <Link className={style.link} href={`/${product.catPath}?product=${product.type}`}>
                 {product.type}
-              </a>
+              </Link>
             </div>
             <div>
               Бренд:{' '}
-              <a
-                className={style.link}
-                href={`/${product.catPath}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  history.push({
-                    pathname: `/${product.catPath}`,
-                    search: `?brand=${product.brand}`,
-                  });
-                }}
-              >
+              <Link className={style.link} href={`/${product.catPath}?brand=${product.brand}`}>
                 {product.brand}
-              </a>
+              </Link>
             </div>
           </div>
           <div className={style.price}>{formatPrice(product.price)} BYN</div>
