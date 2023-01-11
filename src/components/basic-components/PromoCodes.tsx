@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import classNames from 'classnames';
-import { CartState, possiblePromos } from '../cartState';
+import { CartStateContext, possiblePromos } from '../cartState';
 import style from './PromoCodes.module.css';
 import x from '../../assets/icons/x.svg';
 
 export const PromoCodes = () => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
   const [input, setInput] = useState('');
 
   const isCorrectPromo = Object.keys(possiblePromos).includes(input);

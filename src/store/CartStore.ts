@@ -1,5 +1,5 @@
 import { Reducer } from 'react';
-import { CartStateProps, possiblePromos } from '../components/cartState';
+import { CartState, possiblePromos } from '../components/cartState';
 import { CartProduct } from '../data/product';
 import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
@@ -17,7 +17,7 @@ export const countTotalCostDiscount = (totalCost: number, totalDiscount: number)
   return (totalCost - (totalCost / 100) * totalDiscount).toFixed(2);
 };
 
-export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, action) => {
+export const cartReducer: Reducer<CartState, CartActionType> = (state, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
       const newState = {

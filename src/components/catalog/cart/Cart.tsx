@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react
 import classNames from 'classnames';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
-import { CartState } from '../../cartState';
+import { CartStateContext } from '../../cartState';
 import style from './Cart.module.css';
 import { CartProductCard } from './CartProductCard';
 import { CheckoutPage } from './CheckoutPage';
@@ -15,7 +15,7 @@ import { PromoCodes } from '../../basic-components/PromoCodes';
 import { BackToTop } from '../../basic-components/BackToTop';
 
 export const Cart = () => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
 
   const checkSearch = useCallback((val: 'page' | 'limit'): string => {
     const defaultValues = {

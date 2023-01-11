@@ -8,10 +8,10 @@ import visa from '../../../assets/images/visa.png';
 import mastercard from '../../../assets/images/mastercard.png';
 import americanExpress from '../../../assets/images/american-express.png';
 import { history } from '../../../store/History';
-import { CartState } from '../../cartState';
+import { CartStateContext } from '../../cartState';
 
 export const CheckoutPage = () => {
-  const { dispatch } = useContext(CartState);
+  const { dispatch } = useContext(CartStateContext);
   const [isEmptyName, setIsEmptyName] = useState(true);
   const [isEmptyAddress, setIsEmptyAddress] = useState(true);
   const [isEmptyEmail, setIsEmptyEmail] = useState(true);

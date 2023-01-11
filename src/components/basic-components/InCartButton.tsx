@@ -2,14 +2,14 @@ import classNames from 'classnames';
 import { useContext } from 'react';
 import { Product } from '../../data/product';
 import { history } from '../../store/History';
-import { CartState } from '../cartState';
+import { CartStateContext } from '../cartState';
 import style from './InCartButton.module.css';
 
 interface InCartButtonProps {
   product: Product;
 }
 export const InCartButton = (props: InCartButtonProps) => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
   const { product } = props;
   const { id } = product;
 

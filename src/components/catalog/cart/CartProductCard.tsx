@@ -5,7 +5,7 @@ import style from './CartProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import trashIcon from '../../../assets/icons/trash.svg';
 import { history } from '../../../store/History';
-import { CartState } from '../../cartState';
+import { CartStateContext } from '../../cartState';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { AmountCounter } from '../../basic-components/AmountCounter';
 import { useOnScreen } from '../../../hooks/use-on-screen';
@@ -16,7 +16,7 @@ interface CartProductCardProps {
 }
 
 export const CartProductCard = ({ item, index }: CartProductCardProps) => {
-  const { dispatch } = useContext(CartState);
+  const { dispatch } = useContext(CartStateContext);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const imageRef = useRef<HTMLImageElement | null>(null);

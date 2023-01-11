@@ -3,11 +3,11 @@ import style from './Header.module.css';
 import logoSource from '../../assets/images/healthy-logo.png';
 import cartIcon from '../../assets/icons/cart.svg';
 import { history } from '../../store/History';
-import { CartState } from '../cartState';
+import { CartStateContext } from '../cartState';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../store/CartStore';
 
 export const Header = () => {
-  const { cartState } = useContext(CartState);
+  const { cartState } = useContext(CartStateContext);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
   const totalCostDiscounted = countTotalCostDiscount(

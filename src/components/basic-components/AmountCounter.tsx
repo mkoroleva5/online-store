@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CartProduct } from '../../data/product';
-import { CartState } from '../cartState';
+import { CartStateContext } from '../cartState';
 import style from './AmountCounter.module.css';
 
 interface AmountCounterProps {
@@ -8,7 +8,7 @@ interface AmountCounterProps {
 }
 
 export const AmountCounter = ({ id }: AmountCounterProps) => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
   return (
     <div className={style.buttonsWrapper}>
       <button

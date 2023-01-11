@@ -2,7 +2,7 @@ import { useMemo, useReducer } from 'react';
 import { Header } from './components/header/Header';
 import { Catalog } from './components/catalog/Catalog';
 import { Footer } from './components/footer/Footer';
-import { CartState, initialCartState } from './components/cartState';
+import { CartStateContext, initialCartState } from './components/cartState';
 import { cartReducer } from './store/CartStore';
 
 export const App = () => {
@@ -11,10 +11,10 @@ export const App = () => {
 
   return (
     <>
-      <CartState.Provider value={cartContext}>
+      <CartStateContext.Provider value={cartContext}>
         <Header />
         <Catalog />
-      </CartState.Provider>
+      </CartStateContext.Provider>
       <Footer />
     </>
   );

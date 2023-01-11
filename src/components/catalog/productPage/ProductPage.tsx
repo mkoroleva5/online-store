@@ -4,7 +4,7 @@ import { Product } from '../../../data/product';
 import { history } from '../../../store/History';
 import { formatPrice } from '../../../utils/formatPrice';
 import { InCartButton } from '../../basic-components/InCartButton';
-import { CartState } from '../../cartState';
+import { CartStateContext } from '../../cartState';
 import style from './ProductPage.module.css';
 import { ProductPageImage } from './ProductPageImage';
 import chevronRight from '../../../assets/icons/chevron-right.svg';
@@ -14,7 +14,7 @@ interface ProductPageProps {
 }
 
 export const ProductPage = ({ product }: ProductPageProps) => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
   const [isActive, setIsActive] = useState(0);
   const [isEnlarged, setIsEnlarged] = useState(false);
 
