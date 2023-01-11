@@ -20,8 +20,7 @@ export const InCartButton = (props: InCartButtonProps) => {
       onClick={(e) => {
         e.stopPropagation();
         dispatch({ type: 'ADD_PRODUCT', payload: product });
-        const target = e.target as HTMLElement;
-        if (target.textContent === 'В корзине') history.push('/cart');
+        if (cartState.products[id]) history.push('/cart');
       }}
     >
       {!cartState.products[id] ? 'В корзину' : 'В корзине'}
