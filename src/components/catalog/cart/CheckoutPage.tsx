@@ -95,9 +95,7 @@ export const CheckoutPage = () => {
         dispatch({ type: 'SET_CHECKOUT', payload: false });
       }
     });
-    return () => {
-      unlisten();
-    };
+    return unlisten;
   }, [dispatch]);
 
   return (

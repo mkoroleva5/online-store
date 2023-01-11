@@ -90,9 +90,7 @@ export const Catalog = () => {
       checkRouting(location.pathname);
     });
 
-    return () => {
-      unlisten();
-    };
+    return unlisten;
   }, [checkRouting]);
 
   const filteredProducts = useMemo(() => {
