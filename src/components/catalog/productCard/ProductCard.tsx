@@ -76,7 +76,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           />
         </>
       )}
-      {!isImageLoaded && <ImageSpinner displayList={listLayout} />}
+      {!isImageLoaded && <ImageSpinner displayList />}
       <div
         className={classNames({
           [style.cardInfoTable]: tableLayout,
