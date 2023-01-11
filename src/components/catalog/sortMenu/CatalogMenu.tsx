@@ -5,7 +5,7 @@ import tableIcon from '../../../assets/icons/grid.svg';
 import listIcon from '../../../assets/icons/list.svg';
 import arrow from '../../../assets/icons/arrow.svg';
 import { FilterState } from '../filterState';
-import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
+import { updateSearchValue } from '../../../utils/searchHelpers';
 
 export const CatalogMenu = () => {
   const { display, sort } = useContext(FilterState);
