@@ -68,10 +68,10 @@ export const Cart = () => {
       const limit = getSearchValue('limit');
       if (page) setCurrentPage(checkSearch('page'));
       if (limit) setCardsPerPage(checkSearch('limit'));
-      return () => {
-        unlisten();
-      };
     });
+    return () => {
+      unlisten();
+    };
   }, [checkSearch]);
 
   useEffect(() => {

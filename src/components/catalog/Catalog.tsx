@@ -140,6 +140,7 @@ export const Catalog = () => {
   const isCartOpen = categoryPath === 'cart';
   const isProductPageOpen = !isCartOpen && isProductPageView && product;
   const isCatalogOpen = !isCartOpen && !isProductPageView;
+
   return (
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
