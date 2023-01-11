@@ -12,6 +12,15 @@ interface OptionProps {
   quantity: string;
 }
 
+const addSearchValueToArray = (searchString: string, toAdd: string) =>
+  [...searchString.split('-and-'), toAdd].join('-and-');
+
+const removeSearchValueFromArray = (searchString: string, toRemove: string) =>
+  searchString
+    .split('-and-')
+    .filter((el) => el !== toRemove)
+    .join('-and-');
+
 export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) => {
   const filterState = useContext(FilterState);
   const filterOptionState = filterState[filterGroup];
@@ -26,10 +35,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
     ) => {
       if (isChecked) {
         if (currentGroup) {
-          updateSearchValue(
-            filterGroupString,
-            [...currentGroup.split('-and-'), searchValue].join('-and-'),
-          );
+          updateSearchValue(filterGroupString, addSearchValueToArray(currentGroup, searchValue));
         } else {
           updateSearchValue(filterGroupString, searchValue);
         }
@@ -37,10 +43,7 @@ export const FilterOption = ({ value, id, filterGroup, quantity }: OptionProps) 
         if (currentGroup) {
           updateSearchValue(
             filterGroupString,
-            currentGroup
-              .split('-and-')
-              .filter((el) => el !== searchValue)
-              .join('-and-'),
+            removeSearchValueFromArray(currentGroup, searchValue),
           );
         }
       }
