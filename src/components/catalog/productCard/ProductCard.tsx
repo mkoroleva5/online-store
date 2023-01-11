@@ -4,7 +4,6 @@ import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
-import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { history } from '../../../store/History';
 import { InCartButton } from '../../basic-components/InCartButton';
@@ -76,7 +75,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
       <div className={style.cardInfo}>
         <h3 className={style.title}>{product.title}</h3>
         <p className={style.stock}>В наличии: {product.stock}</p>
-        <p className={style.price}>{formatPrice(product.price)} BYN</p>
+        <p className={style.price}>{product.price.toFixed(2)} BYN</p>
         <InCartButton key={product.id} product={product} />
       </div>
     </div>

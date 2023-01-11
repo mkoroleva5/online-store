@@ -4,18 +4,15 @@ import logoSource from '../../assets/images/healthy-logo.png';
 import cartIcon from '../../assets/icons/cart.svg';
 import { CartStateContext } from '../cartState';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../store/CartStore';
-import { formatPrice } from '../../utils/formatPrice';
 import { Link } from '../basic-components/Link';
 
 export const Header = () => {
   const { cartState } = useContext(CartStateContext);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const totalCostDiscounted = formatPrice(
-    countTotalCostDiscount(
-      +totalCost,
-      Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
-    ),
+  const totalCostDiscounted = countTotalCostDiscount(
+    totalCost,
+    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
   );
 
   return (
@@ -27,7 +24,7 @@ export const Header = () => {
         <div className={style.cartWrapper}>
           <div className={style.total}>
             <div>
-              {Number(totalCost) > 0 ? `Итого: ${totalCostDiscounted} BYN` : 'Корзина пуста'}
+              {totalCost > 0 ? `Итого: ${totalCostDiscounted.toFixed(2)} BYN` : 'Корзина пуста'}
             </div>
           </div>
           <Link className={style.cart} href="/cart">

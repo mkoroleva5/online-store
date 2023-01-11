@@ -1,19 +1,26 @@
 import { Reducer } from 'react';
-import { CartState, possiblePromos } from '../components/cartState';
+import { possiblePromos } from '../components/cartState';
+import { CartState } from '../components/cartStateTypes';
 import { CartProduct } from '../data/product';
 import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
 
 export const countTotalItems = (productsObj: Record<number, CartProduct>) => {
-  return Object.values(productsObj).reduce((acc, item) => acc + item.amount, 0);
+  return Number(
+    Object.values(productsObj)
+      .reduce((acc, item) => acc + item.amount, 0)
+      .toFixed(2),
+  );
 };
-export const countTotalCost = (productsObj: Record<number, CartProduct>) => {
-  return Object.values(productsObj)
-    .reduce((acc, item) => acc + item.amount * item.price, 0)
-    .toFixed(2);
+export const countTotalCost = (productsObj: Record<number, CartProduct>): number => {
+  return Number(
+    Object.values(productsObj)
+      .reduce((acc, item) => acc + item.amount * item.price, 0)
+      .toFixed(2),
+  );
 };
 
-export const countTotalCostDiscount = (totalCost: number, totalDiscount: number) => {
+export const countTotalCostDiscount = (totalCost: number, totalDiscount: number): number => {
   return totalCost - (totalCost / 100) * totalDiscount;
 };
 

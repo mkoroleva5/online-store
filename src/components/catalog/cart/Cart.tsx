@@ -13,7 +13,6 @@ import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 import { PromoCodes } from '../../basic-components/PromoCodes';
 import { BackToTop } from '../../basic-components/BackToTop';
-import { formatPrice } from '../../../utils/formatPrice';
 
 export const Cart = () => {
   const { cartState, dispatch } = useContext(CartStateContext);
@@ -30,13 +29,10 @@ export const Cart = () => {
 
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const totalCostDiscounted = formatPrice(
-    countTotalCostDiscount(
-      +totalCost,
-      Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
-    ),
+  const totalCostDiscounted = countTotalCostDiscount(
+    totalCost,
+    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
   );
-
   const [currentPage, setCurrentPage] = useState(() => checkSearch('page'));
   const [cardsPerPage, setCardsPerPage] = useState(() => checkSearch('limit'));
   const [lastPage, setLastPage] = useState(
@@ -99,7 +95,8 @@ export const Cart = () => {
                 <span className={style.boldText}>
                   {totalItems} {countItems(totalItems, ['товар', 'товаров', 'товара'])}
                 </span>{' '}
-                на сумму <span className={style.boldText}>{totalCostDiscounted} BYN</span>:
+                на сумму{' '}
+                <span className={style.boldText}>{totalCostDiscounted.toFixed(2)} BYN</span>:
               </div>
               <div className={style.items}>
                 {allCards.slice(
@@ -184,9 +181,11 @@ export const Cart = () => {
                       [style.crossed]: Object.keys(cartState.promos).length > 0,
                     })}
                   >
-                    {totalCost} BYN
+                    {totalCost.toFixed(2)} BYN
                   </p>
-                  {Object.keys(cartState.promos).length > 0 && <p>{totalCostDiscounted} BYN</p>}
+                  {Object.keys(cartState.promos).length > 0 && (
+                    <p>{totalCostDiscounted.toFixed(2)} BYN</p>
+                  )}
                 </div>
               </div>
             </div>

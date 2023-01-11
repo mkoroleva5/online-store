@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import { useContext, useState } from 'react';
 import { Product } from '../../../data/product';
 import { history } from '../../../store/History';
-import { formatPrice } from '../../../utils/formatPrice';
 import { InCartButton } from '../../basic-components/InCartButton';
 import { CartStateContext } from '../../cartState';
 import style from './ProductPage.module.css';
@@ -118,7 +117,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
               </Link>
             </div>
           </div>
-          <div className={style.price}>{formatPrice(product.price)} BYN</div>
+          <div className={style.price}>{product.price.toFixed(2)} BYN</div>
           <div>В наличии: {product.stock}</div>
           <InCartButton key={product.id} product={product} />
           <button
