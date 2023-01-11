@@ -13,6 +13,7 @@ import { history } from '../../../store/History';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 import { PromoCodes } from '../../basic-components/PromoCodes';
 import { BackToTop } from '../../basic-components/BackToTop';
+import { formatPrice } from '../../../utils/formatPrice';
 
 export const Cart = () => {
   const { cartState, dispatch } = useContext(CartStateContext);
@@ -29,9 +30,11 @@ export const Cart = () => {
 
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const totalCostDiscounted = countTotalCostDiscount(
-    +totalCost,
-    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+  const totalCostDiscounted = formatPrice(
+    countTotalCostDiscount(
+      +totalCost,
+      Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+    ),
   );
 
   const [currentPage, setCurrentPage] = useState(() => checkSearch('page'));

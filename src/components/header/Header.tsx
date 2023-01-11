@@ -5,14 +5,17 @@ import cartIcon from '../../assets/icons/cart.svg';
 import { history } from '../../store/History';
 import { CartStateContext } from '../cartState';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../store/CartStore';
+import { formatPrice } from '../../utils/formatPrice';
 
 export const Header = () => {
   const { cartState } = useContext(CartStateContext);
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
-  const totalCostDiscounted = countTotalCostDiscount(
-    +totalCost,
-    Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+  const totalCostDiscounted = formatPrice(
+    countTotalCostDiscount(
+      +totalCost,
+      Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
+    ),
   );
 
   return (

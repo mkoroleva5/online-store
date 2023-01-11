@@ -14,7 +14,7 @@ export const countTotalCost = (productsObj: Record<number, CartProduct>) => {
 };
 
 export const countTotalCostDiscount = (totalCost: number, totalDiscount: number) => {
-  return (totalCost - (totalCost / 100) * totalDiscount).toFixed(2);
+  return totalCost - (totalCost / 100) * totalDiscount;
 };
 
 export const cartReducer: Reducer<CartState, CartActionType> = (state, action) => {
