@@ -138,7 +138,8 @@ export const Catalog = () => {
   const product = products.find((el) => el.id === +parsePathname(history.location.pathname)[1]);
 
   const isCartOpen = categoryPath === 'cart';
-
+  const isProductPageOpen = !isCartOpen && isProductPageView && product;
+  const isCatalogOpen = !isCartOpen && !isProductPageView;
   return (
     <FilterState.Provider value={filterState}>
       <main className={style.main}>
@@ -148,8 +149,8 @@ export const Catalog = () => {
           ) : (
             <>
               {isCartOpen && <Cart />}
-              {!isCartOpen && isProductPageView && product && <ProductPage product={product} />}
-              {!isCartOpen && !isProductPageView && (
+              {isProductPageOpen && <ProductPage product={product} />}
+              {isCatalogOpen && (
                 <>
                   <Filter filteredProducts={filteredProducts} />
                   <section className={style.catalogWrapper}>
