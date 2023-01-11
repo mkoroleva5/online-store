@@ -8,17 +8,17 @@ import { FilterState } from '../filterState';
 import { getSearchValue, updateSearchValue } from '../../../utils/searchHelpers';
 
 export const CatalogMenu = () => {
-  const filterState = useContext(FilterState);
+  const { display, sort } = useContext(FilterState);
   return (
     <div className={style.buttonsWrapper}>
       <div className={style.blockContainer}>
         <button
           type="button"
           className={classNames(style.sortBtn, {
-            [style.sortBtnActive]: filterState.sort === 'namedown' || filterState.sort === 'nameup',
+            [style.sortBtnActive]: sort === 'namedown' || sort === 'nameup',
           })}
           onClick={() => {
-            updateSearchValue('sort', getSearchValue('sort') === 'nameup' ? 'namedown' : 'nameup');
+            updateSearchValue('sort', sort === 'nameup' ? 'namedown' : 'nameup');
           }}
         >
           По названию
@@ -26,23 +26,18 @@ export const CatalogMenu = () => {
             src={arrow}
             alt="arrow"
             className={classNames(style.arrow, {
-              [style.arrowDown]: filterState.sort === 'namedown',
-              [style.arrowVisible]:
-                filterState.sort === 'namedown' || filterState.sort === 'nameup',
+              [style.arrowDown]: sort === 'namedown',
+              [style.arrowVisible]: sort === 'namedown' || sort === 'nameup',
             })}
           />
         </button>
         <button
           type="button"
           className={classNames(style.sortBtn, {
-            [style.sortBtnActive]:
-              filterState.sort === 'pricedown' || filterState.sort === 'priceup',
+            [style.sortBtnActive]: sort === 'pricedown' || sort === 'priceup',
           })}
           onClick={() => {
-            updateSearchValue(
-              'sort',
-              getSearchValue('sort') === 'priceup' ? 'pricedown' : 'priceup',
-            );
+            updateSearchValue('sort', sort === 'priceup' ? 'pricedown' : 'priceup');
           }}
         >
           По цене
@@ -50,9 +45,8 @@ export const CatalogMenu = () => {
             src={arrow}
             alt="arrow"
             className={classNames(style.arrow, {
-              [style.arrowDown]: filterState.sort === 'pricedown',
-              [style.arrowVisible]:
-                filterState.sort === 'pricedown' || filterState.sort === 'priceup',
+              [style.arrowDown]: sort === 'pricedown',
+              [style.arrowVisible]: sort === 'pricedown' || sort === 'priceup',
             })}
           />
         </button>
@@ -66,9 +60,7 @@ export const CatalogMenu = () => {
           }}
         >
           <img
-            className={`${style.displayIcon} ${
-              filterState.display === 'table' ? style.active : ''
-            }`}
+            className={`${style.displayIcon} ${display === 'table' ? style.active : ''}`}
             style={{ width: '1.8rem' }}
             src={tableIcon}
             alt="Table layout"
@@ -82,7 +74,7 @@ export const CatalogMenu = () => {
           }}
         >
           <img
-            className={`${style.displayIcon} ${filterState.display === 'list' ? style.active : ''}`}
+            className={`${style.displayIcon} ${display === 'list' ? style.active : ''}`}
             src={listIcon}
             alt="List layout"
           />
