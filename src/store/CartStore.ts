@@ -2,7 +2,6 @@ import { Reducer } from 'react';
 import { possiblePromos } from '../components/cartState';
 import { CartState } from '../components/cartStateTypes';
 import { CartProduct } from '../data/product';
-import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
 
 export const countTotalItems = (productsObj: Record<number, CartProduct>) => {
@@ -37,13 +36,11 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
           },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'REMOVE_PRODUCT': {
       const newState = { ...state };
       delete newState.products[action.payload.id];
-      setLS(localStorageCartStateName, newState);
 
       return newState;
     }
@@ -59,7 +56,6 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'DECREASE_PRODUCT': {
@@ -69,7 +65,6 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
       if (amount < 1) {
         const newState = { ...state };
         delete newState.products[action.payload];
-        setLS(localStorageCartStateName, newState);
         return newState;
       }
       const newState = {
@@ -79,7 +74,6 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'CLEAR_CART': {
@@ -89,7 +83,6 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
         promos: {},
         isCheckout: false,
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'ADD_PROMO': {
@@ -103,7 +96,6 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
           [action.payload]: possiblePromos[action.payload],
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'REMOVE_PROMO': {
@@ -116,18 +108,15 @@ export const cartReducer: Reducer<CartState, CartActionType> = (state, action) =
           ...state,
           promos: newPromos,
         };
-        setLS(localStorageCartStateName, newState);
         return newState;
       }
       return state;
     }
     case 'SET_CHECKOUT': {
       const newState = { ...state, isCheckout: action.payload };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     default:
-      setLS(localStorageCartStateName, state);
       return state;
   }
 };
