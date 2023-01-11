@@ -35,7 +35,7 @@
   flex-direction: row;
   gap: 5rem;
   padding: 2rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--light-gray-color);
 }
 
 .images {
@@ -74,7 +74,7 @@
   width: 90vmin;
   height: 90vmin;
   border-radius: 1.4rem;
-  box-shadow: 0 0 0 3px white;
+  box-shadow: 0 0 0 3px var(--white-color);
   overflow: hidden;
 }
 
@@ -125,7 +125,7 @@
 }
 
 .fast-purchase-button {
-  background-color: white;
+  background-color: var(--white-color);
   border: 3px solid var(--bg-color);
   color: var(--bg-color);
   max-width: 15rem;
@@ -133,7 +133,7 @@
 
 .fast-purchase-button:hover {
   background-color: var(--bg-color);
-  color: white;
+  color: var(--white-color);
 }
 
 @media (max-width: 850px) {

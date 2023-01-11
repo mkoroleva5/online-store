@@ -26,6 +26,7 @@
   --text-color: #333333;
   --white-color: #ffffff;
   --gray-color: #7a7878;
+  --light-gray-color: var(--light-gray-color);
   --bg-color: #44b76e;
 }
 

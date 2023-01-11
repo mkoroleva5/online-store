@@ -10,7 +10,7 @@
   border: none;
   padding: 1rem 2rem;
   border-radius: 2rem;
-  background-color: #e5e5e5;
+  background-color: var(--light-gray-color);
   color: var(--text-color);
   cursor: pointer;
   transition: 0.3s;
@@ -18,11 +18,11 @@
 
 .item:hover {
   background-color: #bababa;
-  color: white;
+  color: var(--white-color);
 }
 
 .active {
-  color: white;
+  color: var(--white-color);
   background-color: var(--bg-color);
 }
 

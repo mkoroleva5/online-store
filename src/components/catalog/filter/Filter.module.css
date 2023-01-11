@@ -79,14 +79,14 @@
 
 .field {
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--light-gray-color);
   border-bottom: none;
 }
 
 .block {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--light-gray-color);
   padding: 1rem;
   position: relative;
 }

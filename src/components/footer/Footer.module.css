@@ -44,7 +44,7 @@
 }
 
 .github-link:hover .github-name {
-  color: black;
+  color: var(--text-color);
 }
 
 .github-link:hover .github-logo {

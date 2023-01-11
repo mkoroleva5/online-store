@@ -21,7 +21,7 @@
 }
 
 .in-cart {
-  background-color: white;
+  background-color: var(--white-color);
   border: 3px solid var(--bg-color);
   color: var(--bg-color);
 }

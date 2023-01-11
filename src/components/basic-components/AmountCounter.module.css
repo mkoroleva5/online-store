@@ -9,8 +9,8 @@
 }
 
 .amount-button {
-  background-color: #e5e5e5;
-  border: 1px solid #e5e5e5;
+  background-color: var(--light-gray-color);
+  border: 1px solid var(--light-gray-color);
   color: var(--gray-color);
   font-weight: 700;
   font-size: 2rem;
@@ -20,14 +20,14 @@
 
 .amount-button:hover {
   background-color: #bbbbbb;
-  color: white;
+  color: var(--white-color);
 }
 
 .amount {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid var(--light-gray-color);
+  border-bottom: 1px solid var(--light-gray-color);
   cursor: default;
 }
