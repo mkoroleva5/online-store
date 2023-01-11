@@ -114,16 +114,18 @@ export const Filter = ({ filteredProducts }: FilteredProducts) => {
         <div className={style.block}>
           <div className={style.blockTitle}>Тип продукта</div>
           <div className={style.optionsWrapper}>
-            {[...productTypes].map((product, index) => {
+            {[...productTypes].map((productType, index) => {
+              const filteredInStock = filteredProducts.filter(
+                ({ type }) => type === productType,
+              ).length;
+              const maxStock = products.filter(({ type }) => type === productType).length;
               return (
                 <FilterOption
-                  key={product}
-                  value={product}
+                  key={productType}
+                  value={productType}
                   id={index}
                   filterGroup="product"
-                  quantity={`${filteredProducts.filter((el) => el.type === product).length}/${
-                    products.filter((el) => el.type === product).length
-                  }`}
+                  quantity={`${filteredInStock}/${maxStock}`}
                 />
               );
             })}
