@@ -11,9 +11,7 @@ export const getLS = (key: string) => {
 };
 
 export const removeLS = (key: string) => {
-  if (localStorage.getItem(key)) {
-    localStorage.removeItem(key);
-  }
+  localStorage.removeItem(key);
 };
 
 export const localStorageCartStateName = 'healthy_food_store_cart_state';
