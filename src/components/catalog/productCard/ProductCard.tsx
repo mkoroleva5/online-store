@@ -53,9 +53,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           <img
             src={product.preview || noImage}
             alt={product.title}
-            className={classNames({
-              [style.imgTable]: tableLayout,
-              [style.imgList]: listLayout,
+            className={classNames(style.img, {
               [style.loadedImg]: isImageLoaded,
             })}
             ref={imageRef}
@@ -68,28 +66,15 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           <img
             src={product.images[1] || noImage}
             alt={product.title}
-            className={classNames({
-              [style.secondImgTable]: tableLayout,
-              [style.secondImgList]: listLayout,
+            className={classNames(style.secondImg, {
               [style.loadedImg]: isImageLoaded,
             })}
           />
         </>
       )}
       {!isImageLoaded && <ImageSpinner displayList />}
-      <div
-        className={classNames({
-          [style.cardInfoTable]: tableLayout,
-          [style.cardInfoList]: listLayout,
-        })}
-      >
-        <h3
-          className={classNames(style.title, {
-            [style.titleList]: listLayout,
-          })}
-        >
-          {product.title}
-        </h3>
+      <div className={style.cardInfo}>
+        <h3 className={style.title}>{product.title}</h3>
         <p className={style.stock}>В наличии: {product.stock}</p>
         <p className={style.price}>{formatPrice(product.price)} BYN</p>
         <InCartButton key={product.id} product={product} />
