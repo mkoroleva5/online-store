@@ -35,6 +35,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 40rem;
+  height: 40rem;
 }
 
 @-webkit-keyframes spin {

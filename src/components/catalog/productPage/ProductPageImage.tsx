@@ -35,7 +35,7 @@ export const ProductPageImage = ({
           else setIsImageLoaded(false);
         }}
       />
-      {!isImageLoaded && <ImageSpinner layered displayList={false} />}
+      {!isImageLoaded && <ImageSpinner layered={classN === 'fullImg'} displayList={false} />}
     </>
   );
 };

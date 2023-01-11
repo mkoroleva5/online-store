@@ -16,6 +16,7 @@
 .full-img {
   position: absolute;
   top: 0;
+  left: 0;
   width: 40rem;
   height: 40rem;
   transition: all ease-out 0.5s;
