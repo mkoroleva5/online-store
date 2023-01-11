@@ -72,7 +72,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                   role="button"
                   tabIndex={0}
                 >
-                  <ProductPageImage key={el + 1} src={el} title={product.title} classN="img" />
+                  <ProductPageImage key={el + 1} src={el} title={product.title} imageSize="img" />
                 </div>
               );
             })}
@@ -92,7 +92,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                   src={el}
                   title={product.title}
                   index={index}
-                  classN="fullImg"
+                  imageSize="fullImg"
                 />
               );
             })}
@@ -110,7 +110,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
                   isActive={isActive}
                   src={product.images[isActive]}
                   title={product.title}
-                  classN="enlargedImg"
+                  imageSize="enlargedImg"
                 />
               </div>
             </button>
