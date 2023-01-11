@@ -8,13 +8,13 @@ interface ProductPageImageProps {
   src: string;
   title: string;
   index?: number;
-  classN: 'fullImg' | 'img' | 'enlargedImg';
+  imageSize: 'fullImg' | 'img' | 'enlargedImg';
 }
 
 export const ProductPageImage = ({
   src,
   title,
-  classN,
+  imageSize: classN,
   index,
   isActive,
 }: ProductPageImageProps) => {
