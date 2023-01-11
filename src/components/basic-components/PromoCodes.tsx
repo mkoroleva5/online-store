@@ -8,6 +8,18 @@ export const PromoCodes = () => {
   const { cartState, dispatch } = useContext(CartState);
   const [input, setInput] = useState('');
 
+  const isCorrectPromo = Object.keys(possiblePromos).includes(input);
+
+  const handleCorrectPromoInput = () => {
+    if (isCorrectPromo) {
+      dispatch({
+        type: 'ADD_PROMO',
+        payload: input,
+      });
+      setInput('');
+    }
+  };
+
   return (
     <div className={style.promoWrapper}>
       <div className={style.promoInputWrapper}>
@@ -23,30 +35,18 @@ export const PromoCodes = () => {
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              if (Object.keys(possiblePromos).includes(input)) {
-                dispatch({
-                  type: 'ADD_PROMO',
-                  payload: input,
-                });
-                setInput('');
-              }
+              handleCorrectPromoInput();
             }
           }}
         />
         <button
           className={classNames(style.submitButton, {
-            [style.active]: Object.keys(possiblePromos).includes(input),
+            [style.active]: isCorrectPromo,
           })}
-          disabled={!Object.keys(possiblePromos).includes(input)}
+          disabled={!isCorrectPromo}
           type="button"
           onClick={() => {
-            if (Object.keys(possiblePromos).includes(input)) {
-              dispatch({
-                type: 'ADD_PROMO',
-                payload: input,
-              });
-              setInput('');
-            }
+            handleCorrectPromoInput();
           }}
         >
           Применить
