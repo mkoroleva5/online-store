@@ -6,12 +6,14 @@ interface MatchesProps {
 }
 
 export const Matches = ({ length }: MatchesProps) => {
-  const lastNum = +length.toString().split('').reverse()[0];
-  const found = lastNum === 1 && length !== 11 ? 'Найден' : 'Найдено';
   return (
     <div className={style.matches}>
       {length > 0 ? (
-        `${found} ${length} ${countItems(length)}`
+        `${countItems(length, ['Найден', 'Найдено', 'Найдено'])} ${length} ${countItems(length, [
+          'товар',
+          'товаров',
+          'товара',
+        ])}`
       ) : (
         <>
           <p className={style.matchesTitle}>Ничего не найдено😥</p>

@@ -94,7 +94,7 @@ export const Cart = () => {
               <div>
                 В корзине{' '}
                 <span className={style.boldText}>
-                  {totalItems} {countItems(totalItems)}
+                  {totalItems} {countItems(totalItems, ['товар', 'товаров', 'товара'])}
                 </span>{' '}
                 на сумму <span className={style.boldText}>{totalCostDiscounted} BYN</span>:
               </div>
