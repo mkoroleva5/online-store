@@ -5,6 +5,10 @@
 - [@mkoroleva5](https://www.github.com/mkoroleva5)
 - [@MOONcitizenX](https://www.github.com/MOONcitizenX)
 
+## Deployment  
+
+- [Online-store](https://mkoroleva5-online-store.netlify.app/)
+
 ## Run Locally
 
 Clone the project
