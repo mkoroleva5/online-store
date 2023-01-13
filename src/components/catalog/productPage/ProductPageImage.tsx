@@ -8,13 +8,13 @@ interface ProductPageImageProps {
   src: string;
   title: string;
   index?: number;
-  classN: 'fullImg' | 'img' | 'enlargedImg';
+  imageSize: 'fullImg' | 'img' | 'enlargedImg';
 }
 
 export const ProductPageImage = ({
   src,
   title,
-  classN,
+  imageSize: classN,
   index,
   isActive,
 }: ProductPageImageProps) => {
@@ -35,7 +35,7 @@ export const ProductPageImage = ({
           else setIsImageLoaded(false);
         }}
       />
-      {!isImageLoaded && <ImageSpinner classN={classN} displayList={false} />}
+      {!isImageLoaded && <ImageSpinner layered={classN === 'fullImg'} displayList={false} />}
     </>
   );
 };

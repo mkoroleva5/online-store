@@ -19,7 +19,7 @@
 .promo-input {
   height: 3rem;
   outline: none;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--light-gray-color);
   border-radius: 2px;
   text-indent: 5px;
 }
@@ -31,8 +31,8 @@
 .submit-button {
   height: 3rem;
   padding: 0 1rem;
-  background-color: #e5e5e5;
-  border: 1px solid #e5e5e5;
+  background-color: var(--light-gray-color);
+  border: 1px solid var(--light-gray-color);
   border-radius: 0.8rem;
   color: var(--gray-color);
   transition: all 0.2s ease-in-out;
@@ -41,11 +41,11 @@
 
 .active {
   background-color: var(--bg-color);
-  color: white;
+  color: var(--white-color);
 }
 .active:hover {
   background-color: var(--bg-color);
-  color: white;
+  color: var(--white-color);
   opacity: 0.8;
 }
 
@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e5e5e5;
+  background-color: var(--light-gray-color);
   border-radius: 0.8rem;
   padding: 0.5rem 1.5rem;
   gap: 1rem;

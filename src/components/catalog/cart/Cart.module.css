@@ -85,7 +85,7 @@
   width: 4.5rem;
   height: 2.5rem;
   text-indent: 0.5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--light-gray-color);
   border-radius: 2px;
 }
 
@@ -111,7 +111,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--white-color);
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -119,12 +119,12 @@
 }
 
 .page-button:hover {
-  background-color: #e5e5e5;
+  background-color: var(--light-gray-color);
 }
 
 .active-page {
   background-color: var(--bg-color);
-  color: white;
+  color: var(--white-color);
 }
 
 .active-page:hover {
@@ -135,7 +135,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--white-color);
   border: none;
   cursor: pointer;
 }

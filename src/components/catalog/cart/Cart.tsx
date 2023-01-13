@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react
 import classNames from 'classnames';
 import { countTotalCost, countTotalCostDiscount, countTotalItems } from '../../../store/CartStore';
 import { countItems } from '../../../utils/countItems';
-import { CartState } from '../../cartState';
+import { CartStateContext } from '../../cartState';
 import style from './Cart.module.css';
 import { CartProductCard } from './CartProductCard';
 import { CheckoutPage } from './CheckoutPage';
@@ -15,7 +15,7 @@ import { PromoCodes } from '../../basic-components/PromoCodes';
 import { BackToTop } from '../../basic-components/BackToTop';
 
 export const Cart = () => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
 
   const checkSearch = useCallback((val: 'page' | 'limit'): string => {
     const defaultValues = {
@@ -30,10 +30,9 @@ export const Cart = () => {
   const totalCost = countTotalCost(cartState.products);
   const totalItems = countTotalItems(cartState.products);
   const totalCostDiscounted = countTotalCostDiscount(
-    +totalCost,
+    totalCost,
     Object.values(cartState.promos).reduce((acc, it) => acc + it, 0),
   );
-
   const [currentPage, setCurrentPage] = useState(() => checkSearch('page'));
   const [cardsPerPage, setCardsPerPage] = useState(() => checkSearch('limit'));
   const [lastPage, setLastPage] = useState(
@@ -68,10 +67,8 @@ export const Cart = () => {
       const limit = getSearchValue('limit');
       if (page) setCurrentPage(checkSearch('page'));
       if (limit) setCardsPerPage(checkSearch('limit'));
-      return () => {
-        unlisten();
-      };
     });
+    return unlisten;
   }, [checkSearch]);
 
   useEffect(() => {
@@ -96,9 +93,10 @@ export const Cart = () => {
               <div>
                 В корзине{' '}
                 <span className={style.boldText}>
-                  {totalItems} {countItems(totalItems)}
+                  {totalItems} {countItems(totalItems, ['товар', 'товаров', 'товара'])}
                 </span>{' '}
-                на сумму <span className={style.boldText}>{totalCostDiscounted} BYN</span>:
+                на сумму{' '}
+                <span className={style.boldText}>{totalCostDiscounted.toFixed(2)} BYN</span>:
               </div>
               <div className={style.items}>
                 {allCards.slice(
@@ -183,9 +181,11 @@ export const Cart = () => {
                       [style.crossed]: Object.keys(cartState.promos).length > 0,
                     })}
                   >
-                    {totalCost} BYN
+                    {totalCost.toFixed(2)} BYN
                   </p>
-                  {Object.keys(cartState.promos).length > 0 && <p>{totalCostDiscounted} BYN</p>}
+                  {Object.keys(cartState.promos).length > 0 && (
+                    <p>{totalCostDiscounted.toFixed(2)} BYN</p>
+                  )}
                 </div>
               </div>
             </div>

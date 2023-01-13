@@ -1,7 +1,7 @@
 import { createContext } from 'react';
-import { CartProduct } from '../data/product';
 import { CartActionType } from '../store/CartStoreTypes';
 import { getLS, localStorageCartStateName } from '../utils/localStorageHelpers';
+import { CartState } from './cartStateTypes';
 
 export interface PossiblePromosInt {
   string: number;
@@ -12,23 +12,17 @@ export const possiblePromos: Record<string, number> = {
   WINTER: 15,
 };
 
-export interface CartStateProps {
-  products: Record<number, CartProduct>;
-  promos: Record<string, number>;
-  isCheckout: boolean;
-}
-
 export interface CartContext {
-  cartState: CartStateProps;
+  cartState: CartState;
   dispatch: React.Dispatch<CartActionType>;
 }
 
-const savedCartState = getLS(localStorageCartStateName) as CartStateProps;
+const savedCartState = getLS(localStorageCartStateName);
 
-export const initialCartState: CartStateProps = {
+export const initialCartState: CartState = {
   products: savedCartState?.products ?? {},
   promos: savedCartState?.promos ?? {},
   isCheckout: savedCartState?.isCheckout ?? false,
 };
 
-export const CartState = createContext<CartContext>({} as CartContext);
+export const CartStateContext = createContext<CartContext>({} as CartContext);

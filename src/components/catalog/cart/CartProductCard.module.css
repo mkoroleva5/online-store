@@ -59,9 +59,11 @@
 }
 
 .item-title {
+  text-decoration: none;
   text-align: left;
   font-weight: 700;
   font-size: 1.6rem;
+  color: var(--text-color);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }

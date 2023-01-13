@@ -1,23 +1,29 @@
 import { Reducer } from 'react';
-import { CartStateProps, possiblePromos } from '../components/cartState';
+import { possiblePromos } from '../components/cartState';
+import { CartState } from '../components/cartStateTypes';
 import { CartProduct } from '../data/product';
-import { localStorageCartStateName, setLS } from '../utils/localStorageHelpers';
 import { CartActionType } from './CartStoreTypes';
 
 export const countTotalItems = (productsObj: Record<number, CartProduct>) => {
-  return Object.values(productsObj).reduce((acc, item) => acc + item.amount, 0);
+  return Number(
+    Object.values(productsObj)
+      .reduce((acc, item) => acc + item.amount, 0)
+      .toFixed(2),
+  );
 };
-export const countTotalCost = (productsObj: Record<number, CartProduct>) => {
-  return Object.values(productsObj)
-    .reduce((acc, item) => acc + item.amount * item.price, 0)
-    .toFixed(2);
+export const countTotalCost = (productsObj: Record<number, CartProduct>): number => {
+  return Number(
+    Object.values(productsObj)
+      .reduce((acc, item) => acc + item.amount * item.price, 0)
+      .toFixed(2),
+  );
 };
 
-export const countTotalCostDiscount = (totalCost: number, totalDiscount: number) => {
-  return (totalCost - (totalCost / 100) * totalDiscount).toFixed(2);
+export const countTotalCostDiscount = (totalCost: number, totalDiscount: number): number => {
+  return totalCost - (totalCost / 100) * totalDiscount;
 };
 
-export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, action) => {
+export const cartReducer: Reducer<CartState, CartActionType> = (state, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
       const newState = {
@@ -30,13 +36,11 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
           },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'REMOVE_PRODUCT': {
       const newState = { ...state };
       delete newState.products[action.payload.id];
-      setLS(localStorageCartStateName, newState);
 
       return newState;
     }
@@ -52,7 +56,6 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'DECREASE_PRODUCT': {
@@ -62,7 +65,6 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
       if (amount < 1) {
         const newState = { ...state };
         delete newState.products[action.payload];
-        setLS(localStorageCartStateName, newState);
         return newState;
       }
       const newState = {
@@ -72,7 +74,6 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
           [action.payload]: { ...state.products[action.payload], amount },
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'CLEAR_CART': {
@@ -82,7 +83,6 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
         promos: {},
         isCheckout: false,
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'ADD_PROMO': {
@@ -96,7 +96,6 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
           [action.payload]: possiblePromos[action.payload],
         },
       };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     case 'REMOVE_PROMO': {
@@ -109,18 +108,15 @@ export const cartReducer: Reducer<CartStateProps, CartActionType> = (state, acti
           ...state,
           promos: newPromos,
         };
-        setLS(localStorageCartStateName, newState);
         return newState;
       }
       return state;
     }
     case 'SET_CHECKOUT': {
       const newState = { ...state, isCheckout: action.payload };
-      setLS(localStorageCartStateName, newState);
       return newState;
     }
     default:
-      setLS(localStorageCartStateName, state);
       return state;
   }
 };

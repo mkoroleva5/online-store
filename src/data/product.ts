@@ -1,4 +1,3 @@
-// type and category to be extended after adding products to products.json
 export interface Product {
   id: number;
   title: string;
@@ -16,9 +15,3 @@ export interface Product {
 export interface CartProduct extends Product {
   amount: number;
 }
-
-// export type CategoryPaths = 'sweets' | 'candles' | 'drinks';
-
-// export type ProductCategory = 'Полезные сладости' | 'Полезные напитки' | 'Свечи';
-
-// export type ProductType = 'батончик' | 'печенье';

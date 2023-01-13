@@ -6,11 +6,7 @@ export const BackToTop = () => {
   const [isBackToTop, setIsBackToTop] = useState(false);
 
   const listenerIsBackToTop = () => {
-    if (window.scrollY > 200) {
-      setIsBackToTop(true);
-    } else {
-      setIsBackToTop(false);
-    }
+    setIsBackToTop(window.scrollY > 200);
   };
 
   const scrollUp = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -22,7 +18,7 @@ export const BackToTop = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', listenerIsBackToTop);
+    window.addEventListener('scroll', listenerIsBackToTop, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', listenerIsBackToTop);

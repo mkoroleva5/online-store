@@ -17,7 +17,7 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .logo {
@@ -88,7 +88,7 @@
   height: 20px;
   border-radius: 50%;
   background-color: var(--text-color);
-  color: white;
+  color: var(--white-color);
   font-size: 0.95rem;
 }
 

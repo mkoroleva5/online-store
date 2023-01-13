@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { useDebounce } from '../../hooks/use-debounce';
 import { updateSearchValue } from '../../utils/searchHelpers';
-import { FilterState } from '../catalog/filterState';
+import { FilterState, FilterStoreState } from '../catalog/filterState';
 import style from './DualSlider.module.css';
 
 interface RangesType {
@@ -13,26 +13,54 @@ interface RangesType {
   sliderGroup: 'price' | 'stock';
 }
 
-export const DualSlider = ({ min, max, filteredMin, filteredMax, sliderGroup }: RangesType) => {
-  const sliderName = sliderGroup[0].toUpperCase() + sliderGroup.slice(1);
-  const filterState = useContext(FilterState);
+interface DetermineMinMaxValues extends RangesType {
+  state: FilterStoreState;
+}
 
-  let filterMin = sliderGroup === 'price' ? filterState.minPrice : filterState.minStock;
-  let filterMax = sliderGroup === 'price' ? filterState.maxPrice : filterState.maxStock;
+const determineMinMaxValues = ({
+  min,
+  max,
+  filteredMax,
+  filteredMin,
+  sliderGroup,
+  state,
+}: DetermineMinMaxValues) => {
+  let filterMin = sliderGroup === 'price' ? state.minPrice : state.minStock;
+  let filterMax = sliderGroup === 'price' ? state.maxPrice : state.maxStock;
+
   if (filterMin && filterMax) {
     if (filterMin > max && filterMax < min) {
       filterMin = (filteredMax ?? filterMax ?? max) - 1;
       filterMax = (filteredMin ?? filterMin ?? min) + 1;
     }
   }
+
   if (filterMin) {
     if (filterMin < min) filterMin = min;
     else if (filterMin > max) filterMin = (filteredMax ?? filterMax ?? max) - 1;
   }
+
   if (filterMax) {
     if (filterMax > max) filterMax = max;
     else if (filterMax < min) filterMax = (filteredMin ?? filterMin ?? min) + 1;
   }
+
+  return [filterMin, filterMax];
+};
+
+export const DualSlider = ({ min, max, filteredMin, filteredMax, sliderGroup }: RangesType) => {
+  const sliderName = sliderGroup[0].toUpperCase() + sliderGroup.slice(1);
+  const filterState = useContext(FilterState);
+
+  const [filterMin, filterMax] = determineMinMaxValues({
+    min,
+    max,
+    filteredMax,
+    filteredMin,
+    sliderGroup,
+    state: filterState,
+  });
+
   const [minVal, setMinVal] = useState(filteredMin ?? filterMin ?? min);
   const [maxVal, setMaxVal] = useState(filteredMax ?? filterMax ?? max);
 

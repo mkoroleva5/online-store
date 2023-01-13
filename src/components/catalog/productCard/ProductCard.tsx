@@ -4,7 +4,6 @@ import { Product } from '../../../data/product';
 import style from './ProductCard.module.css';
 import noImage from '../../../assets/images/default.jpg';
 import { Layout } from '../types';
-import { formatPrice } from '../../../utils/formatPrice';
 import { ImageSpinner } from '../../basic-components/ImageSpinner';
 import { history } from '../../../store/History';
 import { InCartButton } from '../../basic-components/InCartButton';
@@ -53,9 +52,7 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           <img
             src={product.preview || noImage}
             alt={product.title}
-            className={classNames({
-              [style.imgTable]: tableLayout,
-              [style.imgList]: listLayout,
+            className={classNames(style.img, {
               [style.loadedImg]: isImageLoaded,
             })}
             ref={imageRef}
@@ -68,30 +65,17 @@ export const ProductCard = ({ product, layout, path }: ProductProps) => {
           <img
             src={product.images[1] || noImage}
             alt={product.title}
-            className={classNames({
-              [style.secondImgTable]: tableLayout,
-              [style.secondImgList]: listLayout,
+            className={classNames(style.secondImg, {
               [style.loadedImg]: isImageLoaded,
             })}
           />
         </>
       )}
-      {!isImageLoaded && <ImageSpinner displayList={listLayout} />}
-      <div
-        className={classNames({
-          [style.cardInfoTable]: tableLayout,
-          [style.cardInfoList]: listLayout,
-        })}
-      >
-        <h3
-          className={classNames(style.title, {
-            [style.titleList]: listLayout,
-          })}
-        >
-          {product.title}
-        </h3>
+      {!isImageLoaded && <ImageSpinner displayList />}
+      <div className={style.cardInfo}>
+        <h3 className={style.title}>{product.title}</h3>
         <p className={style.stock}>В наличии: {product.stock}</p>
-        <p className={style.price}>{formatPrice(product.price)} BYN</p>
+        <p className={style.price}>{product.price.toFixed(2)} BYN</p>
         <InCartButton key={product.id} product={product} />
       </div>
     </div>

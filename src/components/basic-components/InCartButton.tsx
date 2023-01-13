@@ -2,14 +2,14 @@ import classNames from 'classnames';
 import { useContext } from 'react';
 import { Product } from '../../data/product';
 import { history } from '../../store/History';
-import { CartState } from '../cartState';
+import { CartStateContext } from '../cartState';
 import style from './InCartButton.module.css';
 
 interface InCartButtonProps {
   product: Product;
 }
 export const InCartButton = (props: InCartButtonProps) => {
-  const { cartState, dispatch } = useContext(CartState);
+  const { cartState, dispatch } = useContext(CartStateContext);
   const { product } = props;
   const { id } = product;
 
@@ -20,8 +20,7 @@ export const InCartButton = (props: InCartButtonProps) => {
       onClick={(e) => {
         e.stopPropagation();
         dispatch({ type: 'ADD_PRODUCT', payload: product });
-        const target = e.target as HTMLElement;
-        if (target.textContent === 'В корзине') history.push('/cart');
+        if (cartState.products[id]) history.push('/cart');
       }}
     >
       {!cartState.products[id] ? 'В корзину' : 'В корзине'}

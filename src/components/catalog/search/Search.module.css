@@ -9,7 +9,7 @@
   width: 95%;
   height: 2.5rem;
   outline: none;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--light-gray-color);
   border-radius: 2px;
   text-indent: 5px;
 }
