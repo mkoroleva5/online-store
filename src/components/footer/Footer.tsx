@@ -1,6 +1,5 @@
 import style from './Footer.module.css';
 import githubLogo from '../../assets/images/github.png';
-import rsLogo from '../../assets/images/rs-school.png';
 
 export const Footer = () => {
   return (
@@ -29,9 +28,6 @@ export const Footer = () => {
         <div className={style.footer}>
           <p>Online store 2023</p>
         </div>
-        <a className={style.rsLink} href="https://rs.school/js/" target="_blank" rel="noreferrer">
-          <img className={style.rsLogo} src={rsLogo} alt="Rolling Scopes School" />
-        </a>
       </div>
     </footer>
   );
