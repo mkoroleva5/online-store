@@ -18,7 +18,6 @@
 .github-wrapper {
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
@@ -51,21 +50,6 @@
   filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
 }
 
-.rs-link {
-  display: flex;
-  align-items: center;
-}
-
-.rs-logo {
-  height: 30px;
-  transition: 0.2s;
-  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(70%) contrast(64%);
-}
-
-.rs-logo:hover {
-  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
-}
-
 @media (max-width: 1600px) {
   .footer {
     max-width: 1200px;
@@ -84,5 +68,8 @@
 @media (max-width: 576px) {
   .footer {
     max-width: 500px;
+  }
+  .github-wrapper {
+    flex-direction: column;
   }
 }
