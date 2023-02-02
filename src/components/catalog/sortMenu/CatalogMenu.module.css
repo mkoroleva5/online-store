@@ -1,0 +1,75 @@
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem;
+  gap: 1rem;
+  border-bottom: 1px solid var(--light-gray-color);
+}
+
+.block-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.display-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.display-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: 0.2s;
+}
+
+.display-icon:hover {
+  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(30%) contrast(64%);
+}
+
+.sort-btn {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 1.4rem;
+  filter: brightness(0) saturate(100%) invert(46%) sepia(2%) saturate(23%) hue-rotate(53deg)
+    brightness(102%) contrast(91%);
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-btn-active {
+  filter: unset;
+}
+
+.sort-btn:hover {
+  filter: unset;
+}
+
+.arrow {
+  width: 1.3rem;
+  aspect-ratio: 1/1;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow-down {
+  transform: rotate(180deg);
+}
+
+.arrow-visible {
+  visibility: visible;
+}
+
+.sort-btn:hover .arrow {
+  filter: unset;
+}
+
+.display-icon.active {
+  filter: invert(3%) sepia(1%) saturate(1401%) hue-rotate(314deg) brightness(50%) contrast(64%);
+}

@@ -1,0 +1,1361 @@
+[
+  {
+    "id": 1,
+    "title": "Батончик с протеином «Мята» Bite",
+    "description": "Bite Мята — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и много протеина. Для оригинального вкуса мы добавили ароматную мяту — в сочетании с абрикосом и миндалем получился насыщенный протеиновый снек, который удобно взять с собой и забыть о голоде на несколько часов!  Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 21,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/1.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/1.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/1-and-6.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Батончик с протеином «Детокс» абрикос-миндаль Bite",
+    "description": "Bite Detox — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин. Миндаль, фундук и абрикос выводят из тела токсины. Кокос снижает уровень холестерина в крови и быстро насыщает энергией. Молотый имбирь — главный помощник в похудении и детоксикации организма. А протеиновый заряд придает сил и укрепляет мышцы! Это очень питательный перекус для здорового питания, с которым детокс пройдет легко и вкусно. Абсолютно натуральный.  Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 43,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/2.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/2.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/2.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Батончик с протеином «Любовь» вишня-миндаль Bite",
+    "description": "Bite Love — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин. Получился вкусный низкокалорийный десерт в удобном формате снека, который можно взять с собой и перекусить до или после тренировки. Сладость спелой вишни и кислинку клюквы дополняют ароматные специи — корица и гвоздика.  Миндаль и фундук добавляют полезных жиров, а растительный протеин насыщает надолго. Диетический вишневый пирог от Bite — любовь с первого перекуса гарантирована! Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 21,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/3.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/3.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/3.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Батончик с протеином «Иммунитет» клюква-тыквенные семечки Bite",
+    "description": "Bite Иммунитет — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин. Питательный и функциональный, протеиновый батончик Bite - идеальный продукт для здорового питания. В нем большое количество клюквы, которая поможет поддержать иммунитет. А тыквенные семечки содержат целый спектр витаминов и минеральных веществ: B1, B6, B12, PP, К, D, А, Е, С, фолиевую кислоту, фосфор, калий и магний. Он укрепит иммунитет, придаст сил и энергии. Возьмите его с собой и витаминный заряд будет обеспечен! Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 59,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/4.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/4.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/4-and-8.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Батончик с протеином «Баланс» кокос-бразильский орех Bite",
+    "description": "Bite Баланс — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин.  Кокос нормализует уровень сахара, поддерживает баланс жидкости в организме и приводит в норму обмен веществ. Бразильский орех на треть состоит из ненасыщенных жирных кислот, содержит селен, фосфор, натрий, калий, кальций, витамины группы B, С, Е. А еще мы добавили щепотку кардамона и растительный протеин — все идеально сбалансировано! Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 53,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/5.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/5.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/5.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/5-1.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Батончик с протеином «Контроль веса» морковь-кешью Bite",
+    "description": "Bite Контроль веса — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин. Если вы следите за фигурой, низкокалорийный снек отлично подойдет для перекуса до или после тренировки. Ведь в нем всего 147 ккал, а сытость он придает на 2-3 часа! В этом Bite много моркови, а еще яблок, тыквенных семечек, орехов и растительного протеина. А еще Bite Контроль веса можно есть даже по вечерам — и ничего, кроме пользы, вам за это не будет!  Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 11,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/6.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/6.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/1-and-6.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Батончик с протеином «Звезда» шоколад-мускатный орех Bite",
+    "description": "Bite Star — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин.  Насыщенный шоколадный вкус в нем отлично сочетается с хрустящим арахисом. Сладкий вкус фиников оттеняет щепотка морской соли и ароматный мускатный орех. А еще, Bite Star — рекордсмен по содержанию растительного протеина! Он отвечает за восстановление мыщц после активного дня и надолго дарит чувство сытости. Съешь Bite на завтрак, подкрепись после тренировки, закинь пару снеков в рюкзак и можешь не переживать на счет вкусного и полезного перекуса — теперь он всегда будет рядом с тобой. Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 14,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/7.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/7.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/7.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Батончик с протеином «Настроение» шоколад Bite",
+    "description": "Bite Настроение — натуральный орехово-фруктовый батончик без сахара. В составе отборные орехи, фрукты, ягоды и протеин.  Рекордсмен по содержанию эндорфинов, протеиновый Bite — это диетический шоколадный десерт без вреда для фигуры.  Он содержит фундук, миндаль, финики и натуральный горький шоколад! К насыщенному орехово-шоколадному вкусу мы добавили пряности: корицу, мускатный орех и гвоздику. Получился классный перекус, чтобы подкрепиться в течение дня и зарядиться положительными эмоциями! Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 4.09,
+    "stock": 67,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/8.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/8.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/4-and-8.webp"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Фруктово-ягодный батончик «Апельсин» Slim Bite",
+    "description": "Низкокалорийные батончики Slim Bite «Апельсин» — это цитрусовый всплеск витаминов и пряные специи для крепкого иммунитета. В них совсем нет добавленного сахара, консервантов, красителей и усилителей вкуса. Зато много натуральных ягод и фруктов, которые помогают поддерживать форму и естественную красоту. И что самое главное — в каждом снеке меньше 100 калорий. Теперь насладиться вкусом можно без вреда для фигуры. Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 2.35,
+    "stock": 75,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/9.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/9.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/9.webp"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Фруктово-ягодный батончик «Матча» Slim Bite",
+    "description": "Низкокалорийные батончики Slim Bite «Матча» — тот случай, когда любимый напиток вдруг превращается в удобный снек! Матча на кокосовом в нашем исполнении — это настоящий зеленый чай из Японии и ароматный кокос. В Slim Bite совсем нет добавленного сахара, консервантов, красителей и усилителей вкуса. Зато много полезных жиров из кокоса и антиоксидантов из зеленого чая, которые ускоряют обмен веществ, помогают поддерживать форму и естественную красоту. И что самое главное — в каждом снеке меньше 100 калорий. Теперь насладиться вкусом можно без вреда для фигуры. Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 2.35,
+    "stock": 1,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/10.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/10.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/10.webp"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Фруктово-ягодный батончик «Двойной шоколад» Slim Bite",
+    "description": "Низкокалорийные батончики Slim Bite «Двойной шоколад» — чемпионы по содержанию эндорфинов для вашего хорошего настроения! Шоколад, кокос и специи идеально сочетаются и придают снекам вкус шоколадного пирога с нежным сливочным оттенком. В них совсем нет добавленного сахара, консервантов, красителей и усилителей вкуса. Зато много натуральных ягод, фруктов и специй, которые помогают поддерживать форму и естественную красоту. И что самое главное — в каждом снеке меньше 100 калорий. Теперь насладиться вкусом можно без вреда для фигуры. Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 2.35,
+    "stock": 18,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/11.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/11.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/11.webp"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Фруктово-ягодный батончик «Кокос» Slim Bite",
+    "description": "Низкокалорийные батончики Slim Bite «Кокос» — это сладкий и сытный перекус с нежным кокосовым вкусом. В них совсем нет добавленного сахара, консервантов, красителей и усилителей вкуса. Зато много, очень много кокоса! Сбалансированный микс из ягод, фруктов и специй помогает поддерживать форму и естественную красоту. И что самое главное — в каждом снеке меньше 100 калорий. Теперь насладиться вкусом можно без вреда для фигуры. Абсолютно натуральный. Без сахара, без глютена. Не содержит ГМО, молоко и сою. Подходит для диабетиков.",
+    "price": 2.35,
+    "stock": 3,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/12.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/12.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/12.webp"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Печенье безглютеновое «Брокколи» Bite",
+    "description": "Детское печенье Biteу с брокколи —  вкусный и полезный перекус. Еще никогда не было так просто уговорить ребенка есть овощи. Печенье с брокколи имеют натуральный овощной вкус, а яблоки и финик придают натуральную сладость. При этом в составе нет добавленного сахара, дрожжей, белой муки, молока и сои. Мы уверены, что оно в разы полезнее и вкуснее обычных сладостей. Печенье обогащено кальцием и витаминами, необходимыми для гармоничного развития ребёнка. Печенье упаковано в интерактивную коробочку с красочными иллюстрациями мира динозавров, а внутри целая коллекция фигурного печенья в виде тропических листьев и динозавров. Главная особенность всех упаковок печенья Bitey — они легко превращаются в игрушки. Для этого надо выдавить картинки и подставку по контуру, соединить — и можно играть! Познаём мир, веселимся и наслаждаемся полезным перекусом вместе с Bitey! Продукт не содержит глютен, сахар, молоко, сою и красители.",
+    "price": 5.75,
+    "stock": 10,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "печенье",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/13.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/13.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/13.webp"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Печенье безглютеновое «Банан» Bite",
+    "description": "Детское печенье Biteу с бананом —  вкусный и полезный перекус. В печенье Bitey нет добавленного сахара, дрожжей, белой муки, молока и сои. Мы уверены, что оно в разы полезнее и вкуснее обычных сладостей. Печенье обогащено кальцием и витаминами, необходимыми для гармоничного развития ребёнка. Печенье упаковано в интерактивную коробочку с красочными иллюстрациями космического приключения, а внутри целая коллекция фигурного печенья в виде ракет, космонавтов и звезд. Главная особенность всех упаковок печенья Bitey — они легко превращаются в игрушки. Для этого надо выдавить картинки и подставку по контуру, соединить — и можно играть! Познаём мир, веселимся и наслаждаемся полезным перекусом вместе с Bitey! Продукт не содержит глютен, сахар, молоко, сою и красители.",
+    "price": 5.75,
+    "stock": 42,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "печенье",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/14.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/14.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/14.webp"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Печенье безглютеновое «Клубника» Bite",
+    "description": "Детское печенье Biteу с клубникой —  вкусный и полезный перекус. В печенье Bitey нет добавленного сахара, дрожжей, белой муки, молока и сои. Мы уверены, что оно в разы полезнее и вкуснее обычных сладостей. Печенье обогащено кальцием и витаминами, необходимыми для гармоничного развития ребёнка. Печенье упаковано в интерактивную коробочку с красочными иллюстрациями подводного мира, а внутри целая коллекция фигурного печенья в виде рыбок, русалок и ракушек. Главная особенность всех упаковок печенья Bitey — они легко превращаются в игрушки. Для этого надо выдавить картинки и подставку по контуру, соединить — и можно играть! Познаём мир, веселимся и наслаждаемся полезным перекусом вместе с Bitey! Продукт не содержит глютен, сахар, молоко, сою и красители.",
+    "price": 5.75,
+    "stock": 51,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "печенье",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/15.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/15.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/15.webp"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Печенье безглютеновое «Свекла» Bite",
+    "description": "Детское печенье Biteу со свеклой —  вкусный и полезный перекус. Еще никогда не было так просто уговорить ребянка есть овощи. Печенье со свеклой имеют натурльный сладковатый вкус. При этом в составе нет добавленного сахара, дрожжей, белой муки, молока и сои. Мы уверены, что оно в разы полезнее и вкуснее обычных сладостей. Печенье обогащено кальцием и витаминами, необходимыми для гармоничного развития ребёнка. Печенье упаковано в интерактивную коробочку с красочными иллюстрациями животного мира, а внутри целая коллекция фигурного печенья в виде тигров, бегемотов и обезьянок. Главная особенность всех упаковок печенья Bitey — они легко превращаются в игрушки. Для этого надо выдавить картинки и подставку по контуру, соединить — и можно играть! Познаём мир, веселимся и наслаждаемся полезным перекусом вместе с Bitey! Продукт не содержит глютен, сахар, молоко, сою и красители.",
+    "price": 5.75,
+    "stock": 76,
+    "brand": "Bite",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "печенье",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/16.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/16.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/16.webp"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Молочный гречишный шоколад Nature's own factory",
+    "description": "Самый популярный шоколад в линейке - молочный шоколад с нежной натуральной ванилью.  Татарская гречиха, повышенное содержание какао - все это придает молочному шоколаду более насыщенный и глубокий вкус. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-бобов, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре, за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 3.95,
+    "stock": 36,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/17.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/17.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/17.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/17-1.webp"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Белый гречишный шоколад Nature's own factory",
+    "description": "Семена татарской гречихи на основе качественного какао-масла без добавления какао-бобов - это все о  белом шоколаде с цветом слоновой кости. Идеальный вариант для ценителей изысканных сортов сладостей. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 3.95,
+    "stock": 37,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/18.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/18.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/18.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/18-1.webp"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Горький гречишный шоколад Nature's own factory",
+    "description": "Для любителей качественного горького шоколада и с непереносимостью лактозы идеально подойдет шоколад с повышенным содержанием какао-бобов и без молока в составе. Отличное угощение для последователей здорового образа жизни. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-бобов, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 3.95,
+    "stock": 91,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/19.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/19.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/19.webp"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Гречишный шоколад с кокосом Nature's own factory",
+    "description": "Результат успешной коллаборации с Элен Манасир - нежнейший гречишный шоколад ручной работы с кокосом, в котором все ингредиенты - какао-масло, татарская гречиха, кокосовая стружка и кокосовый сахар - создают поистине гармонию вкуса. Один кусочек - и вы перенесетесь на тропический песчаный пляж. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-бобов, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 4.45,
+    "stock": 68,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/20.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/20.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/20.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/20-1.webp"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Гречишный шоколад с матчей Nature's own factory",
+    "description": "Шоколад с матчей - пример удачной коллаборации. Гречишный чай от Nature’s Own Factory и премиальный зеленый японский чай – два любимых продукта Стеллы Аминовой - удалось соединить в нежной тонкой вкусовой гармонии, переносящей на далекие восточные берега, усеянные лепестками сакуры и жасмина. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-бобов, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 4.45,
+    "stock": 84,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/21.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/21.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/21.webp"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Гречишный шоколад с имбирем и лимоном Nature's own factory",
+    "description": "Семена татарской гречихи, витамины и минералы - все эти компоненты составляют уникальный вкус шоколада.  Шоколад с имбирем и лимоном - хороший выбор для любителей вкусного, пряного лакомства. Полностью натуральный шоколад, изготовленный путем меланжирования, какао-масла, гречишного чая, тростникового сахара. Меланжирование осуществляется при низкой температуре за счет чего в шоколаде сохраняются все полезные свойства какао-масла и гречишного чая.",
+    "price": 4.45,
+    "stock": 100,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/22.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/22.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/22.webp"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Гречишный шоколад PREBIOTIC с арахисом Nature's own factory",
+    "description": "Шоколад изготавливается из натуральных ингридиентов, которые бережно перетираются на каменных жерновах.  В состав входят семена татарской гречихи, которые включают комплекс витаминов и минералов и не содержат кофеин. В продукте отсутствуют заменители, ароматизаторы и рафинированный сахар.",
+    "price": 3.39,
+    "stock": 19,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/23.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/23.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/23.webp"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Гречишный шоколад PREBIOTIC горький с кофе Nature's own factory",
+    "description": "Шоколад изготавливается из натуральных ингридиентов, которые бережно перетираются на каменных жерновах.  В состав входят семена татарской гречихи, которые включают комплекс витаминов и минералов и не содержат кофеин. В продукте отсутствуют заменители, ароматизаторы и рафинированный сахар.",
+    "price": 3.39,
+    "stock": 34,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/24.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/24.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/24.webp"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Гречишный шоколад PREBIOTIC с кунжутом Nature's own factory",
+    "description": "Шоколад изготавливается из натуральных ингридиентов, которые бережно перетираются на каменных жерновах.  В состав входят семена татарской гречихи, которые включают комплекс витаминов и минералов и не содержат кофеин. В продукте отсутствуют заменители, ароматизаторы и рафинированный сахар.",
+    "price": 3.39,
+    "stock": 16,
+    "brand": "Nature's own factory",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "шоколад",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/25.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/25.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/25.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/25-1.webp"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Гречишный чайный напиток, пакетированный Nature's own factory",
+    "description": "Гречишный чай от NATURE'S OWN FACTORY - это отшлифованные семена специального подвида татарской гречихи, выращиваемого в горных районах на Тайване.  Чай содержит целую россыпь витаминов и микроэлементов - фосфор, медь, витамины группы B, PP, P. Целебные свойства: Чай из гречихи способствует профилактике многих болезней: сахарного диабета, ожирения, аритмии, повышенного давления, непроходимости пищи, варикоза, отеков, язвы желудка, синдрома хронической усталости.  Гречишный чай улучшает память и сон - он восстанавливает силы и очищает организм от накопленных токсинов и шлаков.",
+    "price": 11.0,
+    "stock": 78,
+    "brand": "Nature's own factory",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/26.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/26.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/26.webp"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Гречишный чайный напиток Nature's own factory",
+    "description": "Гречишный чай от NATURE'S OWN FACTORY - это отшлифованные семена специального подвида татарской гречихи, выращиваемого  в горных районах на Тайване.  Чай содержит целую россыпь витаминов и микроэлементов - фосфор, медь, витамины группы B, PP, P. Целебные свойства: Чай из гречихи способствует профилактике многих болезней: сахарного диабета, ожирения, аритмии, повышенного давления, непроходимости пищи, варикоза, отеков, язвы желудка, синдрома хронической усталости.  Гречишный чай улучшает память и сон - он восстанавливает силы и очищает организм от накопленных токсинов и шлаков.",
+    "price": 25.39,
+    "stock": 46,
+    "brand": "Nature's own factory",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/27.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/27.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/27.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/27-1.webp"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Гречишный чайный напиток с кокосом Nature's own factory",
+    "description": "Уникальный гречишный чай из семян татарской гречихи, которые спрессовываются в гранулы и обжариваются таким образом, что все его полезные свойства сохраняются. Чай включает множество витаминов и микроэлементов - магний, железо, витамины группы В1, В2 и не содержит кофеина. Он способствует нормализации давления, выводит лишнюю жидкость из организма, улучшает память, сон, а также очищает организм от накопленных токсинов и шлаков.",
+    "price": 26.0,
+    "stock": 44,
+    "brand": "Nature's own factory",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/28.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/28.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/28.webp"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Гречишный чайный напиток с манго Nature's own factory",
+    "description": "Уникальный гречишный чай из семян татарской гречихи, которые спрессовываются в гранулы и обжариваются таким образом, что все его полезные свойства сохраняются. Благодаря кусочкам манго, чай богат витаминами группы В, каротином и аскорбиновой кислотой. Чай включает множество витаминов и микроэлементов - магний, железо, витамины группы В1, В2 и не содержит кофеина. Он способствует нормализации давления, выводит лишнюю жидкость из организма, улучшает память, сон, а также очищает организм от накопленных токсинов и шлаков.",
+    "price": 26.0,
+    "stock": 38,
+    "brand": "Nature's own factory",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/29.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/29.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/29.webp"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Чай матча Ufeelgood",
+    "description": "Чай Матча – это 100 % чистый натуральный зеленый чай, представляет собой тонко измельченный порошок из специально выращенных и обработанных листьев. Чай не содержит консервантов, красящих добавок или других каких-либо искусственных ингредиентов. Полезные свойства матчи - Заряжает энергией и улучшает концентрацию внимания. - Помогает бороться со стрессом, улучшает память. - Богат антиоксидантами. Всего 1 чашка Матча соответствует 10-ти чашкам зеленого чая!",
+    "price": 23.39,
+    "stock": 63,
+    "brand": "Ufeelgood",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/30.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/30.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/30.webp"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Чай «Травки для бодрости» ТРАВКИ",
+    "description": "Травки для бодрости – чтобы энергично начать день и обрести ясность мыслей. Терпкий вкус ферментированного иван-чая с кислинкой ягод лимонника и шиповника и ароматом саган-дайля. Поможет: - Проснуться; - Поднять настроение; - Сосредоточиться; - Настроиться на продуктивность; - Почувствовать прилив сил без кофе. Продукт не является лекарственным средством. Противопоказаний нет, кроме индивидуальной непереносимости. Перед употреблением во время беременности и лактации, пожалуйста, проконсультируйтесь с врачом.",
+    "price": 15.6,
+    "stock": 74,
+    "brand": "ТРАВКИ",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/31.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/31.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/31.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/31-1.webp"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Чай «Травки для детокса» ТРАВКИ",
+    "description": "Травки для детокса – очищать организм можно тоже со вкусом: сладко-цветочным с остринкой от имбиря и легким пряным ароматом от фенхеля. Поможет: - Уменьшить чувство голода; - Ускорить обмен веществ; - Улучшить качество кожи; - Мягко вывести токсины; - Снять отечность. Продукт не является лекарственным средством. Противопоказаний нет, кроме индивидуальной непереносимости. Перед употреблением во время беременности и лактации, пожалуйста, проконсультируйтесь с врачом.",
+    "price": 15.6,
+    "stock": 90,
+    "brand": "ТРАВКИ",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/32.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/32.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/32.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/32-1.webp"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Чай «Травки для легкости» ТРАВКИ",
+    "description": "Травки для лёгкости – чтобы почувствовать себя лучше после еды и поддержать пищеварение. Пряный, с восточным ароматом, потому что наполовину состоит из специй, и в то же время свежий от садовой мяты. Поможет: - Почувствовать легкость после тяжёлого обеда; - Уменьшить неприятные ощущения; - Ускорить обмен веществ; - Поддержать пищеварение. Продукт не является лекарственным средством. Противопоказаний нет, кроме индивидуальной непереносимости. Перед употреблением во время беременности и лактации, пожалуйста, проконсультируйтесь с врачом.",
+    "price": 15.6,
+    "stock": 66,
+    "brand": "ТРАВКИ",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/33.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/33.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/33.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/33-1.webp"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Чай «Травки для спокойствия» ТРАВКИ",
+    "description": "Травки для спокойствия – огнетушитель бурных эмоций и укротитель беспокойных мыслей. С ароматом цветущего сада и полевых трав. Можно закрыть глаза и представить, как гуляешь по цветочной поляне. Поможет: - Справиться со стрессом; - Снять напряжение после тяжелого дня или встречи; - Успокоить нервы; - Усмирить страсть; - Повысить качество сна. Продукт не является лекарственным средством. Противопоказаний нет, кроме индивидуальной непереносимости. Перед употреблением во время беременности и лактации, пожалуйста, проконсультируйтесь с врачом.",
+    "price": 15.6,
+    "stock": 64,
+    "brand": "ТРАВКИ",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/34.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/34.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/34.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/34-1.webp"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Чай «Травки имбирь и лимон» ТРАВКИ",
+    "description": "Травки имбирь и лимон – чай для поддержания иммунитета, и просто потому что вкусно. Мы сделали это любимое сочетание еще более витаминным с более интересным вкусом: пряным от куркумы, кисло-сладким от шиповника и лемонграсса. Поможет: - Согреться; - Укрепить иммунитет; - Побороть первые признаки простуды; - Поднять настроение; - Ускорить обмен веществ. Продукт не является лекарственным средством. Противопоказаний нет, кроме индивидуальной непереносимости. Перед употреблением во время беременности и лактации, пожалуйста, проконсультируйтесь с врачом.",
+    "price": 15.6,
+    "stock": 1,
+    "brand": "ТРАВКИ",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/35.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/35.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/35.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/35-1.webp"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Пастила фруктовая «Гарэзлiвы iмбiр» СМАКi",
+    "description": "Пряный согревающий вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 55,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/36.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/36.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/36.webp"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Пастила фруктовая «Яскравы агрэст» СМАКi",
+    "description": "Кисло-сладкий вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 54,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/37.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/37.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/37.webp"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Пастила фруктовая «Бадзёрыя парэчкi» СМАКi",
+    "description": "Кислый вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 82,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/38.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/38.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/38.webp"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Пастила фруктовая «Духмяныя трускаўкi» СМАКi",
+    "description": "Сладкий вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 60,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/39.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/39.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/39.webp"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Пастила фруктовая «Райскiя малiны» СМАКi",
+    "description": "Кисло-сладкий вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 37,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/40.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/40.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/40.webp"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Пастила фруктовая «Сакавiтая груша» СМАКi",
+    "description": "Сладкий вкус. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 33,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/41.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/41.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/41.webp"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Пастила фруктовая «Чароўныя парэчкi» СМАКi",
+    "description": "Более кислый вкус из всей серии. Кондитерское изделие, из подсушенного при минимальных температурах фруктово-ягодного пюре ручной работы. В составе пастилы только фрукты и ягоды. Пастила изготавливается без добавок. Яблоко запечённое – это основа. Яблоко выступает в роли натурального загустителя. Пастила не содержит сахара и мёда. Пастилу можно давать деткам с 8-ми месяцев жизни. Людям, страдающим аллергией тоже можно пастилу, нужно только смотреть на индивидуальную непереносимость.",
+    "price": 5.89,
+    "stock": 94,
+    "brand": "СМАКi",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "пастила",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/42.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/42.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/42.webp"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Батончик фруктово-ореховый «Шоколад с кокосом» Ол'Лайт",
+    "description": "Фруктово-ореховый батончик шоколад и кокос - 100% натуральный перекус. Всегда читай состав. Никаких ароматизаторов, консервантов и красителей. Только натуральные ингредиенты – орехи и сухофрукты. Преимущества: - 100 % натуральный продукт; - Не содержит ГМО, глютена, холестерина, сои и молока; - Без добавления красителей, консервантов и ароматизаторов; - Подходит веганам; - Можно употреблять в пост; - Удобно взять с собой.",
+    "price": 1.49,
+    "stock": 91,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/43.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/43.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/43-44-45.webp"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Батончик фруктово-ореховый «Абрикос» Ол'Лайт",
+    "description": "Фруктово-ореховый батончик абрикос - 100% натуральный перекус. Всегда читай состав. Никаких ароматизаторов, консервантов и красителей. Только натуральные ингредиенты – орехи и сухофрукты. Преимущества: - 100 % натуральный продукт; - Не содержит ГМО, глютена, холестерина, сои и молока; - Без добавления красителей, консервантов и ароматизаторов; - Подходит веганам; - Можно употреблять в пост; - Удобно взять с собой.",
+    "price": 1.49,
+    "stock": 67,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/44.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/44.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/43-44-45.webp"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Батончик фруктово-ореховый «Клубника» Ол'Лайт",
+    "description": "Фруктово-ореховый батончик клубника - 100% натуральный перекус. Всегда читай состав. Никаких ароматизаторов, консервантов и красителей. Только натуральные ингредиенты – орехи и сухофрукты. Преимущества: - 100 % натуральный продукт; - Не содержит ГМО, глютена, холестерина, сои и молока; - Без добавления красителей, консервантов и ароматизаторов; - Подходит веганам; - Можно употреблять в пост; - Удобно взять с собой.",
+    "price": 1.49,
+    "stock": 64,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "батончик",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/45.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/45.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/43-44-45.webp"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Молочная овсяная каша с шоколадными кусочками Ол'Лайт",
+    "description": "Сбалансированная овсяная каша Ол'Лайт с шоколадными кусочками содержит медленные (правильные) углеводы и пищевые волокна, в том числе инулин, поэтому она надолго придает чувство сытости, наполняя организм энергией и поддерживая аминокислотный баланс на протяжении длительного периода времени. Натуральная каша Ол’лайт® изготовлена из отборных овсяных хлопьев, прошедших специальную повторную обработку паром для полного удаления характерной овсяной горчинки. Она также содержит отруби, темный бельгийский шоколад, натуральное сухое молоко. Каша Ол’лайт® дополнительно обогащена пребиотиком – инулином (растворимым пищевым волокном из корней цикория), благотворно влияющим на микрофлору кишечника, стимулирующим рост и активность полезных бифидобактерий. Поэтому мы рекомендуем кашу  Ол’лайт® для всей семьи.  Подходит людям, ведущим активный образ жизни, заботящимся о своем здоровье и следящим за своим питанием, но не всегда имеющим время и возможность для приготовления полезных блюд.",
+    "price": 0.99,
+    "stock": 82,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "каша",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/46.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/46.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/46-47-48.webp"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Молочная овсяная каша с малиной Ол'Лайт",
+    "description": "Сбалансированная овсяная каша Ол'Лайт с малиной содержит медленные (правильные) углеводы и пищевые волокна, в том числе инулин, поэтому она надолго придает чувство сытости, наполняя организм энергией и поддерживая аминокислотный баланс на протяжении длительного периода времени. Натуральная каша Ол’лайт® изготовлена из отборных овсяных хлопьев, прошедших специальную повторную обработку паром для полного удаления характерной овсяной горчинки. Она также содержит отруби, темный бельгийский шоколад, натуральное сухое молоко. Каша Ол’лайт® дополнительно обогащена пребиотиком – инулином (растворимым пищевым волокном из корней цикория), благотворно влияющим на микрофлору кишечника, стимулирующим рост и активность полезных бифидобактерий. Поэтому мы рекомендуем кашу  Ол’лайт® для всей семьи.  Подходит людям, ведущим активный образ жизни, заботящимся о своем здоровье и следящим за своим питанием, но не всегда имеющим время и возможность для приготовления полезных блюд.",
+    "price": 0.99,
+    "stock": 56,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "каша",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/47.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/47.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/46-47-48.webp"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Молочная овсяная каша с клубникой Ол'Лайт",
+    "description": "Сбалансированная овсяная каша Ол'Лайт с клубникой содержит медленные (правильные) углеводы и пищевые волокна, в том числе инулин, поэтому она надолго придает чувство сытости, наполняя организм энергией и поддерживая аминокислотный баланс на протяжении длительного периода времени. Натуральная каша Ол’лайт® изготовлена из отборных овсяных хлопьев, прошедших специальную повторную обработку паром для полного удаления характерной овсяной горчинки. Она также содержит отруби, темный бельгийский шоколад, натуральное сухое молоко. Каша Ол’лайт® дополнительно обогащена пребиотиком – инулином (растворимым пищевым волокном из корней цикория), благотворно влияющим на микрофлору кишечника, стимулирующим рост и активность полезных бифидобактерий. Поэтому мы рекомендуем кашу  Ол’лайт® для всей семьи.  Подходит людям, ведущим активный образ жизни, заботящимся о своем здоровье и следящим за своим питанием, но не всегда имеющим время и возможность для приготовления полезных блюд.",
+    "price": 0.99,
+    "stock": 44,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "каша",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/48.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/48.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/46-47-48.webp"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Запеченная гранола с фруктами и орехами Ол'Лайт",
+    "description": "Хрустящая медовая запеченная гранола с фруктами и орехами - отличный завтрак для всей семьи! Запеченные злаки содержат клетчатку – растительные пищевые волокна, которые нормализуют работу пищеварительной системы, а в сочетании с орехами и фруктами заряжают организм энергией на весь день! Укрепи свое здоровье цельными злаками и клетчаткой – начни свой день правильно! Отличный завтрак, который можно употреблять с молоком, кефиром, йогуртом, соком или даже в сухом виде в качестве полезного перекуса.",
+    "price": 6.55,
+    "stock": 16,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "гранола",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/49.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/49.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/49-50-51-52.webp"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Запеченная гранола шоколадная с орехами Ол'Лайт",
+    "description": "Хрустящая медовая запеченная шоколадная гранола с орехами - отличный завтрак для всей семьи! Запеченные злаки содержат клетчатку – растительные пищевые волокна, которые нормализуют работу пищеварительной системы, а в сочетании с орехами и фруктами заряжают организм энергией на весь день! Укрепи свое здоровье цельными злаками и клетчаткой – начни свой день правильно! Отличный завтрак, который можно употреблять с молоком, кефиром, йогуртом, соком или даже в сухом виде в качестве полезного перекуса.",
+    "price": 7.15,
+    "stock": 12,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "гранола",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/50.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/50.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/49-50-51-52.webp"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Запеченная гранола с тропическими фруктами Ол'Лайт",
+    "description": "Хрустящая медовая запеченная гранола с тропическими фруктами - отличный завтрак для всей семьи! Запеченные злаки содержат клетчатку – растительные пищевые волокна, которые нормализуют работу пищеварительной системы, а в сочетании с орехами и фруктами заряжают организм энергией на весь день! Укрепи свое здоровье цельными злаками и клетчаткой – начни свой день правильно! Отличный завтрак, который можно употреблять с молоком, кефиром, йогуртом, соком или даже в сухом виде в качестве полезного перекуса.",
+    "price": 6.59,
+    "stock": 27,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "гранола",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/51.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/51.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/49-50-51-52.webp"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Запеченная гранола с ягодами Ол'Лайт",
+    "description": "Хрустящая медовая запеченная гранола с ягодами - отличный завтрак для всей семьи! Запеченные злаки содержат клетчатку – растительные пищевые волокна, которые нормализуют работу пищеварительной системы, а в сочетании с орехами и фруктами заряжают организм энергией на весь день! Укрепи свое здоровье цельными злаками и клетчаткой – начни свой день правильно! Отличный завтрак, который можно употреблять с молоком, кефиром, йогуртом, соком или даже в сухом виде в качестве полезного перекуса.",
+    "price": 6.85,
+    "stock": 1,
+    "brand": "Ол'Лайт",
+    "category": "Полезные сладости",
+    "catPath": "sweets",
+    "type": "гранола",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/52.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/52.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/49-50-51-52.webp"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Цикорий традиционный Ол'Лайт",
+    "description": "Цикорий традиционный - горячий напиток для здорового питания, изготовленный из 100% корней цикория, выращенных и обработанных по уникальной технологии производства. Цикорий ОЛ'ЛАЙТ® - источник витаминов, минералов и инулина, столь необходимых современным жителям мегаполисов, стремящимся вести здоровый образ жизни. Содержит инулин – растительное пищевое волокно, которое улучшает микрофлору кишечника, стимулирует рост и активность бифидобактерий, улучшает усвоение организмом кальция. В одной порции напитка – 60% суточной нормы инулина. Без кофеина, не повышает артериальное давление. Не содержит ГМО. Без глютена.",
+    "price": 6.85,
+    "stock": 6,
+    "brand": "Ол'Лайт",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "цикорий",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/53.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/53.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/53.webp"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Комбуча «Апельсиновая лаванда» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Нежный напиток с легким вкусом лаванды и кислинкой апельсина, обладает приятным ароматом, снимает стресс, дарит легкость после трудного дня. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 17,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/54.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/54.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/54.webp"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Комбуча «Зеленая мята» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Ароматный, нежный и освежающий напиток, дарящий прохладу. Придает силы, улучшает пищеварение, снимает нервное напряжение, помогает расслабиться и забыть о проблемах. Идеально для занятий йогой и медитацией. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 22,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/55.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/55.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/55.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/55-1.webp"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Комбуча «Зеленый жасмин» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Жасмин, придает тонкий, нежный аромат и сладковатый привкус зеленому чаю, обогащает его ароматическую и вкусовую палитру. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 45,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/56.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/56.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/56.webp"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Комбуча «Королевский гибискус» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Обладает приятным фруктовым вкусом и высоким содержанием витамина С, достигнутым естественным путем. В основе напитка кроме черного и зеленого чая, лежат цветы гибискуса. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 1,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/57.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/57.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/57.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/57-1.webp"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Комбуча «Лазурный османтус» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Яркий напиток на основе зеленого чая обладает легким ароматом саган-дайля, цветов османтуса и клитории с приятной кислинкой. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 30,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/58.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/58.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/58.webp"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Комбуча «Традиционный зеленый» HQ Kombucha",
+    "description": "Слабогазированный освежающий напиток на основе чайного гриба (комбуча). Создан специально для тех, кто любит комбучу в ее первозданном виде. В составе вода артезианская, чай зеленый и немного лемонграсса. Напиток натуральный, безалкогольный, слабогазированный приготовлен путем ферментации комбучей культурой приготовленного сусла по рецептуре и технологической инструкции при температуре от + 20°С до + 28°С. Польза комбучи 1. Улучшение пищеварения. 2. Снижение веса. 3. Очищение печени.",
+    "price": 5.5,
+    "stock": 21,
+    "brand": "HQ Kombucha",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "комбуча",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/59.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/59.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/59.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/59-1.webp"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Проростки пшеницы молотые (витграсс) Ufeelgood",
+    "description": "Главная польза от регулярного употребления в пищу молодых побегов пшеницы – это целостное омоложение организма, увеличение продолжительности активной и полноценной жизни.\nВитграсс – это молодые зелёные ростки (побеги) пшеницы. По своим полезным свойствам этот продукт можно назвать настоящим санитаром человеческого организма. Detox Wheatgrass улучшает состояние кожи и волос. Пророщенная пшеница уже длительное время по праву считается одним из профилактических средств от онкологических и сердечно-сосудистых заболеваний. Порошок из ростков пшеницы содержит 19 аминокислот из 21 известных, белок (13%), железо, магний, кальций, фосфор, калий, витамины группы В( в том числе В12), А, С и Е и незаменимые жирные кислоты Омега-3, Омега-6 и Омега-9.",
+    "price": 24.0,
+    "stock": 35,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/60.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/60.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/60.webp"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Конопляные семена (пищевые) Ufeelgood",
+    "description": "Органические семена пищевой конопли (очищенные) призваны обогатить Ваш организм жирными кислотами Омега-3семена конопли и Омега-6, а также легкоусвояемым белком.\nА ещё, как известно, конопля отличается содержанием наибольшего количество эдестина в растительном мире, который помогает в поддержании иммунитета организма. Семя пищевой конопли- это единственное съедобное семя, содержащее гамма-линоленовую кислоту, которая является полезной в лечении симптомов ПМС и менопаузы. Не содержит наркотических веществ! Семена пригодны для приготовления различных блюд, изготовления масла и проращивания.",
+    "price": 23.8,
+    "stock": 14,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/61.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/61.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/61.webp"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Кокосовый сахар Ufeelgood",
+    "description": "Этот ароматный органический сахар сделан из сока кокосовой пальмы. Пожалуй, это самый вкусный естественный подсластитель, который Вы когда-либо пробовали!\nКокосовый сахар содержит большое количество питательных веществ: множеством витаминов и 16 аминокислот, а также имеет низкий гликемический индекс – 35! К примеру, тростниковый сахар, выпускаемый серийно, обладает GL 68. Именно поэтому сахар кокосовой пальмы является наиболее предпочтительным вариантов для диабетиков, которые вынуждены придерживаться гликемической диеты. Он изготовлен на 100% из сока кокосовой пальмы – Organic!",
+    "price": 9.69,
+    "stock": 78,
+    "brand": "Ufeelgood",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сахар",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/62.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/62.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/62.webp"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Спирулина (порошок) Ufeelgood",
+    "description": "Причина этому - особенный биохимический состав. Спирулина вобрала в себя значительное количество микронутриентов (витаминов, аминокислот, микроэлементов, полиненасыщенных жирных кислот и других пищевых веществ) необходимых для оптимизации питания. Все полезные вещества, входящие в состав этой водоросли, находятся в легкоусвояемой форме, среди них следующие:\n- растительный белок в сочетании с комплексом аминокислот (60%),\n- растительные жиры с преобладанием ценных полиненасыщенных жирных кислот, в т.ч. линоленовой,\n- комплекс витаминов: А, С, Е, В1, В2, ВЗ, В6, В9,\n- хлорофилл, фикоцианин, каротиноиды,\n- фолиевая кислота,\n- минеральный комплекс: магний, кальций, калий, фосфор, цинк, железо, бор, марганец и другие.",
+    "price": 24.0,
+    "stock": 3,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/63.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/63.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/63.webp"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Спирулина (таблетки) Ufeelgood",
+    "description": "Натуральная водоросль обладает уникальным и ценным для человеческого организма биохимическим составом. Употребление спирулины в пищу позволяет обогатить организм витаминами А, Е, группы В, полиненасыщенными жирными кислотами, аминокислотами. Также она является источником таких минералов, как цинк, марганец, селен, кальций, а также комплекса микронутриентов, обладает оздоравливающим и общеукрепляющим действием, и может стать природным источником белка для веганов и сыроедов. Подходит для спортивного и диетического питания.\nВлияние на организм\nСпирулина богата хлорофиллом, который стимулирует быстрое восстановление всех тканей. Водоросль помогает укрепить иммунитет, избавить организм от токсинов.",
+    "price": 51.27,
+    "stock": 24,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/64.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/64.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/64.webp"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Спирулина и хлорелла прессованные (таблетки) Ufeelgood",
+    "description": "Эти водоросли являются источником хлорофилла, который обладает мощным регенерирующим эффектом. В каждой таблетке сочетаются полезные свойства обоих типов. Нет необходимости принимать отдельно несколько видов БАДов. Водоросли станут дополнительным источником белка для веганов, сыроедов, подойдут для спортивного и диетического питания.\nВлияние на организм\nСпирулина и хлорелла позволяют обогатить повседневный рацион, восстановить в организме баланс витаминов и минералов. В них содержатся кальций, магний, калий, селен, комплексы микронутриентов, витамины А, Е, весь комплекс группы В. Полиненасыщенные жирные кислоты, аминокислоты позволяют организму функционировать правильно, укрепляют и поддерживают иммунитет.",
+    "price": 57.75,
+    "stock": 54,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/65.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/65.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/65.webp"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Пчелиная пыльца Ufeelgood",
+    "description": "Органическая пчелиная пыльца – это весьма ценный и полезный продукт пчеловодства наряду с маточным молочком и прополисом. Цветочная пыльца имеет в своём составе огромное количество полезных веществ: аминокислоты, витамины, минералы и протеины.\nЭтот продукт пчеловодства является отличным средством для лечения и профилактики сердечно-сосудистых заболеваний.",
+    "price": 19.49,
+    "stock": 43,
+    "brand": "Ufeelgood",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/66.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/66.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/66.webp"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Чай матча Япония Ufeelgood",
+    "description": "Матча или Маття - культовый чай, использующийся в традиционных чайных церемониях в Японии.\nЭтот зеленый чай лучше усваивается, т.к. выпивается сам настой и чаинки.\nМатча имеет более нежный и мягкий вкус, нежели чай Сенча, который содержит танин. Жители страны восходящего солнца его высоко ценят и используют в кулинарии и в уходе за кожей.\nРекомендуется как полезная альтернатива кофе. В отличие от кофе, Матча имеет ощелачивающий, а не закисляющий эффект.\nМатча содержит множество микроэлементов, полифенолов, антиоксидантов и других ценных веществ.",
+    "price": 37.42,
+    "stock": 77,
+    "brand": "Ufeelgood",
+    "category": "Полезные напитки",
+    "catPath": "drinks",
+    "type": "чай",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/67.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/67.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/67.webp"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Псиллиум (подорожник индийский сушеный) Targroch",
+    "description": "Шелуха семян подорожника или Псиллиум – уникальный суперфуд, произрастающий, в основном, в Индии. Клетчатка, получаемая из шелухи семян подорожника яйцевидного - отличное средство для решения проблем органов пищеварения. Внешняя оболочка (шелуха) измельчается в мелкие частицы, представляющие собой четкие, коричневатые, пищевые волокна, которые дают при их приеме в пищу огромные полезные возможности для здоровья.\nШелуха семян подорожника в основном состоит из водорастворимых пищевых волокон. Для сравнения, у овсяных отрубей – 10-15 % клетчатки. И только 5% из неё – водорастворимая!",
+    "price": 26.5,
+    "stock": 18,
+    "brand": "Targroch",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/68.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/68.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/68.webp"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Хлорелла в таблетках Targroch",
+    "description": "Состав хлореллы отличается высоким содержанием белка, витаминов, микроэлементов, а также пигментов, которые помогают живым организмам синтезировать ферменты, участвующие в нормализации обмена веществ. Самый важный пигмент – хлорофилл, именуемый «зеленым золотом», так как его молекулярная структура идентична молекуле гемоглобина. Также хлорелла обладает противовоспалительным действием и способствует более быстрой регенерации костного мозга.\nХлорелла – это прекрасный биогенный иммуностимулирующий препарат, естественный антибиотик, который борется с инфекционными, бактериальными и другими заболеваниями.\nХлорелла не имеет побочных эффектов, которые вредны для организма. Однако, из-за наличия большого количества железа, хлорелла противопоказана больным гемохроматозом.",
+    "price": 26.9,
+    "stock": 4,
+    "brand": "Targroch",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/69.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/69.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/69.webp"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Мука кокосовая Targroch",
+    "description": "Кокосовая мука становится все популярнее из-за своих полезных свойств и приятного аромата. Кокосовая мука имеет пудровую консистенцию и легкий слегка ванильный аромат. Ее получают, так же как и кокосовую стружку из высушенной измельченной и обезжиренной кокосовой мякоти. \nВолокно и белок составляют более половины питательной ценности кокосовой муки. В свою очередь, в нем очень мало углеводов. По этой причине спортсмены, люди, которые заботятся о линии и диабетиках, охотно тянутся к ней. Выбирая кокосовую муку, не стоит обращать внимание на калории из-за богатства белков, клетчатки и минералов, которые делают ее выбор очевидным.",
+    "price": 16.9,
+    "stock": 23,
+    "brand": "Targroch",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/70.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/70.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/70.webp"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Сода очищенная пищевая/питьевая Targroch",
+    "description": "Чистая натуральная пищевая сода без добавок NATURAL SODA. Как и американская сода имеет высокую степень очистки.\nНатуральная очищенная сода - это природный источник молодости и здоровья, который использовали в мире для лечения различных заболеваний, в том числе рака, более 2000 лет и используют сегодня тысячи людей. Натуральная сода - это природный онкопротектор, не имеющий аналогов. Исследования о соде (гидрокарбонат натрия или пищевая сода) позволяет восстановить кислотно-щелочное равновесие в организме: ввывести его из состояния закисления (ацидоза), привести в норму показатели pH всех жидкостных сред и этим повысить его иммунитет.\nПоддержание нормального pH - один из важнейших факторов функционирования иммунной системы организма. Сода создает щелочную среду в крови и всех жидких средах организма. Именно в такой среде не могут существовать и погибают многие виды паразитов, особенно грибковые (дрожжевые) виды. Активизируется процесс выщелачивания мочевой кислоты из организма и солевых отложений в органах ЖКТ и опорно-двигательном аппарате. Раковые клетки тоже уничтожаются содой вследствие защелачивания организма.",
+    "price": 19.5,
+    "stock": 12,
+    "brand": "Targroch",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/71.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/71.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/71.webp"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Сода очищенная пищевая/питьевая Targroch",
+    "description": "Неактивная форма, которая в отличие от обычных дрожжей не ферментируется в нашей пищеварительной системе и, как следствие, не вызывают брожение в кишечнике. Выращивают их на сахарном тростнике и патоке, после этого собирают, промывают и сушат.\nПищевые дрожжи — это единственный (неживотного происхождения) надёжный источник витамина B12.\nИсточник полноценного белка, содержащего 18 аминокислот (45 г белка в 100 г продукта).\nОдним из преимуществ дрожжевых хлопьев является высокое содержание витаминов группы В: B1, B2, B3, B6, В12, которое помогает поддерживать сбалансированный уровень иммунитета в организме, профилактике рака поджелудочной железы.\nПищевые дрожжи необходимы для роста и силы волос. Биотин, содержащийся в них, помогает строить и укреплять белковую структуру волос. Рибофлавин и витамин B, способствует росту волос и ногтей. В пищевых дрожжах содержится фолиевая кислота, дефицит которой приводит к седине, а так же селен, который придает глянцевый блеск волосам\nСодержат очень ценный микроэлемент - хром, играющий важную роль в регулировании уровня содержания сахара в крови.\nФолиевую кислоту, селен, цинк, магний, медь, ванадий, молибден и литий.\nСодержат иммунномодулирующий бета-1,3 глюкан -вид клетчатки, который находится в клеточных стенках дрожжей. Этот полезный компонент помогает укреплять иммунную систему и снижать уровень холестерина.",
+    "price": 17.9,
+    "stock": 35,
+    "brand": "Targroch",
+    "category": "Суперфуды",
+    "catPath": "superfoods",
+    "type": "суперфуд",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/72.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/72.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/72.webp"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Финиковый сироп Bite",
+    "description": "Абсолютно натуральный сироп, который добавит сладость и аромат любимым завтракам, десертам и перекусам.Финиковый сироп – источник витаминов, полезных микроэлементов и антиоксидантов.\n- укрепляет костную систему\n- благотворно влияет на нервную систему \n- источник селена \n- снижает риск развития сердечно-сосудистых заболеваний\n- повышает иммунитет\n- Используйте сироп для десертов либо добавляйте его в чай, кофе или смузи.",
+    "price": 9.25,
+    "stock": 22,
+    "brand": "Bite",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/73.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/73.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/73.webp"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Сироп агавы Bite",
+    "description": "Абсолютно натуральный сироп, который добавит сладость и аромат любимым завтракам, десертам и перекусам.\nСироп агавы – источник витаминов, полезных микроэлементов и антиоксидантов, имеет низкий гликемический индекс.\nСироп обладает карамельным вкусом. Используйте его для десертов либо добавляйте в чай, кофе или смузи.",
+    "price": 14.67,
+    "stock": 64,
+    "brand": "Bite",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/74.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/74.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/74.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/74-1.webp"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "Яблочный сироп Bite",
+    "description": "Абсолютно натуральный сироп, который добавит сладость и аромат любимым завтракам, десертам и перекусам.\nВ составе только свежие яблоки и все!\nЯблочный сироп – источник витаминов, полезных микроэлементов и антиоксидантов.\nИспользуйте сироп для десертов либо добавляйте его в чай, кофе или смузи.",
+    "price": 9.18,
+    "stock": 57,
+    "brand": "Bite",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/75.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/75.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/75.webp"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Финиковый пекмез Royal Forest",
+    "description": "Финиковый пекмез – это сгущенный сок (сироп) из фиников, приготовленный путем выпаривания на солнце без добавления сахара.\nПекмез имеет не высокий гликемический индекс и содержит только естественные сахара (фруктозу, глюкозу и цукрозу). Финиковый пекмез богат витаминами (А, С и группы В), минералами и солями, содержит 23 аминокислоты, а также богат пектином и пищевыми волокнами. По своей консистенции пекмез похож на мед, поэтому этот вкусный и очень полезный финиковый сироп отлично подойдет ко многим Вашим блюдам и придаст им новое «звучание».",
+    "price": 19.44,
+    "stock": 50,
+    "brand": "Royal Forest",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/76.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/76.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/76-78.webp"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Виноградный пекмез Royal Forest",
+    "description": "Виноградный пекмез – это сгущенный сок (сироп) из винограда, приготовленный путем выпаривания на солнце без добавления сахара.\nПекмез имеет не высокий гликемический индекс и содержит только естественные сахара, органические кислоты и витамины. По своей консистенции пекмез похож на мед, а вот по содержанию рибофлавина, тиамина и железа намного его превосходит. Ароматный, вкусный и полезный виноградный сироп отлично подойдет в качестве подсластителя ко многим Вашим блюдам и придаст им новое «звучание».",
+    "price": 12.33,
+    "stock": 5,
+    "brand": "Royal Forest",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/77.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/77.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/76-78.webp"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Можжевеловый пекмез Royal Forest",
+    "description": "Пекмез можжевельника – это сгущенный сок (сироп) из ягод можжевельника, приготовленный путем выпаривания на солнце без добавления сахара.\nПродукт не содержит никаких химических веществ и консервантов! Можжевельник широко применяется в народной медицине для лечения многих заболеваний, пекмез из его ягод также обладает большим количеством полезных свойств для организма.",
+    "price": 14.56,
+    "stock": 37,
+    "brand": "Royal Forest",
+    "category": "Сиропы и сахарозаменители",
+    "catPath": "syrups",
+    "type": "сироп",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/78.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/78.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/76-78.webp"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Кокосовое масло Extra Virgin Aroy-D",
+    "description": "Кокосовое масло Extra Virgin - отличная альтернатива сливочному или растительному маслу. Первый холодный отжим, нерафинированное.\nВеликолепное дополнение к Вашим любимым напиткам и десертам.\nПодходит для снятия макияжа, в качестве средства для ухода за волосами или увлажняющего средства для кожи.\nКокосовое масло богато лауриновой кислотой и среднецепочечными триглицеридами (MCFA). Лауриновая кислота - это кислота, которая обладает функцией преобразования в монолаурин в результате попадания в организм человека. Монолаурин - это мощный компонент, усиливающий имунную систему человека, это антибактериальный, антивирусный и антипротозойный моноглицерид, используемый для борьбы с вирусами в липидной оболочке.\nКокосовое масло Extra Virgin известно своим приятным ароматом, вкусом, содержанию антиоксидантов, витаминов. Преобразуется в энергию, а не в жир.\nСтеклянная банка позволяет увеличить срок хранения кокосового масла, сохранить его вкус и аромат.\nПосле вскрытия продукт пригоден для употребления в течении всего срока годности.\nМасло затвердевает при температуре ниже 25°C, что не влияет на качество товара.",
+    "price": 16.6,
+    "stock": 46,
+    "brand": "Aroy-D",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "кокосовое масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/79.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/79.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/79.webp"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Кокосовое масло нерафинированное Bio Planete",
+    "description": "Нерафинированное органическое кокосовое масло обладает насыщенным кокосовым ароматом. Подходит как для пищевых целей (жарка,  добавление в каши, овощные рагу и тд), так и для косметических целей (маски для волос, масло для тела).\nКокосовое масло затвердевает при температуре 25 градусов. Растапливается при повышении температуры.  Сохраняет свои полезные свойства при термической обработке.\nМасло ускоряет обмен веществ и быстро насыщает организм энергией, поэтому его полезно добавлять в завтраки. Оно также содержит большое количество ценной лауриновой кислоты (до 45%), обладает антибактериальными, противовирусными и противогрибковыми свойствами.",
+    "price": 39.45,
+    "stock": 13,
+    "brand": "Bio Planete",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "кокосовое масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/80.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/80.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/80.webp"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Кокосовое масло (холодный отжим) Ufeelgood",
+    "description": "Кокосовое масло богато растительным жиром и обладает антибактериальными и противовирусными свойствами. При включении кокосового масла в рацион питания повышается иммунитет.\nКокосовое масло имеет непередаваемый аромат и восхитительный вкус орехов из Филиппин, собранных на органических плантациях! Масло произведено из свежей и влажной мякоти путем холодного отжима. Благодаря своим свойствам оно получило широкое применение и в косметических целях.",
+    "price": 10.5,
+    "stock": 95,
+    "brand": "Ufeelgood",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "кокосовое масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/81.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/81.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/81.webp"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Масло сыродавленное Тыквенное TRAWA",
+    "description": "Помните, как в сказке про Золушку в полночь карета превратилась в тыкву? Мы же превращаем методом холодного отжима тыквенные семечки в масло, которое славится своими антиоксидантными свойствами и не теряет их в полночь. Потому как возможности антиоксидантов безграничны! Исследование показали, что употребление тыквенного масла дает эффект, схожий с действием антидепрессантов, благодаря половине дневной нормы магния всего в одной столовой ложке масла. Тыквенные семечки действуют как средство от выпадения волос благодаря содержанию в них цинка. Исследования показывают, что сыродавленное масло обладают понижающими сахар свойствами, а это прекрасная новость для диабетиков. Исторически тыквенное масло использовались как антипаразитарное средство, благодаря кукурбитину — действующему веществу масла, который всасывается в кровь человека и парализует паразитов, в результате чего они погибают. Несколько лет назад одно из влиятельных бьюти изданий “Harper’s Bazar” опубликовало обзор омолаживающих и увлажняющих средств, активным ингредиентом которых было тыквенное масло. Оно прекрасно контролирует выработку себума и борется с акне. В кулинарии один из восхитительных способов употребления тыквенного масла в пищу - это заправка для салата. Кроме того, тыквенное масло частый ингредиент в пюре, сальсе, соусах и крем-супах и, безусловно, во всех блюдах с тыквой.",
+    "price": 45.9,
+    "stock": 45,
+    "brand": "TRAWA",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/82.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/82.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/82.webp"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Сыродавленное Миндальное масло с Белым Трюфелем TRAWA",
+    "description": "Так же, как и в моде, в food мире тоже есть свои тренды, и вот уже сотни лет трюфель не сдает своих позиций, помогая владельцам ресторанов заслуженно зарабатывать свои мишленовские звезды. Вы тоже можете заработать эту звезду, почувствовав себя шеф-поваром на своей собственной кухне! Почему именно белый трюфель? Потому что если уж баловать себя и своих близких, то самым лучшим! Белый трюфель – самый редкий и дорогой подземный гриб, и именно его аромат ценится больше всего! А масло из калифорнийского миндаля с органическим экстрактом белого трюфеля подчеркнет и усилит вкус ваших блюд, сделает изысканными и добавит им «статуса» своим дорогим ароматом. Готовьтесь получать комплименты вашим кулинарным способностям! Особенно рекомендуем подавать к ризотто, пасте, брускеттам и другим блюдам итальянской кухни.",
+    "price": 61.4,
+    "stock": 45,
+    "brand": "TRAWA",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/83.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/83.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/83.webp"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Масло Сыродавленное Кедровое TRAWA",
+    "description": "Кедр – энергетический титан среди деревьев. А кедровое масло – настоящий эликсир живительной силы. Пользу кедрового масла нельзя переоценить. Большинство уникальных свойств масла сибирского кедрового ореха связано с присутствием в нем жирной кислоты, называемой пиноленовой. Этот полезный жир содержится почти во всех соснах, но наибольшее количество на 100 г содержится в кедровых орехах из Сибири. Кедровое масло способствует выработке простациклина, который снижает кровяное давление. Благодаря незаменимым жирным кислотам, масло кедрового ореха эффективно выводит радионуклиды, тяжелые металлы и токсины. Это также профилактика рака. По содержанию витамина Е оно в 3 раза богаче оливкового. Масло кедрового ореха известно своей способностью лечить многочисленные желудочно- кишечные заболевания, такие как язва желудка, гастрит, инфекции Helicobacter pylori, раздраженный кишечник, проктоколит и изжога. Это происходит благодаря большому количеству антиоксидантов – витамина Е и каротиноидов. В косметологии масло кедрового ореха применяется для лечения практически всех кожных заболеваний: нейродермит, себорея, угревая сыпь. Включают его в маски, предотвращающие увядание кожи, потерю волос, а также для смягчения кутикулы, кожи рук, ног и тела. Слабоореховый аромат масла с легким древесным оттенком придаст аромат разнообразным блюдам, таким как фруктовые и овощные салаты, каши, пасты и соусы.",
+    "price": 41.2,
+    "stock": 45,
+    "brand": "TRAWA",
+    "category": "Масла",
+    "catPath": "oils",
+    "type": "масло",
+    "preview": "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/small/84.webp",
+    "images": [
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/full/84.webp",
+      "https://raw.githubusercontent.com/mkoroleva5/online-store-content/main/media/artistic/84.webp"
+    ]
+  }
+]

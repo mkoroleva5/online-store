@@ -1,0 +1,156 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.arrow-img {
+  display: none;
+  width: 1.3rem;
+  aspect-ratio: 1/1;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+.reset {
+  all: unset;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  border-radius: 0.8rem;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.copy {
+  position: relative;
+}
+
+.reset:hover {
+  opacity: 0.8;
+}
+
+.reset-icon {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(100%) sepia(100%) saturate(22%) hue-rotate(252deg) brightness(104%) contrast(100%);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--light-gray-color);
+  border-bottom: none;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--light-gray-color);
+  padding: 1rem;
+  position: relative;
+}
+
+.block-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.search-block {
+  width: 100%;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.optionsWrapper {
+  padding: 1rem 0;
+}
+
+@media (max-width: 1000px) {
+  .filter-wrapper {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-wrapper {
+    width: 75%;
+  }
+
+  .title-block {
+    padding: 0;
+  }
+
+  .title-wrapper {
+    cursor: pointer;
+  }
+
+  .field,
+  .buttons-wrapper {
+    display: none;
+  }
+
+  .visible {
+    display: flex;
+  }
+
+  .open,
+  .arrow-img {
+    display: block;
+  }
+
+  .open {
+    margin-top: 1rem;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-wrapper {
+    width: 90%;
+  }
+}

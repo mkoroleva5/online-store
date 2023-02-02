@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  list-style: none;
+  gap: 1rem;
+}
+
+.item {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--light-gray-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item:hover {
+  background-color: #bababa;
+  color: var(--white-color);
+}
+
+.active {
+  color: var(--white-color);
+  background-color: var(--bg-color);
+}
+
+.active:hover {
+  background-color: var(--bg-color);
+}

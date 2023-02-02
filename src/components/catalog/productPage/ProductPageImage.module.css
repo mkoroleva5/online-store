@@ -1,0 +1,48 @@
+.img {
+  width: 5rem;
+  height: 5rem;
+  outline: 0 solid white;
+  cursor: pointer;
+  transition: all ease-out 0.2s;
+  display: none;
+}
+
+.img:hover {
+  filter: saturate(100%);
+  box-shadow: 1px 1px 5px 1px rgb(34 60 80 / 24%);
+}
+
+.full-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40rem;
+  height: 40rem;
+  transition: all ease-out 0.5s;
+  opacity: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.enlarged-img {
+  width: 100%;
+  height: 100%;
+  transition: all ease-out 0.5s;
+  display: none;
+  cursor: default;
+}
+
+.loaded-img {
+  display: block;
+}
+
+.active {
+  opacity: 1;
+}
+
+@media (max-width: 850px) {
+  .full-img {
+    width: 100%;
+    height: 100%;
+  }
+}
